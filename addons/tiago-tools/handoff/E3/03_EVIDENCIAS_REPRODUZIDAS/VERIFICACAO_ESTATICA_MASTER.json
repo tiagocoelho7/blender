@@ -1,0 +1,24 @@
+{
+  "candidate_sha256": "28cba4b80e058e726f1e802498588d80278897918a4163b554c6697edda5bad2",
+  "manifest": {
+    "schema_version": "1.0.0",
+    "id": "tiago_tools",
+    "version": "1.0.2",
+    "name": "Tiago Tools",
+    "tagline": "Ferramentas pessoais para modifiers e subdivision",
+    "maintainer": "Tiago Coelho",
+    "type": "add-on",
+    "blender_version_min": "5.0.0",
+    "license": [
+      "SPDX:GPL-3.0-or-later"
+    ]
+  },
+  "identical_AST_parts": {
+    "_collect_objects_from_visible_collections": true,
+    "TIAGO_OT_disable_modifiers": true,
+    "VIEW3D_PT_tiago_tools": true
+  },
+  "inner_sha256sums": "4/4",
+  "audit_A_manifest": "21/21",
+  "audit_B_manifest": "19/19"
+}

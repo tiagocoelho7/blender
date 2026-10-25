@@ -1,0 +1,216 @@
+{
+  "schema_version": "1.0",
+  "purpose": "GitHub public monorepo Tiago Tools documentary custody import; no new development",
+  "repository": "tiagocoelho7/blender",
+  "directory": "addons/tiago-tools/",
+  "original_source_archive": "TIAGO_TOOLS_V1_0_2_MASTER_E3_CONSOLIDADO_2026-10-20.zip",
+  "original_source_archive_sha256": "42b8f6e3a503ba6b4a9b32203a5a56a1eff79d1792f383d4484ca2d4ab2bbf6b",
+  "original_source_members": 23,
+  "original_source_manifest_checks": 22,
+  "candidate_zip_sha256": "28cba4b80e058e726f1e802498588d80278897918a4163b554c6697edda5bad2",
+  "candidate_source_files": [
+    "CHANGELOG.txt",
+    "README.txt",
+    "SHA256SUMS.txt",
+    "__init__.py",
+    "blender_manifest.toml"
+  ],
+  "expected_total_files_in_package": 33,
+  "tracked_files_excluding_manifest": 32,
+  "manifest_file_not_self_hashed": "GITHUB_MASTER_IMPORT_MANIFEST.json",
+  "tech_gate": "GO E3 static for E4 preparation only, E4 execution pending explicit approval, production HOLD",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 1700,
+      "sha256": "6244eb9b68e616b018bbb5ea524b58c7b347915c15ba7ea02a4d2dfa7bb5ab51",
+      "category": "github_master_infrastructure"
+    },
+    {
+      "path": "GITHUB_MASTER_IMPORT_README.md",
+      "bytes": 3250,
+      "sha256": "056389a706ee42aefc915384af3a0ef1e383cf6114fe59ac5681345744ec1656",
+      "category": "github_master_infrastructure"
+    },
+    {
+      "path": "GITHUB_MASTER_IMPORT_VERIFY.py",
+      "bytes": 3839,
+      "sha256": "ac8df90f61ec08ad1d1bbc6cef0b8ce2f21c8ebad8dd1ccf16a248a5701a8441",
+      "category": "github_master_infrastructure"
+    },
+    {
+      "path": "handoff/E3/00_LEIA_ME_MASTER.md",
+      "bytes": 1670,
+      "sha256": "3311fea526da1e5dbc84006b09d9adf4020f59ab3aedc5c43135a3ce6a2dcf0b",
+      "category": "original_E3_extracted"
+    },
+    {
+      "path": "handoff/E3/01_PARECER_MASTER_E3.md",
+      "bytes": 6695,
+      "sha256": "8effe3dffbf4c3a31956c74204289a48cbe93d62470e3602f8cc6829c1e24928",
+      "category": "original_E3_extracted"
+    },
+    {
+      "path": "handoff/E3/02_PARECERES_INDEPENDENTES/01_PARECER_A.md",
+      "bytes": 9243,
+      "sha256": "b23b859e2d463898af2d68f75200ad63017affc31aee3efa0cb145f6dce81514",
+      "category": "original_E3_extracted"
+    },
+    {
+      "path": "handoff/E3/02_PARECERES_INDEPENDENTES/01_PARECER_B.md",
+      "bytes": 12774,
+      "sha256": "b5592dbae0cae31a7ef27718e4c4450be0f60d6579452bbfe17df16dc82d4776",
+      "category": "original_E3_extracted"
+    },
+    {
+      "path": "handoff/E3/02_PARECERES_INDEPENDENTES/04_MANIFESTO_SHA256_A.txt",
+      "bytes": 2375,
+      "sha256": "e1cf4e51f6e7a4d59d76bc0d1e54776bee272856f8e2e5ad1c3e30e3c639dd44",
+      "category": "original_E3_extracted"
+    },
+    {
+      "path": "handoff/E3/02_PARECERES_INDEPENDENTES/04_MANIFESTO_SHA256_B.txt",
+      "bytes": 2188,
+      "sha256": "1f0894f1c02198b03b9a80e5708b13dec29ecffc26b98ec92d0329a6e31f2e4f",
+      "category": "original_E3_extracted"
+    },
+    {
+      "path": "handoff/E3/03_EVIDENCIAS_REPRODUZIDAS/DIFF_MASTER_INIT_101_102.patch",
+      "bytes": 3808,
+      "sha256": "798c92eca9d52961ffc37e2c76533404eea8ac576d3bdb1bf4ee741c2dea170b",
+      "category": "original_E3_extracted"
+    },
+    {
+      "path": "handoff/E3/03_EVIDENCIAS_REPRODUZIDAS/MASTER_REPRO_A.log",
+      "bytes": 7128,
+      "sha256": "45d8b874799c422e6de68350b9d8c9f6b9201dbfec45ba547b638db39de14d8a",
+      "category": "original_E3_extracted"
+    },
+    {
+      "path": "handoff/E3/03_EVIDENCIAS_REPRODUZIDAS/MASTER_REPRO_B.log",
+      "bytes": 6002,
+      "sha256": "4cd94f5c3431fcfca72c2e5d60a9c3c46d5a6477b574d76c97d7c859b08a1a82",
+      "category": "original_E3_extracted"
+    },
+    {
+      "path": "handoff/E3/03_EVIDENCIAS_REPRODUZIDAS/REGISTRO_DA_REPRODUCAO.md",
+      "bytes": 978,
+      "sha256": "8ee63834fcf7d6df659e33e0394a6cadc1d5e74d5ebc136f3f594093aeedffdd",
+      "category": "original_E3_extracted"
+    },
+    {
+      "path": "handoff/E3/03_EVIDENCIAS_REPRODUZIDAS/VERIFICACAO_ESTATICA_MASTER.json",
+      "bytes": 686,
+      "sha256": "db2c2133b83d4c50fbbfb00b74f530d86c1345c1d772139591427e1aa65d9d6e",
+      "category": "original_E3_extracted"
+    },
+    {
+      "path": "handoff/E3/04_E4_WINDOWS_PLANO_PENDENTE.md",
+      "bytes": 4482,
+      "sha256": "e14f48eb54276acff223bfa0df80e64da7386a60a5090b405362bbc28a13b0f9",
+      "category": "original_E3_extracted"
+    },
+    {
+      "path": "handoff/E3/05_ORIGINAIS_E3/BLENDER_5022_AUDITOR_A_E3_2026-10-20.zip",
+      "bytes": 81305,
+      "sha256": "c55ae03ccaed596573ddec6850db14949816fb9794c2cd7a4f862821f39293ce",
+      "category": "original_E3_extracted"
+    },
+    {
+      "path": "handoff/E3/05_ORIGINAIS_E3/TIAGO_TOOLS_V1_0_2_AUDITOR_B_E3_RESULTADO_2026-10-20.zip",
+      "bytes": 116997,
+      "sha256": "30d7fa2806ebaf73d1f5897ab7eb83ca49a06d3fa7af449ad87548a9b8f7cd54",
+      "category": "original_E3_extracted"
+    },
+    {
+      "path": "handoff/E3/06_CANDIDATA_E_BASELINES/tiago-tools-1.0.0_HISTORICO.zip",
+      "bytes": 4421,
+      "sha256": "18f727f6cb58297e94ac14af4c656b7ae631e56f71076aaf68bf9bb863406e99",
+      "category": "original_E3_extracted"
+    },
+    {
+      "path": "handoff/E3/06_CANDIDATA_E_BASELINES/tiago-tools-1.0.1.zip",
+      "bytes": 4283,
+      "sha256": "30dc30ec35dc2b8444366bf4faea40dbe4106176cdea68b2604ae0750f191548",
+      "category": "original_E3_extracted"
+    },
+    {
+      "path": "handoff/E3/06_CANDIDATA_E_BASELINES/tiago-tools-1.0.2.zip",
+      "bytes": 5536,
+      "sha256": "28cba4b80e058e726f1e802498588d80278897918a4163b554c6697edda5bad2",
+      "category": "original_E3_extracted"
+    },
+    {
+      "path": "handoff/E3/07_MODELO_RESULTADOS_E4.csv",
+      "bytes": 450,
+      "sha256": "9a2f8cd1a65b6f498f7087bef4551936dfd097c2e1d78563364d5a60264e1c6c",
+      "category": "original_E3_extracted"
+    },
+    {
+      "path": "handoff/E3/08_PROMPT_CONTINUIDADE_MASTER.md",
+      "bytes": 1859,
+      "sha256": "2e014986a2fb1dd06ccbf11224ff1294d9e94d690809be6895a9b4c8352d068d",
+      "category": "original_E3_extracted"
+    },
+    {
+      "path": "handoff/E3/09_WORK_CONDICIONAL_NAO_AUTORIZADO.md",
+      "bytes": 863,
+      "sha256": "afe0dd0bd63231165d18468566c2f2ffea4fe65b53dc8366c3f4dc6ec5870de8",
+      "category": "original_E3_extracted"
+    },
+    {
+      "path": "handoff/E3/10_REFERENCIAS_E_LIMITES.md",
+      "bytes": 1203,
+      "sha256": "e2059488f2cc1fae30a4b34c33fd05843c8e1ba0a5403aea9d5fd80dceea8211",
+      "category": "original_E3_extracted"
+    },
+    {
+      "path": "handoff/E3/11_VERIFICAR_BUNDLE.py",
+      "bytes": 990,
+      "sha256": "1ecbf4e3f5e8eb21cb6438b0214b74e1637e7409d3e527da4230f68cfd2713c0",
+      "category": "original_E3_extracted"
+    },
+    {
+      "path": "handoff/E3/MANIFESTO_SHA256.txt",
+      "bytes": 2498,
+      "sha256": "51dcf78d419fd3384aa26afb79b5c1d0a79c89ade0183110583ce251888565db",
+      "category": "original_E3_extracted"
+    },
+    {
+      "path": "handoff/ORIGINAL_MASTER_E3_CONSOLIDADO_2026-10-20.zip",
+      "bytes": 225319,
+      "sha256": "42b8f6e3a503ba6b4a9b32203a5a56a1eff79d1792f383d4484ca2d4ab2bbf6b",
+      "category": "original_outer_ZIP"
+    },
+    {
+      "path": "snapshots/v1.0.2/CHANGELOG.txt",
+      "bytes": 734,
+      "sha256": "b7687a1201733313952cc3ff12b5e2fdc0fe339738212181b76adae34c5cf86f",
+      "category": "frozen_source_mirror"
+    },
+    {
+      "path": "snapshots/v1.0.2/README.txt",
+      "bytes": 2974,
+      "sha256": "c4022915fc9735e2d0fe046eb4f738cc585677a2b32a6bf4cdfadfa123c565f4",
+      "category": "frozen_source_mirror"
+    },
+    {
+      "path": "snapshots/v1.0.2/SHA256SUMS.txt",
+      "bytes": 323,
+      "sha256": "546577ad5d743087ccee236cf7482cc6c57778a7f4c1a874ef07b1694f6c892e",
+      "category": "frozen_source_mirror"
+    },
+    {
+      "path": "snapshots/v1.0.2/__init__.py",
+      "bytes": 9636,
+      "sha256": "ee090906e412880f81f8d9f51fa234b280f9e7159110437c834e6d51d1e1c6ac",
+      "category": "frozen_source_mirror"
+    },
+    {
+      "path": "snapshots/v1.0.2/blender_manifest.toml",
+      "bytes": 262,
+      "sha256": "37ef6536993359a37ccc496ca62d3cf5e18df33ad03da93e57d7782902eda669",
+      "category": "frozen_source_mirror"
+    }
+  ]
+}
