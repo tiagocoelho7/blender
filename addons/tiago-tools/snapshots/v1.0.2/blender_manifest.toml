@@ -1,0 +1,13 @@
+schema_version = "1.0.0"
+
+id = "tiago_tools"
+version = "1.0.2"
+name = "Tiago Tools"
+tagline = "Ferramentas pessoais para modifiers e subdivision"
+maintainer = "Tiago Coelho"
+type = "add-on"
+
+blender_version_min = "5.0.0"
+license = [
+  "SPDX:GPL-3.0-or-later",
+]

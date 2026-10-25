@@ -1,0 +1,67 @@
+AUDITOR A E3 | independent isolated offline harness | Python 3.13.5 | cwd /tmp/tiago_tools_e3_a_u3plgtoe
+test_all_includes_hidden (__main__.TestBatch.test_all_includes_hidden) ... ok
+test_already_disabled_idempotent (__main__.TestBatch.test_already_disabled_idempotent) ... ok
+test_empty_scene (__main__.TestBatch.test_empty_scene) ... ok
+test_missing_scene_or_view_layer_cancelled (__main__.TestBatch.test_missing_scene_or_view_layer_cancelled) ... ok
+test_multiple_links_unique_processing (__main__.TestBatch.test_multiple_links_unique_processing) ... ok
+test_parent_hidden_prunes_descendants (__main__.TestBatch.test_parent_hidden_prunes_descendants) ... ok
+test_read_fail_one_object_best_effort (__main__.TestBatch.test_read_fail_one_object_best_effort) ... ok
+test_visible_only_per_collection_not_hidden_object (__main__.TestBatch.test_visible_only_per_collection_not_hidden_object) ... ok
+test_ui_two_batch_buttons_one_sub_no_colors (__main__.TestPanel.test_ui_two_batch_buttons_one_sub_no_colors) ... ok
+test_all_register_failure_points_roll_back_without_leaks (__main__.TestRegistration.test_all_register_failure_points_roll_back_without_leaks) ... ok
+test_external_deregistration_stale_track_does_not_self_heal (__main__.TestRegistration.test_external_deregistration_stale_track_does_not_self_heal) ... ok
+test_fail_during_rollback_preserve_tracked_handle (__main__.TestRegistration.test_fail_during_rollback_preserve_tracked_handle) ... ok
+test_fail_during_rollback_then_resume_registration (__main__.TestRegistration.test_fail_during_rollback_then_resume_registration) ... ok
+test_normal_and_idempotent_double_register_unregister (__main__.TestRegistration.test_normal_and_idempotent_double_register_unregister) ... ok
+test_register_order_and_reverse_unregistration (__main__.TestRegistration.test_register_order_and_reverse_unregistration) ... ok
+test_side_effect_register_error_orphans_class_known_gap (__main__.TestRegistration.test_side_effect_register_error_orphans_class_known_gap) ... ok
+test_unregister_multiple_failures_carries_every_pending (__main__.TestRegistration.test_unregister_multiple_failures_carries_every_pending) ... ok
+test_unregister_retry_each_failed_class (__main__.TestRegistration.test_unregister_retry_each_failed_class) ... ok
+test_unregister_when_nothing_registered_no_effect (__main__.TestRegistration.test_unregister_when_nothing_registered_no_effect) ... ok
+test_edit_mode_not_guarded_by_code (__main__.TestSafeSub.test_edit_mode_not_guarded_by_code) ... ok
+test_failure_on_new_before_creating (__main__.TestSafeSub.test_failure_on_new_before_creating) ... ok
+test_missing_active_object_direct_execute (__main__.TestSafeSub.test_missing_active_object_direct_execute) ... ok
+test_new_partial_side_effect_leak_known_gap (__main__.TestSafeSub.test_new_partial_side_effect_leak_known_gap) ... ok
+test_poll_mesh_only (__main__.TestSafeSub.test_poll_mesh_only) ... ok
+test_remove_after_side_effect_gets_finished_warning (__main__.TestSafeSub.test_remove_after_side_effect_gets_finished_warning) ... [Tiago Tools] Safe Sub: erro de configuracao: setter render_levels BEFORE_WRITE; erro ao remover modifier novo: remove failed after side effect
+ok
+test_setter_cleanup_fails_levels_after (__main__.TestSafeSub.test_setter_cleanup_fails_levels_after) ... ok
+test_setter_cleanup_fails_levels_before (__main__.TestSafeSub.test_setter_cleanup_fails_levels_before) ... ok
+test_setter_cleanup_fails_render_levels_after (__main__.TestSafeSub.test_setter_cleanup_fails_render_levels_after) ... ok
+test_setter_cleanup_fails_render_levels_before (__main__.TestSafeSub.test_setter_cleanup_fails_render_levels_before) ... ok
+test_setter_cleanup_fails_show_in_editmode_after (__main__.TestSafeSub.test_setter_cleanup_fails_show_in_editmode_after) ... ok
+test_setter_cleanup_fails_show_in_editmode_before (__main__.TestSafeSub.test_setter_cleanup_fails_show_in_editmode_before) ... ok
+test_setter_cleanup_fails_show_on_cage_after (__main__.TestSafeSub.test_setter_cleanup_fails_show_on_cage_after) ... ok
+test_setter_cleanup_fails_show_on_cage_before (__main__.TestSafeSub.test_setter_cleanup_fails_show_on_cage_before) ... ok
+test_setter_cleanup_fails_show_render_after (__main__.TestSafeSub.test_setter_cleanup_fails_show_render_after) ... ok
+test_setter_cleanup_fails_show_render_before (__main__.TestSafeSub.test_setter_cleanup_fails_show_render_before) ... ok
+test_setter_cleanup_fails_show_viewport_after (__main__.TestSafeSub.test_setter_cleanup_fails_show_viewport_after) ... ok
+test_setter_cleanup_fails_show_viewport_before (__main__.TestSafeSub.test_setter_cleanup_fails_show_viewport_before) ... ok
+test_setter_rollback_levels_after (__main__.TestSafeSub.test_setter_rollback_levels_after) ... ok
+test_setter_rollback_levels_before (__main__.TestSafeSub.test_setter_rollback_levels_before) ... ok
+test_setter_rollback_render_levels_after (__main__.TestSafeSub.test_setter_rollback_render_levels_after) ... ok
+test_setter_rollback_render_levels_before (__main__.TestSafeSub.test_setter_rollback_render_levels_before) ... ok
+test_setter_rollback_show_in_editmode_after (__main__.TestSafeSub.test_setter_rollback_show_in_editmode_after) ... ok
+test_setter_rollback_show_in_editmode_before (__main__.TestSafeSub.test_setter_rollback_show_in_editmode_before) ... ok
+test_setter_rollback_show_on_cage_after (__main__.TestSafeSub.test_setter_rollback_show_on_cage_after) ... ok
+test_setter_rollback_show_on_cage_before (__main__.TestSafeSub.test_setter_rollback_show_on_cage_before) ... ok
+test_setter_rollback_show_render_after (__main__.TestSafeSub.test_setter_rollback_show_render_after) ... ok
+test_setter_rollback_show_render_before (__main__.TestSafeSub.test_setter_rollback_show_render_before) ... ok
+test_setter_rollback_show_viewport_after (__main__.TestSafeSub.test_setter_rollback_show_viewport_after) ... ok
+test_setter_rollback_show_viewport_before (__main__.TestSafeSub.test_setter_rollback_show_viewport_before) ... ok
+test_success_six_fields (__main__.TestSafeSub.test_success_six_fields) ... ok
+test_two_additions_intentional_and_existing_unchanged (__main__.TestSafeSub.test_two_additions_intentional_and_existing_unchanged) ... ok
+test_bl_info (__main__.TestStatic.test_bl_info) ... ok
+test_diff_replayed_for_all_five_files (__main__.TestStatic.test_diff_replayed_for_all_five_files) ... ok
+test_no_hidden_imports_writes_or_modification_apis (__main__.TestStatic.test_no_hidden_imports_writes_or_modification_apis) ... ok
+test_operator_identifiers_and_no_color_operator (__main__.TestStatic.test_operator_identifiers_and_no_color_operator) ... ok
+test_sha256sums (__main__.TestStatic.test_sha256sums) ... ok
+test_source_compiles_without_bytecode_writes (__main__.TestStatic.test_source_compiles_without_bytecode_writes) ... ok
+test_toml_parses_and_metadata (__main__.TestStatic.test_toml_parses_and_metadata) ... ok
+test_unchanged_batch_helper_panel_and_classes (__main__.TestStatic.test_unchanged_batch_helper_panel_and_classes) ... ok
+
+----------------------------------------------------------------------
+Ran 59 tests in 0.073s
+
+OK
+SUMMARY: run=59 failures=0 errors=0 skipped=0

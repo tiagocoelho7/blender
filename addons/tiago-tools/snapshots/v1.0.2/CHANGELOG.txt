@@ -1,0 +1,14 @@
+Tiago Tools - CHANGES
+=====================
+1.0.2 - candidata E2, aguardando reauditoria A/B
+- Handle Safe Sub setter failure with targeted removal of newly created modifier.
+- If removal fails, report warning and return FINISHED for operator Undo.
+- Track class registrations; roll back partial register and retry failed unregister.
+- Fix extension manifest schema_version 1.0.0; bump addon version to 1.0.2.
+- Preserve preexisting Modifiers behavior, collections, panel and duplicate Subsurf.
+
+1.0.1
+- Remove random colors operator, its panel and material-related helpers.
+- Preserve operators and behavior for Disable Modifiers and Safe Sub.
+- Keep extension id tiago_tools for upgrades.
+- Update addon metadata and documentation.

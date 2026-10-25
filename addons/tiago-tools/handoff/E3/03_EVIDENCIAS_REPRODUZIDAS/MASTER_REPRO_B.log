@@ -1,0 +1,63 @@
+ENV python=3.13.5 bpy=INDEPENDENT_MOCK blender=NOT_INSTALLED
+CANDIDATE_SHA256=28cba4b80e058e726f1e802498588d80278897918a4163b554c6697edda5bad2
+T-001 PASS CONFORME Safe Sub normal, seis propriedades e modifier preexistente intacto
+T-002 PASS CONFORME Safe Sub duas chamadas acrescentam dois modifiers (contrato herdado)
+T-003 PASS CONFORME Setter show_viewport falha before: limpeza especifica e CANCELLED
+T-004 PASS CONFORME Setter show_viewport falha after: limpeza especifica e CANCELLED
+T-005 PASS CONFORME Setter show_render falha before: limpeza especifica e CANCELLED
+T-006 PASS CONFORME Setter show_render falha after: limpeza especifica e CANCELLED
+T-007 PASS CONFORME Setter levels falha before: limpeza especifica e CANCELLED
+T-008 PASS CONFORME Setter levels falha after: limpeza especifica e CANCELLED
+T-009 PASS CONFORME Setter render_levels falha before: limpeza especifica e CANCELLED
+T-010 PASS CONFORME Setter render_levels falha after: limpeza especifica e CANCELLED
+T-011 PASS CONFORME Setter show_in_editmode falha before: limpeza especifica e CANCELLED
+T-012 PASS CONFORME Setter show_in_editmode falha after: limpeza especifica e CANCELLED
+T-013 PASS CONFORME Setter show_on_cage falha before: limpeza especifica e CANCELLED
+T-014 PASS CONFORME Setter show_on_cage falha after: limpeza especifica e CANCELLED
+T-015 OBSERVED RISCO_OBSERVADO Setter show_viewport falha; remove falha ANTES: resto e FINISHED+warning
+T-016 OBSERVED RISCO_OBSERVADO Setter show_render falha; remove falha ANTES: resto e FINISHED+warning
+T-017 OBSERVED RISCO_OBSERVADO Setter levels falha; remove falha ANTES: resto e FINISHED+warning
+T-018 OBSERVED RISCO_OBSERVADO Setter render_levels falha; remove falha ANTES: resto e FINISHED+warning
+T-019 OBSERVED RISCO_OBSERVADO Setter show_in_editmode falha; remove falha ANTES: resto e FINISHED+warning
+T-020 OBSERVED RISCO_OBSERVADO Setter show_on_cage falha; remove falha ANTES: resto e FINISHED+warning
+T-021 OBSERVED RISCO_OBSERVADO Setter show_viewport falha; remove falha DEPOIS: final FINISHED sem resto
+T-022 OBSERVED RISCO_OBSERVADO Setter show_render falha; remove falha DEPOIS: final FINISHED sem resto
+T-023 OBSERVED RISCO_OBSERVADO Setter levels falha; remove falha DEPOIS: final FINISHED sem resto
+T-024 OBSERVED RISCO_OBSERVADO Setter render_levels falha; remove falha DEPOIS: final FINISHED sem resto
+T-025 OBSERVED RISCO_OBSERVADO Setter show_in_editmode falha; remove falha DEPOIS: final FINISHED sem resto
+T-026 OBSERVED RISCO_OBSERVADO Setter show_on_cage falha; remove falha DEPOIS: final FINISHED sem resto
+T-027 PASS CONFORME new() falha ANTES de criacao: CANCELLED, sem alteracao
+T-028 OBSERVED RISCO_OBSERVADO new() falha DEPOIS de inserir modifier mas sem devolver handle: CANCELLED com resto sem Undo
+T-029 OBSERVED RISCO_OBSERVADO new() devolve None apos criar: CANCELLED com resto
+T-030 OBSERVED RISCO_OBSERVADO Setter show_viewport nao aplica valor e nao lanca excecao: FINISHED silencioso
+T-031 OBSERVED RISCO_OBSERVADO Setter show_render nao aplica valor e nao lanca excecao: FINISHED silencioso
+T-032 OBSERVED RISCO_OBSERVADO Setter levels nao aplica valor e nao lanca excecao: FINISHED silencioso
+T-033 OBSERVED RISCO_OBSERVADO Setter render_levels nao aplica valor e nao lanca excecao: FINISHED silencioso
+T-034 OBSERVED RISCO_OBSERVADO Setter show_in_editmode nao aplica valor e nao lanca excecao: FINISHED silencioso
+T-035 OBSERVED RISCO_OBSERVADO Setter show_on_cage nao aplica valor e nao lanca excecao: FINISHED silencioso
+T-036 PASS CONFORME poll admite apenas objeto mesh ativo
+T-037 PASS CONFORME Batch sem scene/viewlayer cancela sem efeito
+T-038 PASS CONFORME Batch TODOS: inclui invisiveis, exclui fora da scene; render permanece; repeticao
+T-039 PASS CONFORME Batch VISIVEIS: exclui colecao oculta, dedup objeto em varias colecoes
+T-040 OBSERVED RISCO_OBSERVADO Batch falha leitura e setter: best effort, report WARNING e estado parcial
+T-041 OBSERVED RISCO_OBSERVADO Batch excecao em scene.objects propaga sem report
+T-042 PASS CONFORME Registro normal, duplo register, duplo unregister: tres classes e ordem inversa
+T-043 PASS CONFORME Registro falha ANTES do efeito na classe N=1; rollback e retry
+T-044 PASS CONFORME Registro falha ANTES do efeito na classe N=2; rollback e retry
+T-045 PASS CONFORME Registro falha ANTES do efeito na classe N=3; rollback e retry
+T-046 OBSERVED RISCO_OBSERVADO Registro da classe N=1 funciona mas API lanca excecao depois: classe orfa invisivel
+T-047 OBSERVED RISCO_OBSERVADO Registro da classe N=2 funciona mas API lanca excecao depois: classe orfa invisivel
+T-048 OBSERVED RISCO_OBSERVADO Registro da classe N=3 funciona mas API lanca excecao depois: classe orfa invisivel
+T-049 PASS CONFORME Unregister falha ANTES da remocao N=1: rastreia pendencia e retry resolve
+T-050 PASS CONFORME Unregister falha ANTES da remocao N=2: rastreia pendencia e retry resolve
+T-051 PASS CONFORME Unregister falha ANTES da remocao N=3: rastreia pendencia e retry resolve
+T-052 OBSERVED RISCO_OBSERVADO Unregister remove classe N=1 mas lanca excecao: tracking fantasma e retry falha
+T-053 OBSERVED RISCO_OBSERVADO Unregister remove classe N=2 mas lanca excecao: tracking fantasma e retry falha
+T-054 OBSERVED RISCO_OBSERVADO Unregister remove classe N=3 mas lanca excecao: tracking fantasma e retry falha
+T-055 PASS CONFORME Register falha N=2 + rollback anterior tambem falha; unregister retry limpa
+T-056 PASS CONFORME Register falha N=3 + rollback anterior tambem falha; unregister retry limpa
+T-057 OBSERVED RISCO_OBSERVADO Modulos recompilados/hot-reload geram classe com nova identidade
+T-058 PASS CONFORME Safe Sub com nome duplicado: remocao por identidade preserva Subdivision antigo
+T-059 OBSERVED RISCO_OBSERVADO Interrupcao abrupta durante setter (KeyboardInterrupt) escapa catch e deixa estado parcial
+T-060 PASS CONFORME AST regressao, sintaxe e manifesto TOML, imports sem dependencias externas
+SUMMARY: {'total': 60, 'pass': 30, 'observed_risks': 30, 'failed_assertions': 0}

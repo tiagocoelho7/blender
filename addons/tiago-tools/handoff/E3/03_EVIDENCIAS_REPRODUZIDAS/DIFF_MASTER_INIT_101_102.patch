@@ -1,0 +1,107 @@
+--- v1.0.1/__init__.py
++++ v1.0.2/__init__.py
+@@ -3,7 +3,7 @@
+ bl_info = {
+     "name": "Tiago Tools",
+     "author": "Tiago Coelho",
+-    "version": (1, 0, 1),
++    "version": (1, 0, 2),
+     "blender": (5, 0, 0),
+     "location": "View3D > Sidebar > Tiago",
+     "description": "Ferramentas pessoais para desativar modifiers e criar Safe Sub",
+@@ -150,6 +150,7 @@
+
+     def execute(self, context):
+         obj = context.active_object
++        modifier = None
+
+         try:
+             # A API cria o modifier primeiro; desligamos imediatamente, antes de
+@@ -162,7 +163,31 @@
+             modifier.show_in_editmode = False
+             modifier.show_on_cage = False
+         except Exception as exc:
+-            self.report({'ERROR'}, f"Nao foi possivel adicionar Subdivision: {exc}")
++            if modifier is None:
++                # A criacao falhou sem retornar um modifier para remover.
++                self.report({'ERROR'}, f"Nao foi possivel criar Subdivision: {exc}")
++                return {'CANCELLED'}
++
++            try:
++                # Remover somente o modifier criado nesta chamada.
++                obj.modifiers.remove(modifier)
++            except Exception as cleanup_exc:
++                # Blender nao cria etapa de Undo quando retornamos CANCELLED.
++                # Se a limpeza falhou, FINISHED permite o Undo do operador.
++                print(
++                    f'[Tiago Tools] Safe Sub: erro de configuracao: {exc}; '
++                    f'erro ao remover modifier novo: {cleanup_exc}'
++                )
++                self.report(
++                    {'WARNING'},
++                    'Falha no Safe Sub e na limpeza; confira os modifiers e use Undo (Ctrl+Z)'
++                )
++                return {'FINISHED'}
++
++            self.report(
++                {'ERROR'},
++                f'Nao foi possivel configurar Subdivision: {exc} (novo modifier removido)'
++            )
+             return {'CANCELLED'}
+
+         self.report(
+@@ -218,11 +243,51 @@
+ )
+
+
++# Acompanhar somente classes efetivamente registradas por este modulo.
++# Em caso de falha parcial, o proximo unregister() pode tentar limpar o restante.
++_REGISTERED_CLASSES = []
++
++
+ def register():
+-    for cls in CLASSES:
+-        bpy.utils.register_class(cls)
++    registered_now = []
++    try:
++        for cls in CLASSES:
++            if cls in _REGISTERED_CLASSES:
++                continue
++            bpy.utils.register_class(cls)
++            _REGISTERED_CLASSES.append(cls)
++            registered_now.append(cls)
++    except Exception:
++        # Desfazer apenas os registros novos desta tentativa, na ordem inversa.
++        for cls in reversed(registered_now):
++            try:
++                bpy.utils.unregister_class(cls)
++            except Exception as cleanup_exc:
++                print(
++                    f'[Tiago Tools] Erro ao reverter registro de {cls.__name__}: '
++                    f'{cleanup_exc}'
++                )
++            else:
++                _REGISTERED_CLASSES.remove(cls)
++        raise
+
+
+ def unregister():
++    first_error = None
+     for cls in reversed(CLASSES):
+-        bpy.utils.unregister_class(cls)
++        if cls not in _REGISTERED_CLASSES:
++            continue
++        try:
++            bpy.utils.unregister_class(cls)
++        except Exception as exc:
++            if first_error is None:
++                first_error = exc
++            print(f'[Tiago Tools] Erro ao desregistrar {cls.__name__}: {exc}')
++        else:
++            _REGISTERED_CLASSES.remove(cls)
++
++    if first_error is not None:
++        pending = ', '.join(cls.__name__ for cls in _REGISTERED_CLASSES)
++        raise RuntimeError(
++            f'Tiago Tools: classes ainda registradas ({pending}); tente unregister() novamente'
++        ) from first_error
