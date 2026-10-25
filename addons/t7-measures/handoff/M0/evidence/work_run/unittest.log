@@ -1,0 +1,49 @@
+test_area_retained_when_distance_certificate_unavailable (test_adversarial.AdversarialTests.test_area_retained_when_distance_certificate_unavailable) ... ok
+test_geometric_gate_failure_clears_entire_composite (test_adversarial.AdversarialTests.test_geometric_gate_failure_clears_entire_composite) ... ok
+test_mutable_context_is_copied_and_stale_value_removed (test_adversarial.AdversarialTests.test_mutable_context_is_copied_and_stale_value_removed) ... ok
+test_only_total_area_gate_failure_keeps_distance_all_F_modes (test_adversarial.AdversarialTests.test_only_total_area_gate_failure_keeps_distance_all_F_modes) ... ok
+test_operation_and_bit_budget_fail_closed (test_adversarial.AdversarialTests.test_operation_and_bit_budget_fail_closed) ... ok
+test_positive_nominal_omission_if_rounding_uncertain (test_adversarial.AdversarialTests.test_positive_nominal_omission_if_rounding_uncertain) ... ok
+test_preflight_runs_before_geometry (test_adversarial.AdversarialTests.test_preflight_runs_before_geometry) ... ok
+test_proxy_boundary_reordering_and_large_translation_refusal (test_adversarial.AdversarialTests.test_proxy_boundary_reordering_and_large_translation_refusal) ... ok
+test_rigid_rational_rotation_scaling_and_affine_oracle (test_adversarial.AdversarialTests.test_rigid_rational_rotation_scaling_and_affine_oracle) ... ok
+test_single_edge_and_ambiguous_order (test_adversarial.AdversarialTests.test_single_edge_and_ambiguous_order) ... ok
+test_G01_G03 (test_kernel.GeometryTests.test_G01_G03) ... ok
+test_G04_G08_G05bc (test_kernel.GeometryTests.test_G04_G08_G05bc) ... ok
+test_G09_G12_area (test_kernel.GeometryTests.test_G09_G12_area) ... ok
+test_G13_G17_G24 (test_kernel.GeometryTests.test_G13_G17_G24) ... ok
+test_G18_G20_G25 (test_kernel.GeometryTests.test_G18_G20_G25) ... ok
+test_G21_concave_rotated_reflected (test_kernel.GeometryTests.test_G21_concave_rotated_reflected) ... ok
+test_G22_G23_invalid (test_kernel.GeometryTests.test_G22_G23_invalid) ... ok
+test_G26_G30_small_positive (test_kernel.GeometryTests.test_G26_G30_small_positive) ... ok
+test_random_convex_KKT_oracle (test_kernel.GeometryTests.test_random_convex_KKT_oracle) ... ok
+test_shared_anchor_large_offsets_units (test_kernel.GeometryTests.test_shared_anchor_large_offsets_units) ... ok
+test_singular_near_singular_bad_types (test_kernel.GeometryTests.test_singular_near_singular_bad_types) ... ok
+test_HALF_EVEN_actual_bits_all_units (test_kernel.NumericPolicyTests.test_HALF_EVEN_actual_bits_all_units) ... ok
+test_R81_bounds_nominal_invalid (test_kernel.NumericPolicyTests.test_R81_bounds_nominal_invalid) ... ok
+test_UX_subq_total_gate_independence (test_kernel.NumericPolicyTests.test_UX_subq_total_gate_independence) ... ok
+test_binary32_zero_subnormal_bits (test_kernel.NumericPolicyTests.test_binary32_zero_subnormal_bits) ... ok
+test_resource_refusal_preflight (test_kernel.NumericPolicyTests.test_resource_refusal_preflight) ... ok
+test_root_extremes_and_strict_bounds (test_kernel.NumericPolicyTests.test_root_extremes_and_strict_bounds) ... ok
+test_P_failures (test_kernel.ProxyTests.test_P_failures) ... ok
+test_P_positive_uncertain_and_symmetry (test_kernel.ProxyTests.test_P_positive_uncertain_and_symmetry) ... ok
+test_P_rotation_shear_and_NONE (test_kernel.ProxyTests.test_P_rotation_shear_and_NONE) ... ok
+test_P_two_diagonals_area_distance_oracle (test_kernel.ProxyTests.test_P_two_diagonals_area_distance_oracle) ... ok
+test_tessellation_negative_controls (test_kernel.ProxyTests.test_tessellation_negative_controls) ... ok
+test_V_to_FACE_between_clicks_allowed_mixed_measure (test_session.SessionTests.test_V_to_FACE_between_clicks_allowed_mixed_measure) ... ok
+test_context_identity_generation_and_units (test_session.SessionTests.test_context_identity_generation_and_units) ... ok
+test_double_check_mutation_and_flags (test_session.SessionTests.test_double_check_mutation_and_flags) ... ok
+test_events_clear_captures_and_last (test_session.SessionTests.test_events_clear_captures_and_last) ... ok
+test_global_revision_changes_even_with_same_digest (test_session.SessionTests.test_global_revision_changes_even_with_same_digest) ... ok
+test_hiding_A_between_clicks_not_in_signature (test_session.SessionTests.test_hiding_A_between_clicks_not_in_signature) ... ok
+test_loop_edge_occurrences_are_authoritative (test_session.SessionTests.test_loop_edge_occurrences_are_authoritative) ... ok
+test_many_areas_one_slot (test_session.SessionTests.test_many_areas_one_slot) ... ok
+test_new_A_failure_discards_old_and_encoding_size (test_session.SessionTests.test_new_A_failure_discards_old_and_encoding_size) ... ok
+test_new_A_replaces_entire_cycle_and_owner (test_session.SessionTests.test_new_A_replaces_entire_cycle_and_owner) ... ok
+test_selection_modes_visibility_and_multi_edit (test_session.SessionTests.test_selection_modes_visibility_and_multi_edit) ... ok
+test_silent_occurrence_coordinate_swap (test_session.SessionTests.test_silent_occurrence_coordinate_swap) ... ok
+
+----------------------------------------------------------------------
+Ran 44 tests in 0.539s
+
+OK
