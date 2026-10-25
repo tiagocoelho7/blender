@@ -1,0 +1,19 @@
+{
+  "version": "0.0.1-m0",
+  "scope": "src + tests + runner Python bytes",
+  "aggregate_sha256": "5144810350a34011232513b278ae42639c10a48f38cab0e7d237427d6b95cb6a",
+  "files": {
+    "run_offline.py": "549c481af266016048af58c4935087b147bff5767f30dcd671f05324aa7ed006",
+    "src/t7m/__init__.py": "7e70c33f8d58f146ecfe81daa945175b57fede1f299e68ffac6679dae56d3378",
+    "src/t7m/geometry.py": "32ebea33c221c66244b2d44876855069521913fd56f83f9e61f2e3e703a7af60",
+    "src/t7m/kernel.py": "89e28e486433d814bea579f86ae3143c3bbce0b442ad82e216b5b6cde084508f",
+    "src/t7m/numeric.py": "7c93e7c9de159f922e2cd5c37fbeff1b6bdb273ecda3c31db5abb4b1e1c0eeaf",
+    "src/t7m/presentation.py": "93d3c261c515500a48bca199fcd62393110d4863fa00c62b77e28dac57a09920",
+    "src/t7m/resources.py": "cb6001bb4fac6e9536ea5e2e1887730e21cfb803e1331e0216ace0f6409b95c6",
+    "src/t7m/session.py": "77ec2265fa2e0a1a286d1886971114f0d1cebe34cc0636f0b6a6ad4033841349",
+    "tests/oracle_active_sets.py": "3e26bf99a921845e8a04cd47c759147f1985f29d3d49384cd2d8bd90974c3331",
+    "tests/test_adversarial.py": "cdbc32eb543403ffe08ec3c9bfcf7ff8ac8f2b020a567b409b8dd9ffc548e521",
+    "tests/test_kernel.py": "a8018622a428f7e31c2cda6587236c86a2d29c61d2d4e1bd53828887ea333bfd",
+    "tests/test_session.py": "ef611b424334b0001c58b2c0291ca2ef3463bd35cf42a969c18863b9aa7a4f11"
+  }
+}

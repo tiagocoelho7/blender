@@ -1,0 +1,78 @@
+{
+  "status": "PASS",
+  "scope": "AST import/call scan only; not runtime no-write proof",
+  "files": [
+    {
+      "file": "src/t7m/__init__.py",
+      "imports": [
+        "kernel"
+      ],
+      "forbidden": []
+    },
+    {
+      "file": "src/t7m/geometry.py",
+      "imports": [
+        "collections",
+        "dataclasses",
+        "fractions",
+        "itertools",
+        "numeric"
+      ],
+      "forbidden": []
+    },
+    {
+      "file": "src/t7m/kernel.py",
+      "imports": [
+        "",
+        "dataclasses",
+        "fractions",
+        "numeric",
+        "presentation",
+        "resources"
+      ],
+      "forbidden": []
+    },
+    {
+      "file": "src/t7m/numeric.py",
+      "imports": [
+        "contextvars",
+        "decimal",
+        "fractions",
+        "math",
+        "struct"
+      ],
+      "forbidden": []
+    },
+    {
+      "file": "src/t7m/presentation.py",
+      "imports": [
+        "dataclasses",
+        "fractions",
+        "numeric"
+      ],
+      "forbidden": []
+    },
+    {
+      "file": "src/t7m/resources.py",
+      "imports": [
+        "fractions",
+        "numeric",
+        "struct",
+        "sys"
+      ],
+      "forbidden": []
+    },
+    {
+      "file": "src/t7m/session.py",
+      "imports": [
+        "dataclasses",
+        "fractions",
+        "kernel",
+        "numeric",
+        "resources",
+        "struct"
+      ],
+      "forbidden": []
+    }
+  ]
+}

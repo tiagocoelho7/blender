@@ -1,0 +1,78 @@
+{
+  "scope": "Python tracemalloc only, fixtures prepared before tracing; NOT RSS, NOT Blender, NOT admission proof",
+  "samples": [
+    {
+      "n": 8,
+      "status": "COMPUTED_OFFLINE",
+      "reason": null,
+      "python_traced_peak_bytes": 18928,
+      "seconds": 0.02261531600015587,
+      "exact_steps": 983,
+      "preflight": {
+        "contour": 20,
+        "diameter": 28,
+        "triangle_pairs": 0,
+        "other": 7360,
+        "total": 7408,
+        "estimated_peak_bytes": 84803584
+      }
+    },
+    {
+      "n": 16,
+      "status": "COMPUTED_OFFLINE",
+      "reason": null,
+      "python_traced_peak_bytes": 32924,
+      "seconds": 0.10036743899991052,
+      "exact_steps": 3067,
+      "preflight": {
+        "contour": 104,
+        "diameter": 120,
+        "triangle_pairs": 0,
+        "other": 35264,
+        "total": 35488,
+        "estimated_peak_bytes": 85852160
+      }
+    },
+    {
+      "n": 24,
+      "status": "COMPUTED_OFFLINE",
+      "reason": null,
+      "python_traced_peak_bytes": 58344,
+      "seconds": 0.2552124169997114,
+      "exact_steps": 6367,
+      "preflight": {
+        "contour": 252,
+        "diameter": 276,
+        "triangle_pairs": 0,
+        "other": 95936,
+        "total": 96464,
+        "estimated_peak_bytes": 86900736
+      }
+    },
+    {
+      "n": 30,
+      "status": "COMPUTED_OFFLINE",
+      "reason": null,
+      "python_traced_peak_bytes": 64352,
+      "seconds": 0.37220776599997407,
+      "exact_steps": 9640,
+      "preflight": {
+        "contour": 405,
+        "diameter": 435,
+        "triangle_pairs": 0,
+        "other": 170336,
+        "total": 171176,
+        "estimated_peak_bytes": 87687168
+      }
+    },
+    {
+      "n": 32,
+      "status": "REFUSED",
+      "reason": "PAIR_PREFLIGHT",
+      "python_traced_peak_bytes": 1856,
+      "seconds": 0.00013326099997357232,
+      "exact_steps": null,
+      "preflight": null
+    }
+  ]
+}

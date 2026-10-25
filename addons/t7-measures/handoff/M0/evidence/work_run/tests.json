@@ -1,0 +1,460 @@
+{
+  "methods_run": 44,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "elapsed_seconds": 0.5398059399999511,
+  "methods": [
+    {
+      "id": "test_adversarial.AdversarialTests.test_area_retained_when_distance_certificate_unavailable",
+      "status": "PASS"
+    },
+    {
+      "id": "test_adversarial.AdversarialTests.test_geometric_gate_failure_clears_entire_composite",
+      "status": "PASS"
+    },
+    {
+      "id": "test_adversarial.AdversarialTests.test_mutable_context_is_copied_and_stale_value_removed",
+      "status": "PASS"
+    },
+    {
+      "id": "test_adversarial.AdversarialTests.test_only_total_area_gate_failure_keeps_distance_all_F_modes",
+      "status": "PASS"
+    },
+    {
+      "id": "test_adversarial.AdversarialTests.test_operation_and_bit_budget_fail_closed",
+      "status": "PASS"
+    },
+    {
+      "id": "test_adversarial.AdversarialTests.test_positive_nominal_omission_if_rounding_uncertain",
+      "status": "PASS"
+    },
+    {
+      "id": "test_adversarial.AdversarialTests.test_preflight_runs_before_geometry",
+      "status": "PASS"
+    },
+    {
+      "id": "test_adversarial.AdversarialTests.test_proxy_boundary_reordering_and_large_translation_refusal",
+      "status": "PASS"
+    },
+    {
+      "id": "test_adversarial.AdversarialTests.test_rigid_rational_rotation_scaling_and_affine_oracle",
+      "status": "PASS"
+    },
+    {
+      "id": "test_adversarial.AdversarialTests.test_single_edge_and_ambiguous_order",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_G01_G03",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_G04_G08_G05bc",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_G09_G12_area",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_G13_G17_G24",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_G18_G20_G25",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_G21_concave_rotated_reflected",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_G22_G23_invalid",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_G26_G30_small_positive",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_random_convex_KKT_oracle",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_shared_anchor_large_offsets_units",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_singular_near_singular_bad_types",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.NumericPolicyTests.test_HALF_EVEN_actual_bits_all_units",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.NumericPolicyTests.test_R81_bounds_nominal_invalid",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.NumericPolicyTests.test_UX_subq_total_gate_independence",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.NumericPolicyTests.test_binary32_zero_subnormal_bits",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.NumericPolicyTests.test_resource_refusal_preflight",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.NumericPolicyTests.test_root_extremes_and_strict_bounds",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.ProxyTests.test_P_failures",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.ProxyTests.test_P_positive_uncertain_and_symmetry",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.ProxyTests.test_P_rotation_shear_and_NONE",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.ProxyTests.test_P_two_diagonals_area_distance_oracle",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.ProxyTests.test_tessellation_negative_controls",
+      "status": "PASS"
+    },
+    {
+      "id": "test_session.SessionTests.test_V_to_FACE_between_clicks_allowed_mixed_measure",
+      "status": "PASS"
+    },
+    {
+      "id": "test_session.SessionTests.test_context_identity_generation_and_units",
+      "status": "PASS"
+    },
+    {
+      "id": "test_session.SessionTests.test_double_check_mutation_and_flags",
+      "status": "PASS"
+    },
+    {
+      "id": "test_session.SessionTests.test_events_clear_captures_and_last",
+      "status": "PASS"
+    },
+    {
+      "id": "test_session.SessionTests.test_global_revision_changes_even_with_same_digest",
+      "status": "PASS"
+    },
+    {
+      "id": "test_session.SessionTests.test_hiding_A_between_clicks_not_in_signature",
+      "status": "PASS"
+    },
+    {
+      "id": "test_session.SessionTests.test_loop_edge_occurrences_are_authoritative",
+      "status": "PASS"
+    },
+    {
+      "id": "test_session.SessionTests.test_many_areas_one_slot",
+      "status": "PASS"
+    },
+    {
+      "id": "test_session.SessionTests.test_new_A_failure_discards_old_and_encoding_size",
+      "status": "PASS"
+    },
+    {
+      "id": "test_session.SessionTests.test_new_A_replaces_entire_cycle_and_owner",
+      "status": "PASS"
+    },
+    {
+      "id": "test_session.SessionTests.test_selection_modes_visibility_and_multi_edit",
+      "status": "PASS"
+    },
+    {
+      "id": "test_session.SessionTests.test_silent_occurrence_coordinate_swap",
+      "status": "PASS"
+    }
+  ],
+  "subcases": [
+    {
+      "id": "test_adversarial.AdversarialTests.test_only_total_area_gate_failure_keeps_distance_all_F_modes (kind='V')",
+      "status": "PASS"
+    },
+    {
+      "id": "test_adversarial.AdversarialTests.test_only_total_area_gate_failure_keeps_distance_all_F_modes (kind='E')",
+      "status": "PASS"
+    },
+    {
+      "id": "test_adversarial.AdversarialTests.test_only_total_area_gate_failure_keeps_distance_all_F_modes (kind='F')",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_G04_G08_G05bc (a=((-1, 0, 0), (1, 0, 0)), b=((0, -1, 0), (0, 1, 0)))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_G04_G08_G05bc (a=((0, 0, 0), (5, 0, 0)), b=((2, 0, 0), (7, 0, 0)))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_G04_G08_G05bc (a=((0, 0, 0), (2, 0, 0)), b=((5, 0, 0), (7, 0, 0)))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_G04_G08_G05bc (a=((3, 3, 3), (3, 3, 3)), b=((0, 0, 0), (3, 0, 0)))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_G04_G08_G05bc (a=((0, 0, 0), (1000000, 0, 0)), b=((0, 1, 0), (1000000, Fraction(1001, 1000), 0)))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_G04_G08_G05bc (a=((0, 0, 0), (1000000, 0, 0)), b=((0, Fraction(-1, 2000), 0), (1000000, Fraction(1, 2000), 0)))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_G04_G08_G05bc (a=((0, 0, 0), (1000000, 0, 0)), b=((0, Fraction(-1, 2000), Fraction(1, 500)), (1000000, Fraction(1, 2000), Fraction(1, 500))))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_G22_G23_invalid (pts=((0, 0, 0), (1, 0, 0), (1, 1, 1), (0, 1, 0)))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_G22_G23_invalid (pts=((0, 0, 0), (1, 0, 0), (1, 0, 0)))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_G22_G23_invalid (pts=((0, 0, 0), (1, 1, 0), (0, 1, 0), (1, 0, 0)))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_G22_G23_invalid (pts=((0, 0, 0), (2, 0, 0), (1, 0, 0), (1, 1, 0)))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_G22_G23_invalid (pts=((0, 0, 0), (2, 0, 0), (1, 1, 0), (1, 0, 0), (0, 1, 0)))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_random_convex_KKT_oracle (seed=73181, index=0, modalities=('V', 'V'))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_random_convex_KKT_oracle (seed=73181, index=1, modalities=('E', 'V'))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_random_convex_KKT_oracle (seed=73181, index=2, modalities=('F', 'V'))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_random_convex_KKT_oracle (seed=73181, index=3, modalities=('V', 'E'))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_random_convex_KKT_oracle (seed=73181, index=4, modalities=('E', 'E'))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_random_convex_KKT_oracle (seed=73181, index=5, modalities=('F', 'E'))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_random_convex_KKT_oracle (seed=73181, index=6, modalities=('V', 'F'))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_random_convex_KKT_oracle (seed=73181, index=7, modalities=('E', 'F'))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_random_convex_KKT_oracle (seed=73181, index=8, modalities=('F', 'F'))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_random_convex_KKT_oracle (seed=73181, index=9, modalities=('V', 'V'))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_random_convex_KKT_oracle (seed=73181, index=10, modalities=('E', 'V'))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_random_convex_KKT_oracle (seed=73181, index=11, modalities=('F', 'V'))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_random_convex_KKT_oracle (seed=73181, index=12, modalities=('V', 'E'))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_random_convex_KKT_oracle (seed=73181, index=13, modalities=('E', 'E'))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_random_convex_KKT_oracle (seed=73181, index=14, modalities=('F', 'E'))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_random_convex_KKT_oracle (seed=73181, index=15, modalities=('V', 'F'))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_random_convex_KKT_oracle (seed=73181, index=16, modalities=('E', 'F'))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_random_convex_KKT_oracle (seed=73181, index=17, modalities=('F', 'F'))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_random_convex_KKT_oracle (seed=73181, index=18, modalities=('V', 'V'))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_random_convex_KKT_oracle (seed=73181, index=19, modalities=('E', 'V'))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_random_convex_KKT_oracle (seed=73181, index=20, modalities=('F', 'V'))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_random_convex_KKT_oracle (seed=73181, index=21, modalities=('V', 'E'))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_random_convex_KKT_oracle (seed=73181, index=22, modalities=('E', 'E'))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_random_convex_KKT_oracle (seed=73181, index=23, modalities=('F', 'E'))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_random_convex_KKT_oracle (seed=73181, index=24, modalities=('V', 'F'))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_random_convex_KKT_oracle (seed=73181, index=25, modalities=('E', 'F'))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_random_convex_KKT_oracle (seed=73181, index=26, modalities=('F', 'F'))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_random_convex_KKT_oracle (seed=73181, index=27, modalities=('V', 'V'))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_random_convex_KKT_oracle (seed=73181, index=28, modalities=('E', 'V'))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_random_convex_KKT_oracle (seed=73181, index=29, modalities=('F', 'V'))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_random_convex_KKT_oracle (seed=73181, index=30, modalities=('V', 'E'))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_random_convex_KKT_oracle (seed=73181, index=31, modalities=('E', 'E'))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_random_convex_KKT_oracle (seed=73181, index=32, modalities=('F', 'E'))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_random_convex_KKT_oracle (seed=73181, index=33, modalities=('V', 'F'))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_random_convex_KKT_oracle (seed=73181, index=34, modalities=('E', 'F'))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_kernel.GeometryTests.test_random_convex_KKT_oracle (seed=73181, index=35, modalities=('F', 'F'))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_session.SessionTests.test_context_identity_generation_and_units (context=Context(registration='synthetic-registration-1', generation=1, window=1, area=1, scene=1, view_layer=1, object=1, datablock=1, frame=1, temporal=(), matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), translation=(0, 0, 0), system='METRIC', scale_length=Fraction(1, 1000), mode='EDIT_MESH', objects_in_mode=1))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_session.SessionTests.test_context_identity_generation_and_units (context=Context(registration='synthetic-registration-1', generation=0, window=1, area=1, scene=2, view_layer=1, object=1, datablock=1, frame=1, temporal=(), matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), translation=(0, 0, 0), system='METRIC', scale_length=Fraction(1, 1000), mode='EDIT_MESH', objects_in_mode=1))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_session.SessionTests.test_context_identity_generation_and_units (context=Context(registration='synthetic-registration-1', generation=0, window=1, area=1, scene=1, view_layer=2, object=1, datablock=1, frame=1, temporal=(), matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), translation=(0, 0, 0), system='METRIC', scale_length=Fraction(1, 1000), mode='EDIT_MESH', objects_in_mode=1))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_session.SessionTests.test_context_identity_generation_and_units (context=Context(registration='synthetic-registration-1', generation=0, window=1, area=1, scene=1, view_layer=1, object=2, datablock=1, frame=1, temporal=(), matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), translation=(0, 0, 0), system='METRIC', scale_length=Fraction(1, 1000), mode='EDIT_MESH', objects_in_mode=1))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_session.SessionTests.test_context_identity_generation_and_units (context=Context(registration='synthetic-registration-1', generation=0, window=1, area=1, scene=1, view_layer=1, object=1, datablock=2, frame=1, temporal=(), matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), translation=(0, 0, 0), system='METRIC', scale_length=Fraction(1, 1000), mode='EDIT_MESH', objects_in_mode=1))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_session.SessionTests.test_context_identity_generation_and_units (context=Context(registration='new-registration', generation=0, window=1, area=1, scene=1, view_layer=1, object=1, datablock=1, frame=1, temporal=(), matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), translation=(0, 0, 0), system='METRIC', scale_length=Fraction(1, 1000), mode='EDIT_MESH', objects_in_mode=1))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_session.SessionTests.test_context_identity_generation_and_units (context=Context(registration='synthetic-registration-1', generation=0, window=1, area=1, scene=1, view_layer=1, object=1, datablock=1, frame=2, temporal=(), matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), translation=(0, 0, 0), system='METRIC', scale_length=Fraction(1, 1000), mode='EDIT_MESH', objects_in_mode=1))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_session.SessionTests.test_context_identity_generation_and_units (context=Context(registration='synthetic-registration-1', generation=0, window=1, area=1, scene=1, view_layer=1, object=1, datablock=1, frame=1, temporal=('new-evaluation',), matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), translation=(0, 0, 0), system='METRIC', scale_length=Fraction(1, 1000), mode='EDIT_MESH', objects_in_mode=1))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_session.SessionTests.test_context_identity_generation_and_units (context=Context(registration='synthetic-registration-1', generation=0, window=1, area=1, scene=1, view_layer=1, object=1, datablock=1, frame=1, temporal=(), matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), translation=(0, 0, 0), system='METRIC', scale_length=1, mode='EDIT_MESH', objects_in_mode=1))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_session.SessionTests.test_context_identity_generation_and_units (context=Context(registration='synthetic-registration-1', generation=0, window=1, area=1, scene=1, view_layer=1, object=1, datablock=1, frame=1, temporal=(), matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), translation=(0, 0, 0), system='NONE', scale_length=Fraction(1, 1000), mode='EDIT_MESH', objects_in_mode=1))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_session.SessionTests.test_context_identity_generation_and_units (context=Context(registration='synthetic-registration-1', generation=0, window=1, area=1, scene=1, view_layer=1, object=1, datablock=1, frame=1, temporal=(), matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), translation=(1, 0, 0), system='METRIC', scale_length=Fraction(1, 1000), mode='EDIT_MESH', objects_in_mode=1))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_session.SessionTests.test_context_identity_generation_and_units (context=Context(registration='synthetic-registration-1', generation=0, window=1, area=1, scene=1, view_layer=1, object=1, datablock=1, frame=1, temporal=(), matrix=((2, 0, 0), (0, 1, 0), (0, 0, 1)), translation=(0, 0, 0), system='METRIC', scale_length=Fraction(1, 1000), mode='EDIT_MESH', objects_in_mode=1))",
+      "status": "PASS"
+    },
+    {
+      "id": "test_session.SessionTests.test_double_check_mutation_and_flags (patch={'context2': Context(registration='synthetic-registration-1', generation=1, window=1, area=1, scene=1, view_layer=1, object=1, datablock=1, frame=1, temporal=(), matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), translation=(0, 0, 0), system='METRIC', scale_length=Fraction(1, 1000), mode='EDIT_MESH', objects_in_mode=1)})",
+      "status": "PASS"
+    },
+    {
+      "id": "test_session.SessionTests.test_double_check_mutation_and_flags (patch={'mesh2': Mesh(vertices=((0, 0, 0), (1, 0, 0), (0, 1, 0), (0, 0, 6)), edges=((0, 1), (1, 2), (2, 0), (0, 3)), faces=(((0, 0), (1, 1), (2, 2)),))})",
+      "status": "PASS"
+    },
+    {
+      "id": "test_session.SessionTests.test_double_check_mutation_and_flags (patch={'selection2': Selection(kind='V', occurrences=((1, True, False),))})",
+      "status": "PASS"
+    },
+    {
+      "id": "test_session.SessionTests.test_double_check_mutation_and_flags (patch={'selection2': Selection(kind='V', occurrences=((0, True, True),))})",
+      "status": "PASS"
+    },
+    {
+      "id": "test_session.SessionTests.test_double_check_mutation_and_flags (patch={'selection2': Selection(kind='V', occurrences=((0, False, False),))})",
+      "status": "PASS"
+    }
+  ],
+  "note": "Subcases are not additional test methods; no Blender tests."
+}

@@ -1,0 +1,2285 @@
+{
+  "V-V": {
+    "input": {
+      "a": {
+        "kind": "V",
+        "points": [
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "b": {
+        "kind": "V",
+        "points": [
+          [
+            3,
+            4,
+            0
+          ]
+        ]
+      },
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "system": "METRIC",
+      "scale_length": "1/1000",
+      "precision": 3
+    },
+    "result": {
+      "status": "COMPUTED_OFFLINE",
+      "distance": {
+        "certificate": {
+          "lo": "5",
+          "hi": "5",
+          "quantity": "distance",
+          "approximate": false,
+          "contact_proven": false,
+          "nominal_allowed": true,
+          "reference": [
+            "5",
+            "5"
+          ]
+        },
+        "display": {
+          "state": "POSITIVO_CERTIFICADO",
+          "bounds": [
+            "5.000",
+            "5.000"
+          ],
+          "unit": "mm",
+          "nominal": "5.000",
+          "sub_q": false,
+          "threshold": null,
+          "approximate": false,
+          "positive_internally": true
+        },
+        "squared_proxy": "25"
+      },
+      "sizes": [],
+      "ordering": null,
+      "plan": {
+        "contour": 0,
+        "diameter": 0,
+        "triangle_pairs": 0,
+        "other": 32,
+        "total": 32,
+        "estimated_peak_bytes": 84017152
+      },
+      "exact_steps": 126,
+      "anchor": [
+        "0",
+        "0",
+        "0"
+      ],
+      "unit": "mm",
+      "notice": "Malha de edicao; modifiers nao considerados. Nao equivale a peca final do slicer.",
+      "scale_notice": null
+    }
+  },
+  "V-E": {
+    "input": {
+      "a": {
+        "kind": "V",
+        "points": [
+          [
+            1,
+            1,
+            0
+          ]
+        ]
+      },
+      "b": {
+        "kind": "E",
+        "points": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            10,
+            0,
+            0
+          ]
+        ]
+      },
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "system": "METRIC",
+      "scale_length": "1/1000",
+      "precision": 3
+    },
+    "result": {
+      "status": "COMPUTED_OFFLINE",
+      "distance": {
+        "certificate": {
+          "lo": "1",
+          "hi": "1",
+          "quantity": "distance",
+          "approximate": false,
+          "contact_proven": false,
+          "nominal_allowed": true,
+          "reference": [
+            "1",
+            "1"
+          ]
+        },
+        "display": {
+          "state": "POSITIVO_CERTIFICADO",
+          "bounds": [
+            "1.000",
+            "1.000"
+          ],
+          "unit": "mm",
+          "nominal": "1.000",
+          "sub_q": false,
+          "threshold": null,
+          "approximate": false,
+          "positive_internally": true
+        },
+        "squared_proxy": "1"
+      },
+      "sizes": [
+        {
+          "entity": 2,
+          "kind": "E",
+          "certificate": {
+            "lo": "10",
+            "hi": "10",
+            "quantity": "length",
+            "approximate": false,
+            "contact_proven": false,
+            "nominal_allowed": true,
+            "reference": [
+              "10",
+              "10"
+            ]
+          },
+          "display": {
+            "state": "POSITIVO_CERTIFICADO",
+            "bounds": [
+              "10.000",
+              "10.000"
+            ],
+            "unit": "mm",
+            "nominal": "10.000",
+            "sub_q": false,
+            "threshold": null,
+            "approximate": false,
+            "positive_internally": true
+          },
+          "warning": null
+        }
+      ],
+      "ordering": null,
+      "plan": {
+        "contour": 0,
+        "diameter": 0,
+        "triangle_pairs": 0,
+        "other": 32,
+        "total": 32,
+        "estimated_peak_bytes": 84082688
+      },
+      "exact_steps": 188,
+      "anchor": [
+        "1",
+        "1",
+        "0"
+      ],
+      "unit": "mm",
+      "notice": "Malha de edicao; modifiers nao considerados. Nao equivale a peca final do slicer.",
+      "scale_notice": null
+    }
+  },
+  "V-F": {
+    "input": {
+      "a": {
+        "kind": "V",
+        "points": [
+          [
+            0,
+            0,
+            5
+          ]
+        ]
+      },
+      "b": {
+        "kind": "F",
+        "points": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            2.0,
+            0.0,
+            0.0
+          ],
+          [
+            2.0,
+            2.0,
+            0.0
+          ],
+          [
+            0.0,
+            2.0,
+            0.0
+          ]
+        ]
+      },
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "system": "METRIC",
+      "scale_length": "1/1000",
+      "precision": 3
+    },
+    "result": {
+      "status": "COMPUTED_OFFLINE",
+      "distance": {
+        "certificate": {
+          "lo": "5",
+          "hi": "5",
+          "quantity": "distance",
+          "approximate": false,
+          "contact_proven": false,
+          "nominal_allowed": true,
+          "reference": [
+            "5",
+            "5"
+          ]
+        },
+        "display": {
+          "state": "POSITIVO_CERTIFICADO",
+          "bounds": [
+            "5.000",
+            "5.000"
+          ],
+          "unit": "mm",
+          "nominal": "5.000",
+          "sub_q": false,
+          "threshold": null,
+          "approximate": false,
+          "positive_internally": true
+        },
+        "squared_proxy": "25"
+      },
+      "sizes": [
+        {
+          "entity": 2,
+          "kind": "F",
+          "certificate": {
+            "lo": "4",
+            "hi": "4",
+            "quantity": "area",
+            "approximate": false,
+            "contact_proven": false,
+            "nominal_allowed": true,
+            "reference": [
+              "4",
+              "4"
+            ]
+          },
+          "display": {
+            "state": "POSITIVO_CERTIFICADO",
+            "bounds": [
+              "4.000",
+              "4.000"
+            ],
+            "unit": "mm2",
+            "nominal": "4.000",
+            "sub_q": false,
+            "threshold": null,
+            "approximate": false,
+            "positive_internally": true
+          },
+          "face": {
+            "points": [
+              [
+                "0",
+                "0",
+                "-5"
+              ],
+              [
+                "2",
+                "0",
+                "-5"
+              ],
+              [
+                "2",
+                "2",
+                "-5"
+              ],
+              [
+                "0",
+                "2",
+                "-5"
+              ]
+            ],
+            "triangles": [
+              [
+                [
+                  "0",
+                  "2",
+                  "-5"
+                ],
+                [
+                  "0",
+                  "0",
+                  "-5"
+                ],
+                [
+                  "2",
+                  "0",
+                  "-5"
+                ]
+              ],
+              [
+                [
+                  "2",
+                  "0",
+                  "-5"
+                ],
+                [
+                  "2",
+                  "2",
+                  "-5"
+                ],
+                [
+                  "0",
+                  "2",
+                  "-5"
+                ]
+              ]
+            ],
+            "projected_2d": [
+              [
+                "0",
+                "0"
+              ],
+              [
+                "2",
+                "0"
+              ],
+              [
+                "2",
+                "2"
+              ],
+              [
+                "0",
+                "2"
+              ]
+            ],
+            "triangle_indices": [
+              [
+                3,
+                0,
+                1
+              ],
+              [
+                1,
+                2,
+                3
+              ]
+            ],
+            "approximate": false,
+            "area_lo": "4",
+            "area_hi": "4",
+            "reference_lo": "4",
+            "reference_hi": "4",
+            "area_nominal_allowed": true,
+            "h": "0",
+            "diameter_lo": "0",
+            "diameter_hi": "0",
+            "tau": "0",
+            "resolution": "0",
+            "delta_area": "0"
+          }
+        }
+      ],
+      "ordering": null,
+      "plan": {
+        "contour": 2,
+        "diameter": 6,
+        "triangle_pairs": 0,
+        "other": 1856,
+        "total": 1864,
+        "estimated_peak_bytes": 84344832
+      },
+      "exact_steps": 693,
+      "anchor": [
+        "0",
+        "0",
+        "5"
+      ],
+      "unit": "mm",
+      "notice": "Malha de edicao; modifiers nao considerados. Nao equivale a peca final do slicer.",
+      "scale_notice": null
+    }
+  },
+  "E-E": {
+    "input": {
+      "a": {
+        "kind": "E",
+        "points": [
+          [
+            0,
+            0,
+            5
+          ],
+          [
+            1,
+            0,
+            5
+          ]
+        ]
+      },
+      "b": {
+        "kind": "E",
+        "points": [
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ]
+        ]
+      },
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "system": "METRIC",
+      "scale_length": "1/1000",
+      "precision": 3
+    },
+    "result": {
+      "status": "COMPUTED_OFFLINE",
+      "distance": {
+        "certificate": {
+          "lo": "4000883029692977312547687392659527798663206855320261271829/784637716923335095479473677900958302012794430558004314112",
+          "hi": "8001766059385954625095374785319055597326413710640522543659/1569275433846670190958947355801916604025588861116008628224",
+          "quantity": "distance",
+          "approximate": false,
+          "contact_proven": false,
+          "nominal_allowed": true,
+          "reference": [
+            "4000883029692977312547687392659527798663206855320261271829/784637716923335095479473677900958302012794430558004314112",
+            "8001766059385954625095374785319055597326413710640522543659/1569275433846670190958947355801916604025588861116008628224"
+          ]
+        },
+        "display": {
+          "state": "POSITIVO_CERTIFICADO",
+          "bounds": [
+            "5.099",
+            "5.100"
+          ],
+          "unit": "mm",
+          "nominal": "5.099",
+          "sub_q": false,
+          "threshold": null,
+          "approximate": false,
+          "positive_internally": true
+        },
+        "squared_proxy": "26"
+      },
+      "sizes": [
+        {
+          "entity": 1,
+          "kind": "E",
+          "certificate": {
+            "lo": "1",
+            "hi": "1",
+            "quantity": "length",
+            "approximate": false,
+            "contact_proven": false,
+            "nominal_allowed": true,
+            "reference": [
+              "1",
+              "1"
+            ]
+          },
+          "display": {
+            "state": "POSITIVO_CERTIFICADO",
+            "bounds": [
+              "1.000",
+              "1.000"
+            ],
+            "unit": "mm",
+            "nominal": "1.000",
+            "sub_q": false,
+            "threshold": null,
+            "approximate": false,
+            "positive_internally": true
+          },
+          "warning": null
+        },
+        {
+          "entity": 2,
+          "kind": "E",
+          "certificate": {
+            "lo": "1",
+            "hi": "1",
+            "quantity": "length",
+            "approximate": false,
+            "contact_proven": false,
+            "nominal_allowed": true,
+            "reference": [
+              "1",
+              "1"
+            ]
+          },
+          "display": {
+            "state": "POSITIVO_CERTIFICADO",
+            "bounds": [
+              "1.000",
+              "1.000"
+            ],
+            "unit": "mm",
+            "nominal": "1.000",
+            "sub_q": false,
+            "threshold": null,
+            "approximate": false,
+            "positive_internally": true
+          },
+          "warning": null
+        }
+      ],
+      "ordering": {
+        "order": null,
+        "rounded_overlap_warning": false
+      },
+      "plan": {
+        "contour": 0,
+        "diameter": 0,
+        "triangle_pairs": 0,
+        "other": 32,
+        "total": 32,
+        "estimated_peak_bytes": 84148224
+      },
+      "exact_steps": 364,
+      "anchor": [
+        "0",
+        "0",
+        "5"
+      ],
+      "unit": "mm",
+      "notice": "Malha de edicao; modifiers nao considerados. Nao equivale a peca final do slicer.",
+      "scale_notice": null
+    }
+  },
+  "E-F": {
+    "input": {
+      "a": {
+        "kind": "E",
+        "points": [
+          [
+            0,
+            0,
+            5
+          ],
+          [
+            1,
+            0,
+            5
+          ]
+        ]
+      },
+      "b": {
+        "kind": "F",
+        "points": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            2.0,
+            0.0,
+            0.0
+          ],
+          [
+            2.0,
+            2.0,
+            0.0
+          ],
+          [
+            0.0,
+            2.0,
+            0.0
+          ]
+        ]
+      },
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "system": "METRIC",
+      "scale_length": "1/1000",
+      "precision": 3
+    },
+    "result": {
+      "status": "COMPUTED_OFFLINE",
+      "distance": {
+        "certificate": {
+          "lo": "5",
+          "hi": "5",
+          "quantity": "distance",
+          "approximate": false,
+          "contact_proven": false,
+          "nominal_allowed": true,
+          "reference": [
+            "5",
+            "5"
+          ]
+        },
+        "display": {
+          "state": "POSITIVO_CERTIFICADO",
+          "bounds": [
+            "5.000",
+            "5.000"
+          ],
+          "unit": "mm",
+          "nominal": "5.000",
+          "sub_q": false,
+          "threshold": null,
+          "approximate": false,
+          "positive_internally": true
+        },
+        "squared_proxy": "25"
+      },
+      "sizes": [
+        {
+          "entity": 1,
+          "kind": "E",
+          "certificate": {
+            "lo": "1",
+            "hi": "1",
+            "quantity": "length",
+            "approximate": false,
+            "contact_proven": false,
+            "nominal_allowed": true,
+            "reference": [
+              "1",
+              "1"
+            ]
+          },
+          "display": {
+            "state": "POSITIVO_CERTIFICADO",
+            "bounds": [
+              "1.000",
+              "1.000"
+            ],
+            "unit": "mm",
+            "nominal": "1.000",
+            "sub_q": false,
+            "threshold": null,
+            "approximate": false,
+            "positive_internally": true
+          },
+          "warning": null
+        },
+        {
+          "entity": 2,
+          "kind": "F",
+          "certificate": {
+            "lo": "4",
+            "hi": "4",
+            "quantity": "area",
+            "approximate": false,
+            "contact_proven": false,
+            "nominal_allowed": true,
+            "reference": [
+              "4",
+              "4"
+            ]
+          },
+          "display": {
+            "state": "POSITIVO_CERTIFICADO",
+            "bounds": [
+              "4.000",
+              "4.000"
+            ],
+            "unit": "mm2",
+            "nominal": "4.000",
+            "sub_q": false,
+            "threshold": null,
+            "approximate": false,
+            "positive_internally": true
+          },
+          "face": {
+            "points": [
+              [
+                "0",
+                "0",
+                "-5"
+              ],
+              [
+                "2",
+                "0",
+                "-5"
+              ],
+              [
+                "2",
+                "2",
+                "-5"
+              ],
+              [
+                "0",
+                "2",
+                "-5"
+              ]
+            ],
+            "triangles": [
+              [
+                [
+                  "0",
+                  "2",
+                  "-5"
+                ],
+                [
+                  "0",
+                  "0",
+                  "-5"
+                ],
+                [
+                  "2",
+                  "0",
+                  "-5"
+                ]
+              ],
+              [
+                [
+                  "2",
+                  "0",
+                  "-5"
+                ],
+                [
+                  "2",
+                  "2",
+                  "-5"
+                ],
+                [
+                  "0",
+                  "2",
+                  "-5"
+                ]
+              ]
+            ],
+            "projected_2d": [
+              [
+                "0",
+                "0"
+              ],
+              [
+                "2",
+                "0"
+              ],
+              [
+                "2",
+                "2"
+              ],
+              [
+                "0",
+                "2"
+              ]
+            ],
+            "triangle_indices": [
+              [
+                3,
+                0,
+                1
+              ],
+              [
+                1,
+                2,
+                3
+              ]
+            ],
+            "approximate": false,
+            "area_lo": "4",
+            "area_hi": "4",
+            "reference_lo": "4",
+            "reference_hi": "4",
+            "area_nominal_allowed": true,
+            "h": "0",
+            "diameter_lo": "0",
+            "diameter_hi": "0",
+            "tau": "0",
+            "resolution": "0",
+            "delta_area": "0"
+          }
+        }
+      ],
+      "ordering": null,
+      "plan": {
+        "contour": 2,
+        "diameter": 6,
+        "triangle_pairs": 0,
+        "other": 1856,
+        "total": 1864,
+        "estimated_peak_bytes": 84410368
+      },
+      "exact_steps": 2061,
+      "anchor": [
+        "0",
+        "0",
+        "5"
+      ],
+      "unit": "mm",
+      "notice": "Malha de edicao; modifiers nao considerados. Nao equivale a peca final do slicer.",
+      "scale_notice": null
+    }
+  },
+  "F-F": {
+    "input": {
+      "a": {
+        "kind": "F",
+        "points": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            2.0,
+            0.0,
+            0.0
+          ],
+          [
+            2.0,
+            2.0,
+            0.0
+          ],
+          [
+            0.0,
+            2.0,
+            0.0
+          ]
+        ]
+      },
+      "b": {
+        "kind": "F",
+        "points": [
+          [
+            0.0,
+            0.0,
+            5.0
+          ],
+          [
+            2.0,
+            0.0,
+            5.0
+          ],
+          [
+            2.0,
+            2.0,
+            5.0
+          ],
+          [
+            0.0,
+            2.0,
+            5.0
+          ]
+        ]
+      },
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "system": "METRIC",
+      "scale_length": "1/1000",
+      "precision": 3
+    },
+    "result": {
+      "status": "COMPUTED_OFFLINE",
+      "distance": {
+        "certificate": {
+          "lo": "5",
+          "hi": "5",
+          "quantity": "distance",
+          "approximate": false,
+          "contact_proven": false,
+          "nominal_allowed": true,
+          "reference": [
+            "5",
+            "5"
+          ]
+        },
+        "display": {
+          "state": "POSITIVO_CERTIFICADO",
+          "bounds": [
+            "5.000",
+            "5.000"
+          ],
+          "unit": "mm",
+          "nominal": "5.000",
+          "sub_q": false,
+          "threshold": null,
+          "approximate": false,
+          "positive_internally": true
+        },
+        "squared_proxy": "25"
+      },
+      "sizes": [
+        {
+          "entity": 1,
+          "kind": "F",
+          "certificate": {
+            "lo": "4",
+            "hi": "4",
+            "quantity": "area",
+            "approximate": false,
+            "contact_proven": false,
+            "nominal_allowed": true,
+            "reference": [
+              "4",
+              "4"
+            ]
+          },
+          "display": {
+            "state": "POSITIVO_CERTIFICADO",
+            "bounds": [
+              "4.000",
+              "4.000"
+            ],
+            "unit": "mm2",
+            "nominal": "4.000",
+            "sub_q": false,
+            "threshold": null,
+            "approximate": false,
+            "positive_internally": true
+          },
+          "face": {
+            "points": [
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "2",
+                "0",
+                "0"
+              ],
+              [
+                "2",
+                "2",
+                "0"
+              ],
+              [
+                "0",
+                "2",
+                "0"
+              ]
+            ],
+            "triangles": [
+              [
+                [
+                  "0",
+                  "2",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "2",
+                  "0",
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "2",
+                  "0",
+                  "0"
+                ],
+                [
+                  "2",
+                  "2",
+                  "0"
+                ],
+                [
+                  "0",
+                  "2",
+                  "0"
+                ]
+              ]
+            ],
+            "projected_2d": [
+              [
+                "0",
+                "0"
+              ],
+              [
+                "2",
+                "0"
+              ],
+              [
+                "2",
+                "2"
+              ],
+              [
+                "0",
+                "2"
+              ]
+            ],
+            "triangle_indices": [
+              [
+                3,
+                0,
+                1
+              ],
+              [
+                1,
+                2,
+                3
+              ]
+            ],
+            "approximate": false,
+            "area_lo": "4",
+            "area_hi": "4",
+            "reference_lo": "4",
+            "reference_hi": "4",
+            "area_nominal_allowed": true,
+            "h": "0",
+            "diameter_lo": "0",
+            "diameter_hi": "0",
+            "tau": "0",
+            "resolution": "0",
+            "delta_area": "0"
+          }
+        },
+        {
+          "entity": 2,
+          "kind": "F",
+          "certificate": {
+            "lo": "4",
+            "hi": "4",
+            "quantity": "area",
+            "approximate": false,
+            "contact_proven": false,
+            "nominal_allowed": true,
+            "reference": [
+              "4",
+              "4"
+            ]
+          },
+          "display": {
+            "state": "POSITIVO_CERTIFICADO",
+            "bounds": [
+              "4.000",
+              "4.000"
+            ],
+            "unit": "mm2",
+            "nominal": "4.000",
+            "sub_q": false,
+            "threshold": null,
+            "approximate": false,
+            "positive_internally": true
+          },
+          "face": {
+            "points": [
+              [
+                "0",
+                "0",
+                "5"
+              ],
+              [
+                "2",
+                "0",
+                "5"
+              ],
+              [
+                "2",
+                "2",
+                "5"
+              ],
+              [
+                "0",
+                "2",
+                "5"
+              ]
+            ],
+            "triangles": [
+              [
+                [
+                  "0",
+                  "2",
+                  "5"
+                ],
+                [
+                  "0",
+                  "0",
+                  "5"
+                ],
+                [
+                  "2",
+                  "0",
+                  "5"
+                ]
+              ],
+              [
+                [
+                  "2",
+                  "0",
+                  "5"
+                ],
+                [
+                  "2",
+                  "2",
+                  "5"
+                ],
+                [
+                  "0",
+                  "2",
+                  "5"
+                ]
+              ]
+            ],
+            "projected_2d": [
+              [
+                "0",
+                "0"
+              ],
+              [
+                "2",
+                "0"
+              ],
+              [
+                "2",
+                "2"
+              ],
+              [
+                "0",
+                "2"
+              ]
+            ],
+            "triangle_indices": [
+              [
+                3,
+                0,
+                1
+              ],
+              [
+                1,
+                2,
+                3
+              ]
+            ],
+            "approximate": false,
+            "area_lo": "4",
+            "area_hi": "4",
+            "reference_lo": "4",
+            "reference_hi": "4",
+            "area_nominal_allowed": true,
+            "h": "0",
+            "diameter_lo": "0",
+            "diameter_hi": "0",
+            "tau": "0",
+            "resolution": "0",
+            "delta_area": "0"
+          }
+        }
+      ],
+      "ordering": {
+        "order": null,
+        "rounded_overlap_warning": false
+      },
+      "plan": {
+        "contour": 4,
+        "diameter": 12,
+        "triangle_pairs": 4,
+        "other": 3712,
+        "total": 3732,
+        "estimated_peak_bytes": 84672512
+      },
+      "exact_steps": 19021,
+      "anchor": [
+        "0",
+        "0",
+        "0"
+      ],
+      "unit": "mm",
+      "notice": "Malha de edicao; modifiers nao considerados. Nao equivale a peca final do slicer.",
+      "scale_notice": null
+    }
+  },
+  "E-length": {
+    "input": {
+      "a": {
+        "kind": "E",
+        "points": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            3,
+            4,
+            0
+          ]
+        ]
+      },
+      "b": null,
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "system": "METRIC",
+      "scale_length": "1/1000",
+      "precision": 3
+    },
+    "result": {
+      "status": "COMPUTED_OFFLINE",
+      "distance": null,
+      "sizes": [
+        {
+          "entity": 1,
+          "kind": "E",
+          "certificate": {
+            "lo": "5",
+            "hi": "5",
+            "quantity": "length",
+            "approximate": false,
+            "contact_proven": false,
+            "nominal_allowed": true,
+            "reference": [
+              "5",
+              "5"
+            ]
+          },
+          "display": {
+            "state": "POSITIVO_CERTIFICADO",
+            "bounds": [
+              "5.000",
+              "5.000"
+            ],
+            "unit": "mm",
+            "nominal": "5.000",
+            "sub_q": false,
+            "threshold": null,
+            "approximate": false,
+            "positive_internally": true
+          },
+          "warning": null
+        }
+      ],
+      "ordering": null,
+      "plan": {
+        "contour": 0,
+        "diameter": 0,
+        "triangle_pairs": 0,
+        "other": 32,
+        "total": 32,
+        "estimated_peak_bytes": 84017152
+      },
+      "exact_steps": 125,
+      "anchor": [
+        "0",
+        "0",
+        "0"
+      ],
+      "unit": "mm",
+      "notice": "Malha de edicao; modifiers nao considerados. Nao equivale a peca final do slicer.",
+      "scale_notice": null
+    }
+  },
+  "F-area": {
+    "input": {
+      "a": {
+        "kind": "F",
+        "points": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            2.0,
+            0.0,
+            0.0
+          ],
+          [
+            2.0,
+            2.0,
+            0.0
+          ],
+          [
+            0.0,
+            2.0,
+            0.0
+          ]
+        ]
+      },
+      "b": null,
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "system": "METRIC",
+      "scale_length": "1/1000",
+      "precision": 3
+    },
+    "result": {
+      "status": "COMPUTED_OFFLINE",
+      "distance": null,
+      "sizes": [
+        {
+          "entity": 1,
+          "kind": "F",
+          "certificate": {
+            "lo": "4",
+            "hi": "4",
+            "quantity": "area",
+            "approximate": false,
+            "contact_proven": false,
+            "nominal_allowed": true,
+            "reference": [
+              "4",
+              "4"
+            ]
+          },
+          "display": {
+            "state": "POSITIVO_CERTIFICADO",
+            "bounds": [
+              "4.000",
+              "4.000"
+            ],
+            "unit": "mm2",
+            "nominal": "4.000",
+            "sub_q": false,
+            "threshold": null,
+            "approximate": false,
+            "positive_internally": true
+          },
+          "face": {
+            "points": [
+              [
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "2",
+                "0",
+                "0"
+              ],
+              [
+                "2",
+                "2",
+                "0"
+              ],
+              [
+                "0",
+                "2",
+                "0"
+              ]
+            ],
+            "triangles": [
+              [
+                [
+                  "0",
+                  "2",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "0"
+                ],
+                [
+                  "2",
+                  "0",
+                  "0"
+                ]
+              ],
+              [
+                [
+                  "2",
+                  "0",
+                  "0"
+                ],
+                [
+                  "2",
+                  "2",
+                  "0"
+                ],
+                [
+                  "0",
+                  "2",
+                  "0"
+                ]
+              ]
+            ],
+            "projected_2d": [
+              [
+                "0",
+                "0"
+              ],
+              [
+                "2",
+                "0"
+              ],
+              [
+                "2",
+                "2"
+              ],
+              [
+                "0",
+                "2"
+              ]
+            ],
+            "triangle_indices": [
+              [
+                3,
+                0,
+                1
+              ],
+              [
+                1,
+                2,
+                3
+              ]
+            ],
+            "approximate": false,
+            "area_lo": "4",
+            "area_hi": "4",
+            "reference_lo": "4",
+            "reference_hi": "4",
+            "area_nominal_allowed": true,
+            "h": "0",
+            "diameter_lo": "0",
+            "diameter_hi": "0",
+            "tau": "0",
+            "resolution": "0",
+            "delta_area": "0"
+          }
+        }
+      ],
+      "ordering": null,
+      "plan": {
+        "contour": 2,
+        "diameter": 6,
+        "triangle_pairs": 0,
+        "other": 1856,
+        "total": 1864,
+        "estimated_peak_bytes": 84279296
+      },
+      "exact_steps": 397,
+      "anchor": [
+        "0",
+        "0",
+        "0"
+      ],
+      "unit": "mm",
+      "notice": "Malha de edicao; modifiers nao considerados. Nao equivale a peca final do slicer.",
+      "scale_notice": null
+    }
+  },
+  "P-F-F-positive": {
+    "input": {
+      "a": {
+        "kind": "F",
+        "points": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            10.0,
+            0.0,
+            0.0
+          ],
+          [
+            10.0,
+            10.0,
+            0.00019999999494757503
+          ],
+          [
+            0.0,
+            10.0,
+            0.0
+          ]
+        ]
+      },
+      "b": {
+        "kind": "F",
+        "points": [
+          [
+            0.0,
+            0.0,
+            5.0
+          ],
+          [
+            10.0,
+            0.0,
+            5.0
+          ],
+          [
+            10.0,
+            10.0,
+            5.000199794769287
+          ],
+          [
+            0.0,
+            10.0,
+            5.0
+          ]
+        ]
+      },
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "system": "METRIC",
+      "scale_length": "1/1000",
+      "precision": 3
+    },
+    "result": {
+      "status": "COMPUTED_OFFLINE",
+      "distance": {
+        "certificate": {
+          "lo": "514209879155220439386859087152703759132939707653982480306828617/102844034832575377634685573909834406561420991602098741459288064",
+          "hi": "514230437408547802241013651175309256436932190480968113333111479/102844034832575377634685573909834406561420991602098741459288064",
+          "quantity": "distance",
+          "approximate": true,
+          "contact_proven": false,
+          "nominal_allowed": true,
+          "reference": [
+            "7846376926908632214568120867370704769667601761893849133605/1569275433846670190958947355801916604025588861116008628224",
+            "3923188463454316107284060433685352384833800880946924566803/784637716923335095479473677900958302012794430558004314112"
+          ]
+        },
+        "display": {
+          "state": "POSITIVO_CERTIFICADO_COM_FAIXA",
+          "bounds": [
+            "4.999",
+            "5.001"
+          ],
+          "unit": "mm",
+          "nominal": "5.000",
+          "sub_q": false,
+          "threshold": null,
+          "approximate": true,
+          "positive_internally": true
+        },
+        "squared_proxy": "52006066778689784772666532122003142526948191327167875107157606742025/2080242799638545286489563486035190920916471541250379236081724817408"
+      },
+      "sizes": [
+        {
+          "entity": 1,
+          "kind": "F",
+          "certificate": {
+            "lo": "9807971462522485790044510725933164080169899570747928605919/98079714615416886934934209737619787751599303819750539264",
+            "hi": "2017439777655678928692919582228918913068686579434172129569878850504932463927244289754891353665227482465910624347411295807/20173827172553973356686868531273530268200826506478308693989526222973809547006571833044104322501076808092993531037089792",
+            "quantity": "area",
+            "approximate": true,
+            "contact_proven": false,
+            "nominal_allowed": true,
+            "reference": [
+              "9807971462522485790044510725933164080169899570747928605919/98079714615416886934934209737619787751599303819750539264",
+              "306499108203827680938890960185411377505309361585872768935/3064991081731777716716694054300618367237478244367204352"
+            ]
+          },
+          "display": {
+            "state": "POSITIVO_CERTIFICADO",
+            "bounds": [
+              "100.000",
+              "100.003"
+            ],
+            "unit": "mm2",
+            "nominal": null,
+            "sub_q": false,
+            "threshold": null,
+            "approximate": true,
+            "positive_internally": true
+          },
+          "face": {
+            "points": [
+              [
+                "37778929954205/75557863741025895400818",
+                "37778929954205/75557863741025895400818",
+                "-1888946545429053440/37778931870512947700409"
+              ],
+              [
+                "755578637372480024053975/75557863741025895400818",
+                "-37778929954205/75557863741025895400818",
+                "1888946545429053440/37778931870512947700409"
+              ],
+              [
+                "755578637448037883962385/75557863741025895400818",
+                "755578637448037883962385/75557863741025895400818",
+                "389422254656324144326331981215/2596148429786643473885040973185024"
+              ],
+              [
+                "-37778929954205/75557863741025895400818",
+                "755578637372480024053975/75557863741025895400818",
+                "1888946545429053440/37778931870512947700409"
+              ]
+            ],
+            "triangles": [
+              [
+                [
+                  "-37778929954205/75557863741025895400818",
+                  "755578637372480024053975/75557863741025895400818",
+                  "1888946545429053440/37778931870512947700409"
+                ],
+                [
+                  "37778929954205/75557863741025895400818",
+                  "37778929954205/75557863741025895400818",
+                  "-1888946545429053440/37778931870512947700409"
+                ],
+                [
+                  "755578637372480024053975/75557863741025895400818",
+                  "-37778929954205/75557863741025895400818",
+                  "1888946545429053440/37778931870512947700409"
+                ]
+              ],
+              [
+                [
+                  "755578637372480024053975/75557863741025895400818",
+                  "-37778929954205/75557863741025895400818",
+                  "1888946545429053440/37778931870512947700409"
+                ],
+                [
+                  "755578637448037883962385/75557863741025895400818",
+                  "755578637448037883962385/75557863741025895400818",
+                  "389422254656324144326331981215/2596148429786643473885040973185024"
+                ],
+                [
+                  "-37778929954205/75557863741025895400818",
+                  "755578637372480024053975/75557863741025895400818",
+                  "1888946545429053440/37778931870512947700409"
+                ]
+              ]
+            ],
+            "projected_2d": [
+              [
+                "37778929954205/75557863741025895400818",
+                "37778929954205/75557863741025895400818"
+              ],
+              [
+                "755578637372480024053975/75557863741025895400818",
+                "-37778929954205/75557863741025895400818"
+              ],
+              [
+                "755578637448037883962385/75557863741025895400818",
+                "755578637448037883962385/75557863741025895400818"
+              ],
+              [
+                "-37778929954205/75557863741025895400818",
+                "755578637372480024053975/75557863741025895400818"
+              ]
+            ],
+            "triangle_indices": [
+              [
+                3,
+                0,
+                1
+              ],
+              [
+                1,
+                2,
+                3
+              ]
+            ],
+            "approximate": true,
+            "area_lo": "9807971462522485790044510725933164080169899570747928605919/98079714615416886934934209737619787751599303819750539264",
+            "area_hi": "2017439777655678928692919582228918913068686579434172129569878850504932463927244289754891353665227482465910624347411295807/20173827172553973356686868531273530268200826506478308693989526222973809547006571833044104322501076808092993531037089792",
+            "reference_lo": "9807971462522485790044510725933164080169899570747928605919/98079714615416886934934209737619787751599303819750539264",
+            "reference_hi": "306499108203827680938890960185411377505309361585872768935/3064991081731777716716694054300618367237478244367204352",
+            "area_nominal_allowed": true,
+            "h": "5142201611211606415409306279281126213891260955862451629759/102844034832575377634685573909834406561420991602098741459288064",
+            "diameter_lo": "86691039135422373285553930112874366399138321500897835969/6129982163463555433433388108601236734474956488734408704",
+            "diameter_hi": "11096453009334063780550903054447918899089705152114923004033/784637716923335095479473677900958302012794430558004314112",
+            "tau": "1/1000",
+            "resolution": "1921962039516393106394396527798392739215013054699538214345/1645504557321206042154969182557350504982735865633579863348609024",
+            "delta_area": "57060198543331501454588594822539014334963039206781882493961812200129208205480964481165520833335214782008060979818047/20173827172553973356686868531273530268200826506478308693989526222973809547006571833044104322501076808092993531037089792"
+          }
+        },
+        {
+          "entity": 2,
+          "kind": "F",
+          "certificate": {
+            "lo": "2451992865630118493848597694718782396959492701526035991303/24519928653854221733733552434404946937899825954937634816",
+            "hi": "252179964888022372689040973974384302063545259335680589131089258617304778281732497271498385768651833215528554518340247399/2521728396569246669585858566409191283525103313309788586748690777871726193375821479130513040312634601011624191379636224",
+            "quantity": "area",
+            "approximate": true,
+            "contact_proven": false,
+            "nominal_allowed": true,
+            "reference": [
+              "2451992865630118493848597694718782396959492701526035991303/24519928653854221733733552434404946937899825954937634816",
+              "9807971462520473975394390778875129587837970806104143965213/98079714615416886934934209737619787751599303819750539264"
+            ]
+          },
+          "display": {
+            "state": "POSITIVO_CERTIFICADO",
+            "bounds": [
+              "100.000",
+              "100.003"
+            ],
+            "unit": "mm2",
+            "nominal": null,
+            "sub_q": false,
+            "threshold": null,
+            "approximate": true,
+            "positive_internally": true
+          },
+          "face": {
+            "points": [
+              [
+                "877805/1759218604792722",
+                "877805/1759218604792722",
+                "4398002576647405/879609302396361"
+              ],
+              [
+                "17592186047049415/1759218604792722",
+                "-877805/1759218604792722",
+                "4398090447316205/879609302396361"
+              ],
+              [
+                "17592186048805025/1759218604792722",
+                "17592186048805025/1759218604792722",
+                "9223648455918962765819/1844674407739133263872"
+              ],
+              [
+                "-877805/1759218604792722",
+                "17592186047049415/1759218604792722",
+                "4398090447316205/879609302396361"
+              ]
+            ],
+            "triangles": [
+              [
+                [
+                  "-877805/1759218604792722",
+                  "17592186047049415/1759218604792722",
+                  "4398090447316205/879609302396361"
+                ],
+                [
+                  "877805/1759218604792722",
+                  "877805/1759218604792722",
+                  "4398002576647405/879609302396361"
+                ],
+                [
+                  "17592186047049415/1759218604792722",
+                  "-877805/1759218604792722",
+                  "4398090447316205/879609302396361"
+                ]
+              ],
+              [
+                [
+                  "17592186047049415/1759218604792722",
+                  "-877805/1759218604792722",
+                  "4398090447316205/879609302396361"
+                ],
+                [
+                  "17592186048805025/1759218604792722",
+                  "17592186048805025/1759218604792722",
+                  "9223648455918962765819/1844674407739133263872"
+                ],
+                [
+                  "-877805/1759218604792722",
+                  "17592186047049415/1759218604792722",
+                  "4398090447316205/879609302396361"
+                ]
+              ]
+            ],
+            "projected_2d": [
+              [
+                "877805/1759218604792722",
+                "877805/1759218604792722"
+              ],
+              [
+                "17592186047049415/1759218604792722",
+                "-877805/1759218604792722"
+              ],
+              [
+                "17592186048805025/1759218604792722",
+                "17592186048805025/1759218604792722"
+              ],
+              [
+                "-877805/1759218604792722",
+                "17592186047049415/1759218604792722"
+              ]
+            ],
+            "triangle_indices": [
+              [
+                3,
+                0,
+                1
+              ],
+              [
+                1,
+                2,
+                3
+              ]
+            ],
+            "approximate": true,
+            "area_lo": "2451992865630118493848597694718782396959492701526035991303/24519928653854221733733552434404946937899825954937634816",
+            "area_hi": "252179964888022372689040973974384302063545259335680589131089258617304778281732497271498385768651833215528554518340247399/2521728396569246669585858566409191283525103313309788586748690777871726193375821479130513040312634601011624191379636224",
+            "reference_lo": "2451992865630118493848597694718782396959492701526035991303/24519928653854221733733552434404946937899825954937634816",
+            "reference_hi": "9807971462520473975394390778875129587837970806104143965213/98079714615416886934934209737619787751599303819750539264",
+            "area_nominal_allowed": true,
+            "h": "642115631558727582734088127933440722793769067119257684863/12855504354071922204335696738729300820177623950262342682411008",
+            "diameter_lo": "1387056626166473459012544830591863778976895689739379912707/98079714615416886934934209737619787751599303819750539264",
+            "diameter_hi": "11096453009331787672100358644734910231815165517915039301657/784637716923335095479473677900958302012794430558004314112",
+            "tau": "1/1000",
+            "resolution": "8154194347476376140357275319543634972222810547740947494323/6582018229284824168619876730229402019930943462534319453394436096",
+            "delta_area": "7125205932148824096255090464582070609387484916002343549723540205853142926650644695042485693898304381864270099717991/2521728396569246669585858566409191283525103313309788586748690777871726193375821479130513040312634601011624191379636224"
+          }
+        }
+      ],
+      "ordering": {
+        "order": null,
+        "rounded_overlap_warning": false
+      },
+      "plan": {
+        "contour": 4,
+        "diameter": 12,
+        "triangle_pairs": 4,
+        "other": 3712,
+        "total": 3732,
+        "estimated_peak_bytes": 84672512
+      },
+      "exact_steps": 21656,
+      "anchor": [
+        "0",
+        "0",
+        "0"
+      ],
+      "unit": "mm",
+      "notice": "Malha de edicao; modifiers nao considerados. Nao equivale a peca final do slicer.",
+      "scale_notice": null
+    }
+  },
+  "P-V-F-unknown-contact": {
+    "input": {
+      "a": {
+        "kind": "V",
+        "points": [
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "b": {
+        "kind": "F",
+        "points": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            10.0,
+            0.0,
+            0.0
+          ],
+          [
+            10.0,
+            10.0,
+            0.00019999999494757503
+          ],
+          [
+            0.0,
+            10.0,
+            0.0
+          ]
+        ]
+      },
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "system": "METRIC",
+      "scale_length": "1/1000",
+      "precision": 3
+    },
+    "result": {
+      "status": "COMPUTED_OFFLINE",
+      "distance": {
+        "certificate": {
+          "lo": "0",
+          "hi": "5142201611211606415409306279281126213891260955862451629759/51422017416287688817342786954917203280710495801049370729644032",
+          "quantity": "distance",
+          "approximate": true,
+          "contact_proven": false,
+          "nominal_allowed": true,
+          "reference": [
+            "10284403222423212830818612558562252427782521911724903259517/205688069665150755269371147819668813122841983204197482918576128",
+            "5142201611211606415409306279281126213891260955862451629759/102844034832575377634685573909834406561420991602098741459288064"
+          ]
+        },
+        "display": {
+          "state": "INDETERMINADO_COM_FAIXA",
+          "bounds": [
+            "0.000",
+            "0.001"
+          ],
+          "unit": "mm",
+          "nominal": null,
+          "sub_q": false
+        },
+        "squared_proxy": "188894649771025/75557863741025895400818"
+      },
+      "sizes": [
+        {
+          "entity": 2,
+          "kind": "F",
+          "certificate": {
+            "lo": "9807971462522485790044510725933164080169899570747928605919/98079714615416886934934209737619787751599303819750539264",
+            "hi": "2017439777655678928692919582228918913068686579434172129569878850504932463927244289754891353665227482465910624347411295807/20173827172553973356686868531273530268200826506478308693989526222973809547006571833044104322501076808092993531037089792",
+            "quantity": "area",
+            "approximate": true,
+            "contact_proven": false,
+            "nominal_allowed": true,
+            "reference": [
+              "9807971462522485790044510725933164080169899570747928605919/98079714615416886934934209737619787751599303819750539264",
+              "306499108203827680938890960185411377505309361585872768935/3064991081731777716716694054300618367237478244367204352"
+            ]
+          },
+          "display": {
+            "state": "POSITIVO_CERTIFICADO",
+            "bounds": [
+              "100.000",
+              "100.003"
+            ],
+            "unit": "mm2",
+            "nominal": null,
+            "sub_q": false,
+            "threshold": null,
+            "approximate": true,
+            "positive_internally": true
+          },
+          "face": {
+            "points": [
+              [
+                "37778929954205/75557863741025895400818",
+                "37778929954205/75557863741025895400818",
+                "-1888946545429053440/37778931870512947700409"
+              ],
+              [
+                "755578637372480024053975/75557863741025895400818",
+                "-37778929954205/75557863741025895400818",
+                "1888946545429053440/37778931870512947700409"
+              ],
+              [
+                "755578637448037883962385/75557863741025895400818",
+                "755578637448037883962385/75557863741025895400818",
+                "389422254656324144326331981215/2596148429786643473885040973185024"
+              ],
+              [
+                "-37778929954205/75557863741025895400818",
+                "755578637372480024053975/75557863741025895400818",
+                "1888946545429053440/37778931870512947700409"
+              ]
+            ],
+            "triangles": [
+              [
+                [
+                  "-37778929954205/75557863741025895400818",
+                  "755578637372480024053975/75557863741025895400818",
+                  "1888946545429053440/37778931870512947700409"
+                ],
+                [
+                  "37778929954205/75557863741025895400818",
+                  "37778929954205/75557863741025895400818",
+                  "-1888946545429053440/37778931870512947700409"
+                ],
+                [
+                  "755578637372480024053975/75557863741025895400818",
+                  "-37778929954205/75557863741025895400818",
+                  "1888946545429053440/37778931870512947700409"
+                ]
+              ],
+              [
+                [
+                  "755578637372480024053975/75557863741025895400818",
+                  "-37778929954205/75557863741025895400818",
+                  "1888946545429053440/37778931870512947700409"
+                ],
+                [
+                  "755578637448037883962385/75557863741025895400818",
+                  "755578637448037883962385/75557863741025895400818",
+                  "389422254656324144326331981215/2596148429786643473885040973185024"
+                ],
+                [
+                  "-37778929954205/75557863741025895400818",
+                  "755578637372480024053975/75557863741025895400818",
+                  "1888946545429053440/37778931870512947700409"
+                ]
+              ]
+            ],
+            "projected_2d": [
+              [
+                "37778929954205/75557863741025895400818",
+                "37778929954205/75557863741025895400818"
+              ],
+              [
+                "755578637372480024053975/75557863741025895400818",
+                "-37778929954205/75557863741025895400818"
+              ],
+              [
+                "755578637448037883962385/75557863741025895400818",
+                "755578637448037883962385/75557863741025895400818"
+              ],
+              [
+                "-37778929954205/75557863741025895400818",
+                "755578637372480024053975/75557863741025895400818"
+              ]
+            ],
+            "triangle_indices": [
+              [
+                3,
+                0,
+                1
+              ],
+              [
+                1,
+                2,
+                3
+              ]
+            ],
+            "approximate": true,
+            "area_lo": "9807971462522485790044510725933164080169899570747928605919/98079714615416886934934209737619787751599303819750539264",
+            "area_hi": "2017439777655678928692919582228918913068686579434172129569878850504932463927244289754891353665227482465910624347411295807/20173827172553973356686868531273530268200826506478308693989526222973809547006571833044104322501076808092993531037089792",
+            "reference_lo": "9807971462522485790044510725933164080169899570747928605919/98079714615416886934934209737619787751599303819750539264",
+            "reference_hi": "306499108203827680938890960185411377505309361585872768935/3064991081731777716716694054300618367237478244367204352",
+            "area_nominal_allowed": true,
+            "h": "5142201611211606415409306279281126213891260955862451629759/102844034832575377634685573909834406561420991602098741459288064",
+            "diameter_lo": "86691039135422373285553930112874366399138321500897835969/6129982163463555433433388108601236734474956488734408704",
+            "diameter_hi": "11096453009334063780550903054447918899089705152114923004033/784637716923335095479473677900958302012794430558004314112",
+            "tau": "1/1000",
+            "resolution": "1921962039516393106394396527798392739215013054699538214345/1645504557321206042154969182557350504982735865633579863348609024",
+            "delta_area": "57060198543331501454588594822539014334963039206781882493961812200129208205480964481165520833335214782008060979818047/20173827172553973356686868531273530268200826506478308693989526222973809547006571833044104322501076808092993531037089792"
+          }
+        }
+      ],
+      "ordering": null,
+      "plan": {
+        "contour": 2,
+        "diameter": 6,
+        "triangle_pairs": 0,
+        "other": 1856,
+        "total": 1864,
+        "estimated_peak_bytes": 84344832
+      },
+      "exact_steps": 832,
+      "anchor": [
+        "0",
+        "0",
+        "0"
+      ],
+      "unit": "mm",
+      "notice": "Malha de edicao; modifiers nao considerados. Nao equivale a peca final do slicer.",
+      "scale_notice": null
+    }
+  },
+  "P-resolution-refusal": {
+    "input": {
+      "a": {
+        "kind": "F",
+        "points": [
+          [
+            10000,
+            0,
+            0
+          ],
+          [
+            10010,
+            0,
+            0
+          ],
+          [
+            10010,
+            10,
+            0.00020000000949949026
+          ],
+          [
+            10000,
+            10,
+            0
+          ]
+        ]
+      },
+      "b": null,
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "system": "METRIC",
+      "scale_length": "1/1000",
+      "precision": 3
+    },
+    "result": {
+      "status": "REFUSED",
+      "reason": "P_STORED_RESOLUTION_GATE",
+      "distance": null,
+      "sizes": [],
+      "ordering": null
+    }
+  }
+}

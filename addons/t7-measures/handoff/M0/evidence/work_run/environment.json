@@ -1,0 +1,11 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "implementation": "CPython",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "machine": "x86_64",
+  "byteorder": "little",
+  "int_info": "sys.int_info(bits_per_digit=30, sizeof_digit=4, default_max_str_digits=4300, str_digits_check_threshold=640)",
+  "offline": true,
+  "no_Blender_run": true,
+  "no_user_blend_access": true
+}
