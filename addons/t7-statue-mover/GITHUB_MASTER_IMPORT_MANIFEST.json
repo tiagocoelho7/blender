@@ -1,0 +1,188 @@
+{
+  "candidate_sha256": "7d475cfb4453ba3abc34da32a56274e4c296caebb614a78363c4c63edd57044f",
+  "files": {
+    "AGENTS.md": {
+      "sha256": "73815fce8ada6ba5d6d702a312279f8d16bd55f6e24944971adeaa16c90b0f17",
+      "size": 846
+    },
+    "GITHUB_MASTER_IMPORT_README.md": {
+      "sha256": "489061b1c5734eb8bc5ec1872ce5fcebb555d32118437b2a572eae90b5511387",
+      "size": 1987
+    },
+    "GITHUB_MASTER_IMPORT_VERIFY.py": {
+      "sha256": "a856b4cef69bdac48700e5b1e5ff831c94284e1fec1bd1c04f34c52d0ffc999a",
+      "size": 859
+    },
+    "handoff/T7-STATUE-MOVER-HANDOFF-COMPLETO-2026-10-23.zip": {
+      "sha256": "e0ddd3bd549f7c6112da3a71a47eba7424a25594be4fd853b5d892c6b68f8626",
+      "size": 10141853
+    },
+    "handoff/documentos_extraidos/00_PROMPT_PARA_PROXIMO_CHAT.md": {
+      "sha256": "3986dc1489b0296354f631d8ecb81a4002915fdad0db4ab0a36bd716f11a59a3",
+      "size": 3966
+    },
+    "handoff/documentos_extraidos/01_HANDOFF_COMPLETO.md": {
+      "sha256": "860c861429c420004f552e1a9dd580eb30cb72ddd442619eeed2abe41b1994ed",
+      "size": 25373
+    },
+    "handoff/documentos_extraidos/04_AUDITORIA_ATUAL/INVENTARIO_FONTES_NAO_EMPACOTADAS.md": {
+      "sha256": "6fdf8414cf203d9e04267ec69a4433ed59981c7ba51257099ae66622dc060e99",
+      "size": 1645
+    },
+    "handoff/documentos_extraidos/04_AUDITORIA_ATUAL/RESUMO_RUNTIME_v1.2.21.md": {
+      "sha256": "0b55a8d7992d3688daa7bc0f9b99818d4e0b600277252047a2a3ef837b95397f",
+      "size": 4693
+    },
+    "handoff/documentos_extraidos/05_HISTORICO_REFERENCIAS/HANDOFF-COMPLETO-T7-STATUE-MOVER-v1.2.19-2026-10-04.md": {
+      "sha256": "95aeb4a325a4c178d61f21ebdec0552c0dcae46e15b5cc59eea6d2f8ee178de0",
+      "size": 20599
+    },
+    "handoff/documentos_extraidos/05_HISTORICO_REFERENCIAS/T7-Statue-Mover-v1.2.20-to-v1.2.21-__init__.diff": {
+      "sha256": "ba5e8e74a8fd8b0f2f88b4cec51b5b750ffae233662ae1e208aec0036e68d696",
+      "size": 6066
+    },
+    "handoff/documentos_extraidos/05_HISTORICO_REFERENCIAS/T7-Statue-Mover-v1.2.21-AUDIT-DELTA.md": {
+      "sha256": "34fc1c6c359799f998caef41747f19a2d423063648e2aa8cfee2f71fd32b7bcc",
+      "size": 6628
+    },
+    "handoff/documentos_extraidos/05_HISTORICO_REFERENCIAS/T7-Statue-Mover-v1.2.21-CLAUDE-RUNTIME-AUDITOR-PROMPT.md": {
+      "sha256": "12500a76591cd2d233df1429d70e6dcc4b33809b9c0e40c5ebc3cafed7fbbf62",
+      "size": 14113
+    },
+    "handoff/documentos_extraidos/05_HISTORICO_REFERENCIAS/T7-Statue-Mover-v1.2.21-LOCAL-PRECHECK.md": {
+      "sha256": "04de3b7f8a1b752df5d66946d9cce3eb8293008cf82d2b87d2e6856358d36d8b",
+      "size": 3472
+    },
+    "handoff/documentos_extraidos/05_HISTORICO_REFERENCIAS/T7-Statue-Mover-v1.2.21-PROMPT-PARA-PROXIMO-CHAT-RUNTIME.md": {
+      "sha256": "12500a76591cd2d233df1429d70e6dcc4b33809b9c0e40c5ebc3cafed7fbbf62",
+      "size": 14113
+    },
+    "handoff/documentos_extraidos/06_PLANO_GUI/GUI_GATE_BLENDER_5.0.0.md": {
+      "sha256": "0a16223606b3f38279ed73b665b735f7473a078ff73bcefa312679458fca1265",
+      "size": 3453
+    },
+    "handoff/documentos_extraidos/99_NEXT_CHAT/00_PROMPT_PARA_PROXIMO_CHAT.md": {
+      "sha256": "3986dc1489b0296354f631d8ecb81a4002915fdad0db4ab0a36bd716f11a59a3",
+      "size": 3966
+    },
+    "handoff/documentos_extraidos/MANIFEST.sha256": {
+      "sha256": "fa58e9df4bb2d1de32fe00105f9a37d0e748267f1df87e73c40eddb0198e6948",
+      "size": 2451
+    },
+    "handoff/documentos_extraidos/PROVENIENCIA.json": {
+      "sha256": "d5cee5d84d17f8ef07170bc9bc4e880a0f286540ea4914cd483442c4545f0b68",
+      "size": 1388
+    },
+    "handoff/documentos_extraidos/README_FIRST.md": {
+      "sha256": "84177e0101511a8af7a52ff2818434176b474c01c6a9f17144b7c5a9f495f847",
+      "size": 1805
+    },
+    "handoff/t7-statue-mover-v1.2.21-candidate.zip": {
+      "sha256": "7d475cfb4453ba3abc34da32a56274e4c296caebb614a78363c4c63edd57044f",
+      "size": 108753
+    },
+    "snapshots/v1.2.21/t7_statue_mover/AUDITOR_PROMPT.md": {
+      "sha256": "4cf35d27a0eac519d61211af839061fb25c4d45613001477425a661c82f449e0",
+      "size": 7772
+    },
+    "snapshots/v1.2.21/t7_statue_mover/AUDIT_DELTA_v1.2.10.md": {
+      "sha256": "649d263580f8ae230fbd1c2b8339e008b68ac57ff6de2cbc77c5ec21dfef87c7",
+      "size": 5741
+    },
+    "snapshots/v1.2.21/t7_statue_mover/AUDIT_DELTA_v1.2.11.md": {
+      "sha256": "0883a4e5651b2d8f72f647aef1504860d8fd01b7105193c1bf88d8a6e966170f",
+      "size": 5978
+    },
+    "snapshots/v1.2.21/t7_statue_mover/AUDIT_DELTA_v1.2.12.md": {
+      "sha256": "23d497a075a8d83d04b94efee3f9ac171c9fc1857910fb27107fd80b10539e02",
+      "size": 3148
+    },
+    "snapshots/v1.2.21/t7_statue_mover/AUDIT_DELTA_v1.2.13.md": {
+      "sha256": "012c637dd3902f04fac2d2db94cdef3ea0a3e3997b88cf51806fd4c908bfd799",
+      "size": 3987
+    },
+    "snapshots/v1.2.21/t7_statue_mover/AUDIT_DELTA_v1.2.14.md": {
+      "sha256": "b2e98fab29833b35a2bb47063f3d150151ca8df95614c5cc15ebdfb8a0314dcc",
+      "size": 4739
+    },
+    "snapshots/v1.2.21/t7_statue_mover/AUDIT_DELTA_v1.2.15.md": {
+      "sha256": "fda7f7d00037284e181bdcd74648907b2d7e352126beae699e51a3b0bf8f1c34",
+      "size": 4496
+    },
+    "snapshots/v1.2.21/t7_statue_mover/AUDIT_DELTA_v1.2.16.md": {
+      "sha256": "ea458441f839d05c5a33dd2dee7e0d9acca03ae81e8ff85a4fe2d4d8840aab59",
+      "size": 4551
+    },
+    "snapshots/v1.2.21/t7_statue_mover/AUDIT_DELTA_v1.2.17.md": {
+      "sha256": "a0a2cb24b417df643712e58a5be2c58731d44c9bdd7971cf5a539d55adca89d9",
+      "size": 2623
+    },
+    "snapshots/v1.2.21/t7_statue_mover/AUDIT_DELTA_v1.2.18.md": {
+      "sha256": "4a7c9ca294e766f99e6f7ec44a1720a55badaf6277482e75bbff1d539d8d8860",
+      "size": 3622
+    },
+    "snapshots/v1.2.21/t7_statue_mover/AUDIT_DELTA_v1.2.19.md": {
+      "sha256": "452ff6c5b1b69011ab85ba1c307dae61ae9626728769e0c811e16f2412d8a298",
+      "size": 5313
+    },
+    "snapshots/v1.2.21/t7_statue_mover/AUDIT_DELTA_v1.2.2.md": {
+      "sha256": "aa89111df336e6ae85dddf0371bd66e50179e491b598f2d8be3871d277f56fda",
+      "size": 3546
+    },
+    "snapshots/v1.2.21/t7_statue_mover/AUDIT_DELTA_v1.2.20.md": {
+      "sha256": "8db6e63c8178c627cb7f1e88e722d3b073cb748f0a59ce1e64438643401d1e8a",
+      "size": 6101
+    },
+    "snapshots/v1.2.21/t7_statue_mover/AUDIT_DELTA_v1.2.21.md": {
+      "sha256": "34fc1c6c359799f998caef41747f19a2d423063648e2aa8cfee2f71fd32b7bcc",
+      "size": 6628
+    },
+    "snapshots/v1.2.21/t7_statue_mover/AUDIT_DELTA_v1.2.3.md": {
+      "sha256": "341b31d74e9ac542784eb10e83428db08dbdeb99639ba5280ac342f309410c17",
+      "size": 1981
+    },
+    "snapshots/v1.2.21/t7_statue_mover/AUDIT_DELTA_v1.2.4.md": {
+      "sha256": "dddb972191013e75ced9a38517955cb557fd974371e2993f516f859d3c94d8c4",
+      "size": 4959
+    },
+    "snapshots/v1.2.21/t7_statue_mover/AUDIT_DELTA_v1.2.5.md": {
+      "sha256": "844cf27df922d72c09f97ae102f0fbd706d22f1f2a2af26c4b2c1476d1539220",
+      "size": 2079
+    },
+    "snapshots/v1.2.21/t7_statue_mover/AUDIT_DELTA_v1.2.6.md": {
+      "sha256": "df8592c6dff51d80bbb50e26c9a7745760c69d771a24c271a2215795549d72c1",
+      "size": 3681
+    },
+    "snapshots/v1.2.21/t7_statue_mover/AUDIT_DELTA_v1.2.7.md": {
+      "sha256": "cdd770f48e26fc2889f5f990bcf4f4cc3ced6f4f3c4d34fa761a280103892b04",
+      "size": 4611
+    },
+    "snapshots/v1.2.21/t7_statue_mover/AUDIT_DELTA_v1.2.8.md": {
+      "sha256": "53ccb197dbca39204f400f76896341a3b3787f7af742a64558b7e138b8f1d399",
+      "size": 3406
+    },
+    "snapshots/v1.2.21/t7_statue_mover/AUDIT_DELTA_v1.2.9.md": {
+      "sha256": "264620113cd04e8d5d07d6b896744f1139b82f4f1c9d4938d7bc08b3a5f45219",
+      "size": 4283
+    },
+    "snapshots/v1.2.21/t7_statue_mover/README.md": {
+      "sha256": "b2ef5f0b4af7f31ceffedba9fc167364ca7b4c94a5eafa9873a7b192951c3197",
+      "size": 24083
+    },
+    "snapshots/v1.2.21/t7_statue_mover/SHA256SUMS.txt": {
+      "sha256": "64d1960cb8cb496e476c9370a6b7bca013da3d6bc7ea0ea47b2c2b006f74723f",
+      "size": 2094
+    },
+    "snapshots/v1.2.21/t7_statue_mover/__init__.py": {
+      "sha256": "3678a278f60afa84850167618d0e659359948cfc913e671101195963fc7c8a7e",
+      "size": 224321
+    },
+    "snapshots/v1.2.21/t7_statue_mover/assets/README.txt": {
+      "sha256": "59d4e4e1fb5cf5c1599c5f66e2f6317df6d55076e27775ddc4f7bf83e1659fba",
+      "size": 339
+    }
+  },
+  "project": "t7-statue-mover",
+  "schema": "github-master-custody-v1",
+  "source_zip_sha256": "e0ddd3bd549f7c6112da3a71a47eba7424a25594be4fd853b5d892c6b68f8626"
+}

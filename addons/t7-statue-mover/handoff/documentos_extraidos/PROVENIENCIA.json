@@ -1,0 +1,29 @@
+{
+  "project": "T7 Statue Mover",
+  "handoff_generated_at": "2026-10-23",
+  "status": "v1.2.21 frozen; Blender 5.0.0 headless GO WITH CONDITIONS; GUI PENDING; production release not authorized",
+  "candidate_zip": "02_CANDIDATA_CONGELADA/t7-statue-mover-v1.2.21-candidate.zip",
+  "candidate_sha256": "7d475cfb4453ba3abc34da32a56274e4c296caebb614a78363c4c63edd57044f",
+  "init_sha256": "3678a278f60afa84850167618d0e659359948cfc913e671101195963fc7c8a7e",
+  "runtime_input_bundle_sha256": "7cc7e3bb5538c7b3d62723061ec536ef2b0908c3b05bccb2377e9963f00a1e77",
+  "runtime_audit_output_originals_embedded": false,
+  "runtime_audit_output_original_names": [
+    "T7-Statue-Mover-v1.2.21-CLAUDE-RUNTIME-AUDIT-REPORT.md",
+    "T7-Statue-Mover-v1.2.21-CLAUDE-RUNTIME-AUDIT-EVIDENCE.zip"
+  ],
+  "runtime_audit_output_reported_first_pass_seal_sha256": "c46ec89a2c4bdc33515a0ceabd9e4452108ec0264d0489a80daa5b4fc9786657",
+  "version_target": "Blender 5.0.0 exactly",
+  "schema": 6,
+  "next_gate": "GUI Windows Blender 5.0.0; Undo/event loop/driver-autoexec/manual operator flows",
+  "future_not_implemented": [
+    "DIM-300 warning; nonblocking"
+  ],
+  "separate_project": "T7 Pre-Remesh",
+  "verified_at_handoff": {
+    "candidate_internal_manifest": "24/24",
+    "runtime_input_manifest": "16/16",
+    "candidate_crc": true,
+    "runtime_input_crc": true,
+    "continuity_prompt_duplicate": true
+  }
+}
