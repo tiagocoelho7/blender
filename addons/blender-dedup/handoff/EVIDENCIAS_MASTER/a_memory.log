@@ -1,0 +1,47 @@
+[
+  {
+    "n": 100,
+    "returncode": 0,
+    "data": {
+      "n": 100,
+      "true": true,
+      "seconds": 0.1135,
+      "pair_cap_bytes": 60000,
+      "reported_largest_allocation": 16000,
+      "sampled_rss_delta_bytes": 139264,
+      "rss_over_pair_cap": true,
+      "states": 200
+    },
+    "stderr": ""
+  },
+  {
+    "n": 200,
+    "returncode": 0,
+    "data": {
+      "n": 200,
+      "true": true,
+      "seconds": 0.8766,
+      "pair_cap_bytes": 60000,
+      "reported_largest_allocation": 32000,
+      "sampled_rss_delta_bytes": 135168,
+      "rss_over_pair_cap": true,
+      "states": 400
+    },
+    "stderr": ""
+  },
+  {
+    "n": 240,
+    "returncode": 0,
+    "data": {
+      "n": 240,
+      "true": true,
+      "seconds": 1.4855,
+      "pair_cap_bytes": 60000,
+      "reported_largest_allocation": 38400,
+      "sampled_rss_delta_bytes": 135168,
+      "rss_over_pair_cap": true,
+      "states": 480
+    },
+    "stderr": ""
+  }
+]

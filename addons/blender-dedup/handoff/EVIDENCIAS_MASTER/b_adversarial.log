@@ -1,0 +1,27 @@
+test_control_direct_name_block (independent_B_adversarial.AuditorBRechecks.test_control_direct_name_block) ... ok
+test_control_drop_edit_denied (independent_B_adversarial.AuditorBRechecks.test_control_drop_edit_denied) ... ok
+test_control_keep_readonly_allowed (independent_B_adversarial.AuditorBRechecks.test_control_keep_readonly_allowed) ... ok
+test_control_nested_idproperty_block (independent_B_adversarial.AuditorBRechecks.test_control_nested_idproperty_block) ... ok
+test_unsafe_from_bpy_import_data_lookup (independent_B_adversarial.AuditorBRechecks.test_unsafe_from_bpy_import_data_lookup) ... ok
+test_unsafe_getattr_objects_lookup (independent_B_adversarial.AuditorBRechecks.test_unsafe_getattr_objects_lookup) ... ok
+test_unsafe_keep_in_edit_mode_not_blocked (independent_B_adversarial.AuditorBRechecks.test_unsafe_keep_in_edit_mode_not_blocked) ... ok
+test_unsafe_keep_mesh_data_edit_after_planning (independent_B_adversarial.AuditorBRechecks.test_unsafe_keep_mesh_data_edit_after_planning) ... ok
+test_unsafe_reference_added_after_ledger (independent_B_adversarial.AuditorBRechecks.test_unsafe_reference_added_after_ledger) ... ok
+test_unsafe_reference_added_to_existing_root_before_snapshot (independent_B_adversarial.AuditorBRechecks.test_unsafe_reference_added_to_existing_root_before_snapshot) ... ok
+test_unsafe_two_stage_alias_name_lookup (independent_B_adversarial.AuditorBRechecks.test_unsafe_two_stage_alias_name_lookup) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.039s
+
+OK
+B-CTRL-DIRECT {"ret": null, "error": "PreflightAborted: Preflight abortado (ZERO REMOCOES): Text com acesso dinamico a bpy.data.objects/collections: control", "calls": 0, "remaining": ["model.000", "model.001", "model.002"], "emissions": ["[T7-DEDUP-PREFLIGHT-ABORT]"]}
+B-CTRL-DROP-EDIT {"ret": null, "error": "PreflightAborted: Preflight abortado (ZERO REMOCOES): DROP nao elegivel: model.000 linked=False indirect=False override=False editable=True evaluated=False mode=EDIT", "calls": 0, "remaining": ["model.000", "model.001", "model.002"], "emissions": ["[T7-DEDUP-PREFLIGHT-ABORT]"]}
+B-CTRL-KEEP-READONLY {"ret": "REMOVOES_CONFIRMADAS", "error": null, "calls": 2, "remaining": ["model.001"], "emissions": ["[T7-DEDUP-LEDGER-PRE]", "[T7-DEDUP-BEFORE-REMOVE]", "[T7-DEDUP-AFTER-REMOVE]", "[T7-DEDUP-BEFORE-REMOVE]", "[T7-DEDUP-AFTER-REMOVE]", "[T7-DEDUP-RESULT]"]}
+B-CTRL-IDPROP {"ret": null, "error": "PreflightAborted: Preflight abortado (ZERO REMOCOES): Referencia funcional para DROP: custom -> model.000 (Material.IDProperty['idref']['links'][0])", "calls": 0, "remaining": ["model.000", "model.001", "model.002"], "emissions": ["[T7-DEDUP-PREFLIGHT-ABORT]"]}
+B06-FROM-IMPORT {"ret": "REMOVOES_CONFIRMADAS", "error": null, "calls": 2, "remaining": ["model.001"], "emissions": ["[T7-DEDUP-LEDGER-PRE]", "[T7-DEDUP-BEFORE-REMOVE]", "[T7-DEDUP-AFTER-REMOVE]", "[T7-DEDUP-BEFORE-REMOVE]", "[T7-DEDUP-AFTER-REMOVE]", "[T7-DEDUP-RESULT]"]}
+B07-GETATTR-LOOKUP {"ret": "REMOVOES_CONFIRMADAS", "error": null, "calls": 2, "remaining": ["model.001"], "emissions": ["[T7-DEDUP-LEDGER-PRE]", "[T7-DEDUP-BEFORE-REMOVE]", "[T7-DEDUP-AFTER-REMOVE]", "[T7-DEDUP-BEFORE-REMOVE]", "[T7-DEDUP-AFTER-REMOVE]", "[T7-DEDUP-RESULT]"]}
+B01-EDIT-KEEP {"ret": "REMOVOES_CONFIRMADAS", "error": null, "calls": 2, "remaining": ["model.001"], "emissions": ["[T7-DEDUP-LEDGER-PRE]", "[T7-DEDUP-BEFORE-REMOVE]", "[T7-DEDUP-AFTER-REMOVE]", "[T7-DEDUP-BEFORE-REMOVE]", "[T7-DEDUP-AFTER-REMOVE]", "[T7-DEDUP-RESULT]"], "keep_mode": "EDIT"}
+B02-TOCTOU-GEOMETRY {"ret": "REMOVOES_CONFIRMADAS", "error": null, "calls": 2, "remaining": ["model.001"], "emissions": ["[T7-DEDUP-LEDGER-PRE]", "[T7-DEDUP-BEFORE-REMOVE]", "[T7-DEDUP-AFTER-REMOVE]", "[T7-DEDUP-BEFORE-REMOVE]", "[T7-DEDUP-AFTER-REMOVE]", "[T7-DEDUP-RESULT]"], "drop_mesh_after_ledger": [500.0, 500.0, 500.0]}
+B03-TOCTOU-REF {"ret": "REMOVOES_CONFIRMADAS", "error": null, "calls": 2, "remaining": ["model.001", "LivingOutside"], "emissions": ["[T7-DEDUP-LEDGER-PRE]", "[T7-DEDUP-BEFORE-REMOVE]", "[T7-DEDUP-AFTER-REMOVE]", "[T7-DEDUP-BEFORE-REMOVE]", "[T7-DEDUP-AFTER-REMOVE]", "[T7-DEDUP-RESULT]"], "surviving_owner_target": "model.000"}
+B04-TOCTOU-PARENT {"ret": "REMOVOES_CONFIRMADAS", "error": null, "calls": 2, "remaining": ["model.001", "LivingOutside"], "emissions": ["[T7-DEDUP-LEDGER-PRE]", "[T7-DEDUP-BEFORE-REMOVE]", "[T7-DEDUP-AFTER-REMOVE]", "[T7-DEDUP-BEFORE-REMOVE]", "[T7-DEDUP-AFTER-REMOVE]", "[T7-DEDUP-RESULT]"]}
+B05-DYNAMIC-ALIAS {"ret": "REMOVOES_CONFIRMADAS", "error": null, "calls": 2, "remaining": ["model.001"], "emissions": ["[T7-DEDUP-LEDGER-PRE]", "[T7-DEDUP-BEFORE-REMOVE]", "[T7-DEDUP-AFTER-REMOVE]", "[T7-DEDUP-BEFORE-REMOVE]", "[T7-DEDUP-AFTER-REMOVE]", "[T7-DEDUP-RESULT]"]}
