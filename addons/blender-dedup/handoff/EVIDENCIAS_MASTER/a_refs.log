@@ -1,0 +1,5 @@
+REF-01-mutate-reference-after-ledger : {"status": "REMOVOES_CONFIRMADAS", "removed_calls": 2, "removed_target": true, "dangling_survivor_parent": true, "survivor_remains": true}
+REF-02-mutate-reference-after-first-remove : {"status": "REMOVOES_CONFIRMADAS", "removed_calls": 2, "removed_target": true, "dangling_survivor_parent": true, "survivor_remains": true}
+REF-03-Text-imported-data-alias-lookup : {"blocked_lookup_risk": false, "status": "REMOVOES_CONFIRMADAS", "removed": 2, "script_points_to_removed_name": true, "script_content": "from bpy import data as d\nname = \"model.\" + str(0).zfill(3)\nobj = d.objects[name]"}
+REF-04-Text-getattr-lookup : {"blocked_lookup_risk": false, "status": "REMOVOES_CONFIRMADAS", "removed": 2, "script_points_to_removed_name": true}
+REF-05-user-map-undercount : {"user_map_owners_claimed": 0, "rna_membership_found": 2, "preflight_passed": true}

@@ -1,0 +1,32 @@
+{
+  "A": {
+    "zip": "/mnt/data/BLENDER_DEDUP_V101_AUDITOR_A_CODIGO_RESULTADO_2026-10-23.zip",
+    "sha256": "d28d68e58da01df9a4bcadefe0e5cc2791232ec442f2dcc26e796f2efa5c1ad1",
+    "files": 94,
+    "CRC_bad": null,
+    "unsafe_paths": [],
+    "manifest_entries": 92,
+    "manifest_missing": [],
+    "manifest_mismatch": [],
+    "sha_lines": 92,
+    "sha_failed": [],
+    "candidate_sha256": "1d4175b1190732ea6077232b32d4fd632021f99c9ccb80e5ba15dd5e4dcb9956",
+    "input_entries": 62,
+    "input_failed": []
+  },
+  "B": {
+    "zip": "/mnt/data/BLENDER_DEDUP_V101_CODIGO_AUDITOR_B_RESULTADO_2026-10-23.zip",
+    "sha256": "ebe1fe227c05ea9608d066d13b16c741ccd3b102016829e8af83d2933848c3d8",
+    "files": 93,
+    "CRC_bad": null,
+    "unsafe_paths": [],
+    "manifest_entries": 91,
+    "manifest_missing": [],
+    "manifest_mismatch": [],
+    "sha_lines": 91,
+    "sha_failed": [],
+    "candidate_sha256": "1d4175b1190732ea6077232b32d4fd632021f99c9ccb80e5ba15dd5e4dcb9956",
+    "input_entries": 62,
+    "input_failed": []
+  }
+}

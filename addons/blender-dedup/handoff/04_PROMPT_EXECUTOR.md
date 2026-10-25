@@ -1,0 +1,15 @@
+# PROMPT PRINCIPAL — Executor offline do Blender Dedup
+
+Atue como DESENVOLVEDOR do Blender Dedup, nao como auditor que homologa seu proprio trabalho. Execute a implementacao de uma **nova candidata separada** (nome proposto `v1.0.2-test1`) que resolva as pendencias MC01–MC07 no plano deste bundle. Congele e nunca modifique a v1.0.1, a baseline v1.0, a especificacao, o plano R2 e os dois ZIPs de auditoria de 2026-10-23.
+
+**Ler obrigatoriamente:** `00_LEIA_PRIMEIRO.md`, `01_PARECER_MASTER.md`, `02_MATRIZ_CONSOLIDADA.md`, `03_PLANO_DE_CORRECOES.md`, os reports originais A/B nos ZIPs anexos e os tests adversariais A/B. Nao tratar `PASS` em teste cuja assercao demonstra inseguranca como aprovacao.
+
+**Contrato funcional imutavel:** detectar duas malhas com mesma geometria/topologia original independentemente da ordem de vertices/arestas/faces, com quantizacao de 5 casas, ignorando translocacao/rotacao/escala, materiais/UVs/modifiers/shape keys na deteccao. Preservar maior numero de modifiers; desempate por shape keys; finalmente nome/criterio deterministico. Ignorar animacoes para a prioridade. Considerar todos os objetos MESH de `bpy.data.objects` sem fronteira de collection/cena. Alteracao destrutiva que mude geometria/topologia nao constitui duplicata. Excluir automaticamente apos preflight seguro, sem confirmacao manual e sem salvar arquivo.
+
+**Correcoes tecnicas exigidas:** MC01 TOCTOU callbacks/references/geometry; MC02 scripts Text/IDProps com alias; MC03 classes ambiguas e custo de memoria; MC04 deadline no ranking; MC05 KEEP Edit Mode; MC06 coerencia de `user_map`; MC07 ledger completo. Implementar solucao demonstravel, documentando limites impossiveis de garantir, como Python externo arbitrario/handlers. Em incerteza antes de primeira remocao, ZERO exclusoes; em falha depois, interromper remocoes restantes, reconciliar, nunca prometer rollback.
+
+**Testes offline obrigatorios:** regressao 57/57 + 266/266 + 2649/2649 + 32/32 + oracle 400/400 A e 160/160 B, testes inversos dos 11 achados, adversarial de custo/timeout, referencias dinâmicas, modo KEEP, mutacao no `emit`, mutacao apos primeiro `remove` e falha do logger. Nenhum teste pode abrir Blender nem arquivos `.blend` reais. Usar apenas ambiente Python com mocks NumPy/NetworkX e copias descartaveis.
+
+**Entregas:** (1) novo script Python separado, com hash SHA-256; (2) diff legivel da v1.0.1; (3) QA reproduzivel e oraculos independentes; (4) logs e manifestos verificaveis; (5) matriz MC01–MC07 com evidencias PASS/HOLD; (6) relatorio de riscos residuais e limites API reais; (7) DOIS ZIPs independentes, um para Auditor A e outro para Auditor B, cada um com seu proprio prompt, mesmo SHA de candidata, testes originais e criterios de aceite; (8) ZIP MASTER autossuficiente com originais intocados e prompt de continuidade.
+
+**Proibicoes:** NAO executar `bpy`/Blender real; NAO abrir, salvar ou modificar `.blend` do proprietario; NAO instalar o script para producao; NAO usar a mesma candidata e declarar GO final a si proprio; NAO apagar backup; NAO chamar Work sem nova autorizacao. Resultado da implementacao: **candidata para reauditoria**, nao homologacao.
