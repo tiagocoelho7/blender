@@ -1,0 +1,121 @@
+--- /mnt/data/t7_v1221_base/t7_statue_mover/__init__.py	2026-10-05 01:41:16.000000000 +0000
++++ __init__.py	2026-10-06 17:30:00.000000000 +0000
+@@ -1,7 +1,7 @@
+ bl_info = {
+     "name": "T7 Statue Mover",
+     "author": "T7 / OpenAI",
+-    "version": (1, 2, 20),
++    "version": (1, 2, 21),
+     "blender": (5, 0, 0),
+     "location": "View3D > Sidebar > T7 Statue",
+     "description": "Persistent statue transform snapshots, G/R/S propagation, modifier safety, and fixed base/reference import for Blender 5.0.0",
+@@ -50,6 +50,20 @@
+ MATRIX_ABS_TOLERANCE = 2.0e-6
+ MATRIX_REL_TOLERANCE = 2.0e-6
+ MATRIX_LINEAR_APPLY_ABS_TOLERANCE = 1.6e-5
++# v1.2.21: N-56 runtime showed that, after the v1.2.20 polar projection, the
++# requested rotation is already orthonormal in Python double precision. A singular
++# Euler threshold of 1e-6 is therefore too coarse and can enter the singular branch
++# for a narrow but legitimate near-gimbal window, discarding O(cy) information and
++# causing false rejects at large world scales. Use a double-scale threshold (1e-12)
++# instead.
++#
++# N-52 also remained visible to the user because v1.2.20 compared equivalent Euler
++# branches against the channels *after* Blender's matrix_basis setter, and that setter
++# can itself jump to an equivalent branch. v1.2.21 captures the pre-write Euler
++# channels and uses them only as the continuity reference for branch selection. The
++# requested world transform, signed scale handling, deltas, and downstream sanity
++# gates remain unchanged.
++#
+ # v1.2.20: N-54 is fixed at the Euler write path by projecting the requested
+ # normalized linear basis onto the nearest proper rotation *before* matrix->Euler
+ # decomposition. Parent-chain float32 products can inject ~1e-7 non-orthogonality;
+@@ -71,11 +85,11 @@
+ WORLD_SANITY_LINEAR_COMPONENT_ABS_TOLERANCE = 1.25e-2
+ WORLD_SANITY_LINEAR_COMPONENT_ULPS = 8.0
+ WORLD_SANITY_TRANSLATION_ULPS = 4.0
+-EULER_SINGULAR_THRESHOLD = 1.0e-6
++EULER_SINGULAR_THRESHOLD = 1.0e-12
+ EULER_BRANCH_ERROR_EQUIVALENCE = 1.0e-12
+ SIMILARITY_TOLERANCE = 2.0e-5
+ 
+-ADDON_VERSION = (1, 2, 20)
++ADDON_VERSION = (1, 2, 21)
+ SUPPORTED_BLENDER_VERSION = (5, 0, 0)
+ SNAPSHOT_SCHEMA_VERSION = 6
+ SCENE_SNAPSHOT_KEY = "_t7sm_snapshot_v6"
+@@ -1413,15 +1427,18 @@
+     return _double_nearest_proper_rotation(rotation)
+ 
+ 
+-def _refine_euler_after_matrix_basis_write(obj, requested_local):
++def _refine_euler_after_matrix_basis_write(obj, requested_local, continuity_reference=None):
+     """Replace Blender's lossy float32 matrix->Euler result with a double one.
+ 
+     Blender 5.0.0's matrix_basis setter is retained first so location, signed
+     scale and delta transforms keep Blender's native semantics. For Euler modes
+     only, we then recover the requested total rotation, remove the existing
+     delta rotation (delta @ base is Blender's order), and write a compatible
+-    base Euler computed in Python double precision. Quaternion/Axis-Angle modes
+-    keep the proven historical setter path because N-50 is Euler-specific.
++    base Euler computed in Python double precision. When supplied,
++    ``continuity_reference`` is the pre-write Euler channel state, so branch
++    continuity is measured against what the user actually had before Blender's
++    matrix setter runs. Quaternion/Axis-Angle modes keep the proven historical
++    setter path because N-50 is Euler-specific.
+     """
+     order = str(obj.rotation_mode)
+     if order not in _EULER_ORDER_TUPLES:
+@@ -1431,7 +1448,10 @@
+         return False
+     delta_rotation = _double_euler_to_mat3(tuple(float(v) for v in obj.delta_rotation_euler), order)
+     base_rotation = _double_mat3_mul(_double_mat3_transpose(delta_rotation), total_rotation)
+-    current = tuple(float(v) for v in obj.rotation_euler)
++    if continuity_reference is None:
++        current = tuple(float(v) for v in obj.rotation_euler)
++    else:
++        current = tuple(float(v) for v in continuity_reference)
+     refined = _double_mat3_to_compatible_euler(base_rotation, order, current)
+     if any(not isfinite(value) for value in refined):
+         return False
+@@ -1440,22 +1460,24 @@
+ 
+ 
+ def set_channel_world_matrix(obj, desired_world):
+-    """Set desired world transform and refine Euler decomposition for N-50.
++    """Set desired world transform and refine Euler decomposition for N-50/N-52.
+ 
+     Blender's matrix_basis setter remains the authority for location, signed
+-    scale and delta factoring.  In Euler modes, v1.2.20 immediately replaces only
+-    the lossy float32 matrix->Euler result with a compatible double-precision
+-    decomposition of the same requested basis after near-rotation
+-    orthonormalization.  This fixes the near-gimbal write
+-    error without weakening the downstream world-sanity gates.
++    scale and delta factoring. In Euler modes, capture the user's pre-write base
++    Euler channels for continuity, then run the native setter and replace only its
++    lossy matrix->Euler result with the compatible double-precision decomposition
++    of the same requested basis after near-rotation orthonormalization.
+     """
+     prefix = channel_parent_prefix(obj)
+     try:
+         local = prefix.inverted() @ desired_world
+     except Exception as exc:
+         raise ValueError(f"cadeia de parent de '{obj.name}' não é invertível") from exc
++    continuity_reference = None
++    if str(obj.rotation_mode) in _EULER_ORDER_TUPLES:
++        continuity_reference = tuple(float(v) for v in obj.rotation_euler)
+     obj.matrix_basis = local
+-    _refine_euler_after_matrix_basis_write(obj, local)
++    _refine_euler_after_matrix_basis_write(obj, local, continuity_reference)
+     return local.copy()
+ 
+ 
+@@ -4967,7 +4989,7 @@
+         settings = scene.t7sm_settings
+ 
+         version_row = layout.row()
+-        version_row.label(text="Blender 5.0.0 | Addon v1.2.19", icon='INFO')
++        version_row.label(text="Blender 5.0.0 | Addon v1.2.21", icon='INFO')
+ 
+         ref_box = layout.box()
+         ref_box.label(text="Base católica + modelo de referência", icon='FILE_BLEND')
