@@ -1,0 +1,9 @@
+test_dynamic_lookup_in_nested_idproperty_str_not_flagged (independent_B_crosscheck.SecondaryB.test_dynamic_lookup_in_nested_idproperty_str_not_flagged) ... ok
+test_user_map_empty_not_inconclusive (independent_B_crosscheck.SecondaryB.test_user_map_empty_not_inconclusive) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.019s
+
+OK
+B09 {"idproperty_dynamic_script": {"nested": {"script": "from bpy import data\nobj=data.objects.get('model.000')"}}, "objects_remove_calls": 2, "status": "REMOVOES_CONFIRMADAS"}
+B08 {"user_map": "{}", "objects_remove_calls": 2, "status": "REMOVOES_CONFIRMADAS"}

@@ -1,0 +1,1 @@
+{"test": "independent_B_geometry_oracle", "cases": 160, "pass": 160, "failures": [], "elapsed_s": 0.059, "scope": "zero bpy, all vertices coincident, no faces"}

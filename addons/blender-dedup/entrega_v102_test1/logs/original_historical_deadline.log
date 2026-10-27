@@ -1,0 +1,1 @@
+{"n": 200, "budget_pair_seconds": 0.01, "elapsed_seconds": 1.009, "overshoot_factor": 100.9, "states": 256, "outcome": "ABORT_RESOURCE"}

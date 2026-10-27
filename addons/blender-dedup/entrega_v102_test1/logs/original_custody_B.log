@@ -1,0 +1,14 @@
+{
+  "gate": "custody",
+  "original_entries_verified": 62,
+  "original_total": 62,
+  "nested_master_entries_verified": 33,
+  "nested_master_total": 33,
+  "pinned_hashes": {
+    "src/remover_duplicatas_blend_v1_0_1.py": "1d4175b1190732ea6077232b32d4fd632021f99c9ccb80e5ba15dd5e4dcb9956",
+    "originais/remover_duplicatas_blend_v1.py": "f4290a066e23c6a1089c67c88c13b633c4b017d823220240222c4ca78a479fb3",
+    "originais/master_r2/CONGELADOS/ESPECIFICACAO_R1_R5.md": "2d1aa740b4ec7a42307dcec253fbce23f452ad45249fa35585bd12a6da0d3653"
+  },
+  "nested_zips_crc_ok": 2,
+  "errors": []
+}

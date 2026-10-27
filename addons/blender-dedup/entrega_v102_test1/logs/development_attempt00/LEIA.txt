@@ -1,0 +1,1 @@
+Saídas anteriores ao runner separar nomes/targets por diretório. Evidências finais: logs/original_*, logs/qa57.log, logs/oracle266/, logs/oracle400/, logs/safety.log. Não usar estes JSONs preliminares como selo da fonte final.

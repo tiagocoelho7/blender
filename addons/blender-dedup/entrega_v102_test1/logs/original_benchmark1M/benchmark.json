@@ -1,0 +1,36 @@
+{
+  "large": {
+    "scope": "SYNTHETIC NumPy array-backed; NOT Blender/bpy",
+    "N_vertices_each": 1000000,
+    "N_edges_each": 999999,
+    "N_faces_each": 0,
+    "equal_after_reindex": true,
+    "elapsed_s": 0.278,
+    "budget_states": 0,
+    "estimated_peak_request_bytes": 80000000,
+    "rss_start": 74850304,
+    "rss_peak_sampled": 295088128,
+    "rss_growth_sampled": 220237824,
+    "limits_default": {
+      "total_seconds": 300.0,
+      "pair_seconds": 45.0,
+      "comparisons": 50000,
+      "states_total": 2000000,
+      "states_per_pair": 250000,
+      "mem_global_bytes": 2147483648,
+      "mem_pair_bytes": 536870912,
+      "bucket_objects": 2048,
+      "rna_nodes": 2000000,
+      "text_bytes": 8388608
+    }
+  },
+  "adversarial": {
+    "case": "Rook vs Shrikhande",
+    "oracle_equal": false,
+    "candidate_outcome": "ABORT_INCONCLUSIVE_NO_DELETE",
+    "elapsed_s": 0.0281,
+    "states": 751,
+    "pair_time_budget": 0.1,
+    "rss_peak": 83456000
+  }
+}

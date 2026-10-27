@@ -1,0 +1,25 @@
+{
+  "candidate_sha256": "02618942350dacfbb7d1b2b079e802ed3336802ddb719e059a85bfd2582a1ca8",
+  "historical_regressions": {
+    "executor_unittest": 57,
+    "oracle_A": 266,
+    "geometry_A": 2649,
+    "graph_B": 32,
+    "independent_oracle_A": 400,
+    "independent_oracle_B": 160
+  },
+  "new_safety_unittest": 34,
+  "B_inverted_original_methods": 11,
+  "B_inverted_crosschecks": 2,
+  "cost_sizes": [
+    100,
+    200,
+    240
+  ],
+  "large_synthetic_vertices_per_mesh": 1000000,
+  "all_candidate_processes_exit_zero": true,
+  "all_historical_processes_exit_zero": true,
+  "no_missing_historical_suites": true,
+  "runtime_Blender": "NOT_RUN_NOT_AUTHORIZED",
+  "verdict": "candidata preparada para auditoria independente; producao HOLD"
+}

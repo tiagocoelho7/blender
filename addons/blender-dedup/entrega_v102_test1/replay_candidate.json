@@ -1,0 +1,141 @@
+[
+  {
+    "name": "qa57",
+    "returncode": 0,
+    "seconds": 1.2135,
+    "command": [
+      "/workspace/blender-dedup-env/venv/bin/python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "qa",
+      "-p",
+      "test_candidate_v101.py",
+      "-v"
+    ],
+    "cwd": "/workspace/blender/addons/blender-dedup/work/replay/A/CANDIDATA_EXTRAIDA",
+    "target_sha256": "02618942350dacfbb7d1b2b079e802ed3336802ddb719e059a85bfd2582a1ca8"
+  },
+  {
+    "name": "oracle266",
+    "returncode": 0,
+    "seconds": 0.369,
+    "command": [
+      "/workspace/blender-dedup-env/venv/bin/python",
+      "/workspace/blender/addons/blender-dedup/tests_v102_test1/oracle266_adapter.py",
+      "/workspace/blender/addons/blender-dedup/work/replay/A/CANDIDATA_EXTRAIDA/qa/oracle_A_adapted_to_candidate.py",
+      "/workspace/blender/addons/blender-dedup/work/replay/A/CANDIDATA_EXTRAIDA/src/remover_duplicatas_blend_v1_0_1.py",
+      "/workspace/blender/addons/blender-dedup/entrega_v102_test1/logs/oracle266/results.json"
+    ],
+    "cwd": "/workspace/blender/addons/blender-dedup/work/replay/A/CANDIDATA_EXTRAIDA",
+    "target_sha256": "02618942350dacfbb7d1b2b079e802ed3336802ddb719e059a85bfd2582a1ca8"
+  },
+  {
+    "name": "geometry2649",
+    "returncode": 0,
+    "seconds": 2.2123,
+    "command": [
+      "/workspace/blender-dedup-env/venv/bin/python",
+      "qa/audit_A_geometry_adapted.py",
+      "src/remover_duplicatas_blend_v1_0_1.py"
+    ],
+    "cwd": "/workspace/blender/addons/blender-dedup/work/replay/A/CANDIDATA_EXTRAIDA",
+    "target_sha256": "02618942350dacfbb7d1b2b079e802ed3336802ddb719e059a85bfd2582a1ca8"
+  },
+  {
+    "name": "graph32",
+    "returncode": 0,
+    "seconds": 0.655,
+    "command": [
+      "/workspace/blender-dedup-env/venv/bin/python",
+      "qa/verify_B_graph32_on_candidate.py"
+    ],
+    "cwd": "/workspace/blender/addons/blender-dedup/work/replay/A/CANDIDATA_EXTRAIDA",
+    "target_sha256": "02618942350dacfbb7d1b2b079e802ed3336802ddb719e059a85bfd2582a1ca8"
+  },
+  {
+    "name": "oracle400",
+    "returncode": 0,
+    "seconds": 1.0278,
+    "command": [
+      "/workspace/blender-dedup-env/venv/bin/python",
+      "HARNESSES/independent_geometry_oracle.py"
+    ],
+    "cwd": "/workspace/blender/addons/blender-dedup/work/replay/A",
+    "target_sha256": "02618942350dacfbb7d1b2b079e802ed3336802ddb719e059a85bfd2582a1ca8"
+  },
+  {
+    "name": "oracle160",
+    "returncode": 0,
+    "seconds": 0.3076,
+    "command": [
+      "/workspace/blender-dedup-env/venv/bin/python",
+      "tests/independent_B_geometry_oracle.py"
+    ],
+    "cwd": "/workspace/blender/addons/blender-dedup/work/replay/B",
+    "target_sha256": "02618942350dacfbb7d1b2b079e802ed3336802ddb719e059a85bfd2582a1ca8"
+  },
+  {
+    "name": "benchmark1M",
+    "returncode": 0,
+    "seconds": 0.7033,
+    "command": [
+      "/workspace/blender-dedup-env/venv/bin/python",
+      "qa/benchmark_v101.py"
+    ],
+    "cwd": "/workspace/blender/addons/blender-dedup/work/replay/A/CANDIDATA_EXTRAIDA",
+    "target_sha256": "02618942350dacfbb7d1b2b079e802ed3336802ddb719e059a85bfd2582a1ca8"
+  },
+  {
+    "name": "B_inversions",
+    "returncode": 0,
+    "seconds": 0.3422,
+    "command": [
+      "/workspace/blender-dedup-env/venv/bin/python",
+      "/workspace/blender/addons/blender-dedup/tests_v102_test1/replay_inversions.py"
+    ],
+    "cwd": "/workspace/blender/addons/blender-dedup",
+    "target_sha256": "02618942350dacfbb7d1b2b079e802ed3336802ddb719e059a85bfd2582a1ca8"
+  },
+  {
+    "name": "cost_probes",
+    "returncode": 0,
+    "seconds": 0.1953,
+    "command": [
+      "/workspace/blender-dedup-env/venv/bin/python",
+      "/workspace/blender/addons/blender-dedup/tests_v102_test1/probe_cost.py"
+    ],
+    "cwd": "/workspace/blender/addons/blender-dedup",
+    "target_sha256": "02618942350dacfbb7d1b2b079e802ed3336802ddb719e059a85bfd2582a1ca8"
+  },
+  {
+    "name": "ledger_examples",
+    "returncode": 0,
+    "seconds": 0.2265,
+    "command": [
+      "/workspace/blender-dedup-env/venv/bin/python",
+      "/workspace/blender/addons/blender-dedup/tests_v102_test1/ledger_examples.py"
+    ],
+    "cwd": "/workspace/blender/addons/blender-dedup",
+    "target_sha256": "02618942350dacfbb7d1b2b079e802ed3336802ddb719e059a85bfd2582a1ca8"
+  },
+  {
+    "name": "safety",
+    "returncode": 0,
+    "seconds": 1.5144,
+    "command": [
+      "/workspace/blender-dedup-env/venv/bin/python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "/workspace/blender/addons/blender-dedup/tests_v102_test1",
+      "-p",
+      "test_safety.py",
+      "-v"
+    ],
+    "cwd": "/workspace/blender/addons/blender-dedup",
+    "target_sha256": "02618942350dacfbb7d1b2b079e802ed3336802ddb719e059a85bfd2582a1ca8"
+  }
+]

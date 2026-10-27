@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspace/blender/addons/blender-dedup/work/replay/A/CANDIDATA_EXTRAIDA/qa/oracle_A_adapted_to_candidate.py", line 129, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/workspace/blender/addons/blender-dedup/work/replay/A/CANDIDATA_EXTRAIDA/qa/oracle_A_adapted_to_candidate.py", line 82, in main
+    assert hashlib.sha256(Path(source).read_bytes()).hexdigest()==PIN
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

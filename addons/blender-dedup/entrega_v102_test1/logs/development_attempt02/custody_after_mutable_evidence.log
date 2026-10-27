@@ -1,0 +1,11 @@
+{
+  "zip_members": 64,
+  "sum1": 62,
+  "sum2": 34,
+  "manifest_entries": 62,
+  "mismatches": [
+    "evidencias/benchmark_v101.json",
+    "SHA256SUMS.txt:evidencias/benchmark_v101.json",
+    "manifest:evidencias/benchmark_v101.json"
+  ]
+}

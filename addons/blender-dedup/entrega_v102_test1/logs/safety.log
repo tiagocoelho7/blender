@@ -1,0 +1,40 @@
+test_A_REF01_B04_parent_after_ledger (test_safety.Safety.test_A_REF01_B04_parent_after_ledger) ... ok
+test_A_REF02_after_first_remove (test_safety.Safety.test_A_REF02_after_first_remove) ... ok
+test_A_REF05_B08_user_map_undercount (test_safety.Safety.test_A_REF05_B08_user_map_undercount) ... ok
+test_B01_keep_edit (test_safety.Safety.test_B01_keep_edit) ... ok
+test_B02_geometry_after_ledger (test_safety.Safety.test_B02_geometry_after_ledger) ... ok
+test_B03_modifier_after_ledger (test_safety.Safety.test_B03_modifier_after_ledger) ... ok
+test_B_control_direct_lookup (test_safety.Safety.test_B_control_direct_lookup) ... ok
+test_B_control_drop_edit (test_safety.Safety.test_B_control_drop_edit) ... ok
+test_B_control_keep_readonly (test_safety.Safety.test_B_control_keep_readonly) ... ok
+test_B_control_nested_idpointer (test_safety.Safety.test_B_control_nested_idpointer) ... ok
+test_MC03_memory_preallocation_100_200_240 (test_safety.Safety.test_MC03_memory_preallocation_100_200_240) ... ok
+test_MC04_internal_deadline (test_safety.Safety.test_MC04_internal_deadline) ... ok
+test_MC07_aggregate_blockers_and_fields (test_safety.Safety.test_MC07_aggregate_blockers_and_fields) ... ok
+test_aliases_A_REF03_REF04_B05_B06_B07_B09 (test_safety.Safety.test_aliases_A_REF03_REF04_B05_B06_B07_B09) ... ok
+test_callbacks_at_every_label_geometry_and_flags (test_safety.Safety.test_callbacks_at_every_label_geometry_and_flags) ... ok
+test_concurrent_execute_fails_closed (test_safety.Safety.test_concurrent_execute_fails_closed) ... ok
+test_deterministic_clock_checkpoint_inside_ranking (test_safety.Safety.test_deterministic_clock_checkpoint_inside_ranking) ... ok
+test_failures_before_after_first_second_last (test_safety.Safety.test_failures_before_after_first_second_last) ... ok
+test_indirect_drop_key_and_abort_decisions (test_safety.Safety.test_indirect_drop_key_and_abort_decisions) ... ok
+test_invalid_overlapping_faces (test_safety.Safety.test_invalid_overlapping_faces) ... ok
+test_last_remove_mutates_keep (test_safety.Safety.test_last_remove_mutates_keep) ... ok
+test_logger_errors_every_phase (test_safety.Safety.test_logger_errors_every_phase) ... ok
+test_logger_payload_is_detached (test_safety.Safety.test_logger_payload_is_detached) ... ok
+test_million_ambiguous_rejected_before_buffers (test_safety.Safety.test_million_ambiguous_rejected_before_buffers) ... ok
+test_mutation_after_first_remove_targets_next_drop (test_safety.Safety.test_mutation_after_first_remove_targets_next_drop) ... ok
+test_offline_guard_active (test_safety.Safety.test_offline_guard_active) ... ok
+test_orphan_zero_users_legitimate (test_safety.Safety.test_orphan_zero_users_legitimate) ... ok
+test_real_unlink_membership_indexes (test_safety.Safety.test_real_unlink_membership_indexes) ... ok
+test_reentry_poison_even_if_caught (test_safety.Safety.test_reentry_poison_even_if_caught) ... ok
+test_remove_returns_without_effect (test_safety.Safety.test_remove_returns_without_effect) ... ok
+test_rename_uid_reuse_and_reconciliation_failure (test_safety.Safety.test_rename_uid_reuse_and_reconciliation_failure) ... ok
+test_scan_failure_exposes_uninspected (test_safety.Safety.test_scan_failure_exposes_uninspected) ... ok
+test_text_resource_budget (test_safety.Safety.test_text_resource_budget) ... ok
+test_user_map_normalization_scene_projection (test_safety.Safety.test_user_map_normalization_scene_projection) ... ok
+
+----------------------------------------------------------------------
+Ran 34 tests in 1.334s
+
+OK
+DEADLINE_MEASURED {"n": 200, "requested": 0.01, "elapsed": 0.010119108000026245, "states": 16}

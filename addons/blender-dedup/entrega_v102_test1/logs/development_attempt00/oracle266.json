@@ -1,0 +1,4869 @@
+{
+  "scope": "FROZEN v1.0.1 candidate (synthetic QA only, NO Blender)",
+  "candidate_sha256": "1d4175b1190732ea6077232b32d4fd632021f99c9ccb80e5ba15dd5e4dcb9956",
+  "rng_seed": 21012026,
+  "executed": 266,
+  "passed": 266,
+  "by_kind": {
+    "semantic": 2,
+    "hypergraph": 1,
+    "multiplicity": 1,
+    "long_cycle": 2,
+    "generated_isomorphic": 130,
+    "randomized_nonmatch_or_match": 130
+  },
+  "hypergraph_edge_only": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "hypergraph_edge_and_face": [
+    1,
+    5
+  ],
+  "numpy": "2.4.2",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "checks": [
+    {
+      "label": "SEM-01 coincident winding reversal IS isomorphic",
+      "category": "semantic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "elapsed_ms": 6.5333,
+      "pass": true
+    },
+    {
+      "label": "distinguishable winding reversal is NOT isomorphic",
+      "category": "semantic",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.5305,
+      "pass": true
+    },
+    {
+      "label": "synthetic face-only hypergraph reindexed",
+      "category": "hypergraph",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          5,
+          2
+        ]
+      ],
+      "elapsed_ms": 5.6877,
+      "pass": true
+    },
+    {
+      "label": "multiplicity and face orientation control",
+      "category": "multiplicity",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 1.0574,
+      "pass": true
+    },
+    {
+      "label": "n-gon 17 reindexed rotation",
+      "category": "long_cycle",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          12
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          13
+        ],
+        [
+          3,
+          11
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          7,
+          3
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          9,
+          15
+        ],
+        [
+          10,
+          9
+        ],
+        [
+          11,
+          16
+        ],
+        [
+          12,
+          8
+        ],
+        [
+          13,
+          14
+        ],
+        [
+          14,
+          7
+        ],
+        [
+          15,
+          2
+        ],
+        [
+          16,
+          10
+        ]
+      ],
+      "elapsed_ms": 0.6183,
+      "pass": true
+    },
+    {
+      "label": "n-gon 17 orientation reversed",
+      "category": "long_cycle",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.603,
+      "pass": true
+    },
+    {
+      "label": "random_000",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "elapsed_ms": 0.4707,
+      "pass": true
+    },
+    {
+      "label": "random_001",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "elapsed_ms": 0.3046,
+      "pass": true
+    },
+    {
+      "label": "random_002",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "elapsed_ms": 0.3676,
+      "pass": true
+    },
+    {
+      "label": "random_003",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.667,
+      "pass": true
+    },
+    {
+      "label": "random_004",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "elapsed_ms": 0.3435,
+      "pass": true
+    },
+    {
+      "label": "random_005",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.403,
+      "pass": true
+    },
+    {
+      "label": "random_006",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "elapsed_ms": 0.6825,
+      "pass": true
+    },
+    {
+      "label": "random_007",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.8151,
+      "pass": true
+    },
+    {
+      "label": "random_008",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          2,
+          2
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "elapsed_ms": 0.3499,
+      "pass": true
+    },
+    {
+      "label": "random_009",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.3745,
+      "pass": true
+    },
+    {
+      "label": "random_010",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "elapsed_ms": 0.5405,
+      "pass": true
+    },
+    {
+      "label": "random_011",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.6027,
+      "pass": true
+    },
+    {
+      "label": "random_012",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "elapsed_ms": 0.5393,
+      "pass": true
+    },
+    {
+      "label": "random_013",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.236,
+      "pass": true
+    },
+    {
+      "label": "random_014",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "elapsed_ms": 0.949,
+      "pass": true
+    },
+    {
+      "label": "random_015",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.5445,
+      "pass": true
+    },
+    {
+      "label": "random_016",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "elapsed_ms": 0.2636,
+      "pass": true
+    },
+    {
+      "label": "random_017",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.3995,
+      "pass": true
+    },
+    {
+      "label": "random_018",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "elapsed_ms": 0.6284,
+      "pass": true
+    },
+    {
+      "label": "random_019",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.7749,
+      "pass": true
+    },
+    {
+      "label": "random_020",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "elapsed_ms": 0.5998,
+      "pass": true
+    },
+    {
+      "label": "random_021",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.2852,
+      "pass": true
+    },
+    {
+      "label": "random_022",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "elapsed_ms": 1.0786,
+      "pass": true
+    },
+    {
+      "label": "random_023",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 1.131,
+      "pass": true
+    },
+    {
+      "label": "random_024",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "elapsed_ms": 0.5382,
+      "pass": true
+    },
+    {
+      "label": "random_025",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.2567,
+      "pass": true
+    },
+    {
+      "label": "random_026",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          3,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "elapsed_ms": 1.8056,
+      "pass": true
+    },
+    {
+      "label": "random_027",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.651,
+      "pass": true
+    },
+    {
+      "label": "random_028",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "elapsed_ms": 0.2974,
+      "pass": true
+    },
+    {
+      "label": "random_029",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.4287,
+      "pass": true
+    },
+    {
+      "label": "random_030",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "elapsed_ms": 1.0964,
+      "pass": true
+    },
+    {
+      "label": "random_031",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 1.8719,
+      "pass": true
+    },
+    {
+      "label": "random_032",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "elapsed_ms": 0.5851,
+      "pass": true
+    },
+    {
+      "label": "random_033",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.3459,
+      "pass": true
+    },
+    {
+      "label": "random_034",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          4,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "elapsed_ms": 0.6893,
+      "pass": true
+    },
+    {
+      "label": "random_035",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 1.2864,
+      "pass": true
+    },
+    {
+      "label": "random_036",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "elapsed_ms": 0.3297,
+      "pass": true
+    },
+    {
+      "label": "random_037",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.4397,
+      "pass": true
+    },
+    {
+      "label": "random_038",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "elapsed_ms": 0.3336,
+      "pass": true
+    },
+    {
+      "label": "random_039",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 1.3617,
+      "pass": true
+    },
+    {
+      "label": "random_040",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "elapsed_ms": 0.2199,
+      "pass": true
+    },
+    {
+      "label": "random_041",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.2158,
+      "pass": true
+    },
+    {
+      "label": "random_042",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "elapsed_ms": 0.3911,
+      "pass": true
+    },
+    {
+      "label": "random_043",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.4765,
+      "pass": true
+    },
+    {
+      "label": "random_044",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "elapsed_ms": 0.3735,
+      "pass": true
+    },
+    {
+      "label": "random_045",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.1823,
+      "pass": true
+    },
+    {
+      "label": "random_046",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "elapsed_ms": 0.5773,
+      "pass": true
+    },
+    {
+      "label": "random_047",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.7833,
+      "pass": true
+    },
+    {
+      "label": "random_048",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "elapsed_ms": 0.3083,
+      "pass": true
+    },
+    {
+      "label": "random_049",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.39,
+      "pass": true
+    },
+    {
+      "label": "random_050",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "elapsed_ms": 0.7126,
+      "pass": true
+    },
+    {
+      "label": "random_051",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.597,
+      "pass": true
+    },
+    {
+      "label": "random_052",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "elapsed_ms": 0.3831,
+      "pass": true
+    },
+    {
+      "label": "random_053",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.2864,
+      "pass": true
+    },
+    {
+      "label": "random_054",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "elapsed_ms": 0.7575,
+      "pass": true
+    },
+    {
+      "label": "random_055",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.6065,
+      "pass": true
+    },
+    {
+      "label": "random_056",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "elapsed_ms": 0.2295,
+      "pass": true
+    },
+    {
+      "label": "random_057",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "elapsed_ms": 0.1984,
+      "pass": true
+    },
+    {
+      "label": "random_058",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          3
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "elapsed_ms": 0.4286,
+      "pass": true
+    },
+    {
+      "label": "random_059",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.55,
+      "pass": true
+    },
+    {
+      "label": "random_060",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "elapsed_ms": 0.4278,
+      "pass": true
+    },
+    {
+      "label": "random_061",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          2,
+          2
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "elapsed_ms": 0.1015,
+      "pass": true
+    },
+    {
+      "label": "random_062",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          4
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "elapsed_ms": 0.5163,
+      "pass": true
+    },
+    {
+      "label": "random_063",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.4858,
+      "pass": true
+    },
+    {
+      "label": "random_064",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "elapsed_ms": 0.2498,
+      "pass": true
+    },
+    {
+      "label": "random_065",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.234,
+      "pass": true
+    },
+    {
+      "label": "random_066",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          4,
+          3
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "elapsed_ms": 0.3674,
+      "pass": true
+    },
+    {
+      "label": "random_067",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.4519,
+      "pass": true
+    },
+    {
+      "label": "random_068",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "elapsed_ms": 0.253,
+      "pass": true
+    },
+    {
+      "label": "random_069",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.2373,
+      "pass": true
+    },
+    {
+      "label": "random_070",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "elapsed_ms": 0.6479,
+      "pass": true
+    },
+    {
+      "label": "random_071",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.7284,
+      "pass": true
+    },
+    {
+      "label": "random_072",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "elapsed_ms": 0.247,
+      "pass": true
+    },
+    {
+      "label": "random_073",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.202,
+      "pass": true
+    },
+    {
+      "label": "random_074",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "elapsed_ms": 0.5888,
+      "pass": true
+    },
+    {
+      "label": "random_075",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 2.9739,
+      "pass": true
+    },
+    {
+      "label": "random_076",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "elapsed_ms": 0.1765,
+      "pass": true
+    },
+    {
+      "label": "random_077",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.2469,
+      "pass": true
+    },
+    {
+      "label": "random_078",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "elapsed_ms": 0.7081,
+      "pass": true
+    },
+    {
+      "label": "random_079",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.6009,
+      "pass": true
+    },
+    {
+      "label": "random_080",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "elapsed_ms": 0.1986,
+      "pass": true
+    },
+    {
+      "label": "random_081",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.1714,
+      "pass": true
+    },
+    {
+      "label": "random_082",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "elapsed_ms": 0.5249,
+      "pass": true
+    },
+    {
+      "label": "random_083",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.44,
+      "pass": true
+    },
+    {
+      "label": "random_084",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "elapsed_ms": 0.2071,
+      "pass": true
+    },
+    {
+      "label": "random_085",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.2085,
+      "pass": true
+    },
+    {
+      "label": "random_086",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "elapsed_ms": 0.5331,
+      "pass": true
+    },
+    {
+      "label": "random_087",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.9525,
+      "pass": true
+    },
+    {
+      "label": "random_088",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "elapsed_ms": 0.2774,
+      "pass": true
+    },
+    {
+      "label": "random_089",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.2895,
+      "pass": true
+    },
+    {
+      "label": "random_090",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "elapsed_ms": 0.1115,
+      "pass": true
+    },
+    {
+      "label": "random_091",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.7527,
+      "pass": true
+    },
+    {
+      "label": "random_092",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "elapsed_ms": 0.4768,
+      "pass": true
+    },
+    {
+      "label": "random_093",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.3391,
+      "pass": true
+    },
+    {
+      "label": "random_094",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "elapsed_ms": 0.5508,
+      "pass": true
+    },
+    {
+      "label": "random_095",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.5798,
+      "pass": true
+    },
+    {
+      "label": "random_096",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          2,
+          2
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "elapsed_ms": 0.2365,
+      "pass": true
+    },
+    {
+      "label": "random_097",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.2074,
+      "pass": true
+    },
+    {
+      "label": "random_098",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "elapsed_ms": 0.6015,
+      "pass": true
+    },
+    {
+      "label": "random_099",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.5849,
+      "pass": true
+    },
+    {
+      "label": "random_100",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "elapsed_ms": 0.375,
+      "pass": true
+    },
+    {
+      "label": "random_101",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.2564,
+      "pass": true
+    },
+    {
+      "label": "random_102",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "elapsed_ms": 0.6687,
+      "pass": true
+    },
+    {
+      "label": "random_103",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 1.624,
+      "pass": true
+    },
+    {
+      "label": "random_104",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "elapsed_ms": 0.3329,
+      "pass": true
+    },
+    {
+      "label": "random_105",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.3445,
+      "pass": true
+    },
+    {
+      "label": "random_106",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "elapsed_ms": 0.4082,
+      "pass": true
+    },
+    {
+      "label": "random_107",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 3.9491,
+      "pass": true
+    },
+    {
+      "label": "random_108",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "elapsed_ms": 0.4548,
+      "pass": true
+    },
+    {
+      "label": "random_109",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.3107,
+      "pass": true
+    },
+    {
+      "label": "random_110",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "elapsed_ms": 0.6463,
+      "pass": true
+    },
+    {
+      "label": "random_111",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.8729,
+      "pass": true
+    },
+    {
+      "label": "random_112",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "elapsed_ms": 0.3848,
+      "pass": true
+    },
+    {
+      "label": "random_113",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.2497,
+      "pass": true
+    },
+    {
+      "label": "random_114",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          0
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "elapsed_ms": 0.1947,
+      "pass": true
+    },
+    {
+      "label": "random_115",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 1.1967,
+      "pass": true
+    },
+    {
+      "label": "random_116",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "elapsed_ms": 0.2474,
+      "pass": true
+    },
+    {
+      "label": "random_117",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.1941,
+      "pass": true
+    },
+    {
+      "label": "random_118",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "elapsed_ms": 0.611,
+      "pass": true
+    },
+    {
+      "label": "random_119",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 1.7176,
+      "pass": true
+    },
+    {
+      "label": "random_120",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "elapsed_ms": 0.35,
+      "pass": true
+    },
+    {
+      "label": "random_121",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.2986,
+      "pass": true
+    },
+    {
+      "label": "random_122",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          3
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "elapsed_ms": 0.5342,
+      "pass": true
+    },
+    {
+      "label": "random_123",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 3.4628,
+      "pass": true
+    },
+    {
+      "label": "random_124",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "elapsed_ms": 0.3433,
+      "pass": true
+    },
+    {
+      "label": "random_125",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.1894,
+      "pass": true
+    },
+    {
+      "label": "random_126",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "elapsed_ms": 0.6082,
+      "pass": true
+    },
+    {
+      "label": "random_127",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.5378,
+      "pass": true
+    },
+    {
+      "label": "random_128",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "elapsed_ms": 0.2265,
+      "pass": true
+    },
+    {
+      "label": "random_129",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.1735,
+      "pass": true
+    },
+    {
+      "label": "random_130",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "elapsed_ms": 0.4355,
+      "pass": true
+    },
+    {
+      "label": "random_131",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 3.4488,
+      "pass": true
+    },
+    {
+      "label": "random_132",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "elapsed_ms": 0.2804,
+      "pass": true
+    },
+    {
+      "label": "random_133",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.2512,
+      "pass": true
+    },
+    {
+      "label": "random_134",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          2,
+          0
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "elapsed_ms": 0.8721,
+      "pass": true
+    },
+    {
+      "label": "random_135",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 1.3281,
+      "pass": true
+    },
+    {
+      "label": "random_136",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "elapsed_ms": 0.3462,
+      "pass": true
+    },
+    {
+      "label": "random_137",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.2467,
+      "pass": true
+    },
+    {
+      "label": "random_138",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          1
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "elapsed_ms": 0.4573,
+      "pass": true
+    },
+    {
+      "label": "random_139",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.5835,
+      "pass": true
+    },
+    {
+      "label": "random_140",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "elapsed_ms": 0.2844,
+      "pass": true
+    },
+    {
+      "label": "random_141",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.1781,
+      "pass": true
+    },
+    {
+      "label": "random_142",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          3
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "elapsed_ms": 0.6597,
+      "pass": true
+    },
+    {
+      "label": "random_143",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.5864,
+      "pass": true
+    },
+    {
+      "label": "random_144",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "elapsed_ms": 0.1018,
+      "pass": true
+    },
+    {
+      "label": "random_145",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "elapsed_ms": 0.0911,
+      "pass": true
+    },
+    {
+      "label": "random_146",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "elapsed_ms": 0.8921,
+      "pass": true
+    },
+    {
+      "label": "random_147",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.8216,
+      "pass": true
+    },
+    {
+      "label": "random_148",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "elapsed_ms": 0.3887,
+      "pass": true
+    },
+    {
+      "label": "random_149",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.333,
+      "pass": true
+    },
+    {
+      "label": "random_150",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          1
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "elapsed_ms": 0.7183,
+      "pass": true
+    },
+    {
+      "label": "random_151",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.9755,
+      "pass": true
+    },
+    {
+      "label": "random_152",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "elapsed_ms": 1.4872,
+      "pass": true
+    },
+    {
+      "label": "random_153",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.2157,
+      "pass": true
+    },
+    {
+      "label": "random_154",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          3
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "elapsed_ms": 1.0876,
+      "pass": true
+    },
+    {
+      "label": "random_155",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 2.5936,
+      "pass": true
+    },
+    {
+      "label": "random_156",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "elapsed_ms": 0.4475,
+      "pass": true
+    },
+    {
+      "label": "random_157",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.4147,
+      "pass": true
+    },
+    {
+      "label": "random_158",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "elapsed_ms": 0.2645,
+      "pass": true
+    },
+    {
+      "label": "random_159",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.3956,
+      "pass": true
+    },
+    {
+      "label": "random_160",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "elapsed_ms": 0.4579,
+      "pass": true
+    },
+    {
+      "label": "random_161",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.2008,
+      "pass": true
+    },
+    {
+      "label": "random_162",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "elapsed_ms": 0.2688,
+      "pass": true
+    },
+    {
+      "label": "random_163",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 1.7858,
+      "pass": true
+    },
+    {
+      "label": "random_164",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "elapsed_ms": 0.4906,
+      "pass": true
+    },
+    {
+      "label": "random_165",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.2933,
+      "pass": true
+    },
+    {
+      "label": "random_166",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "elapsed_ms": 0.6188,
+      "pass": true
+    },
+    {
+      "label": "random_167",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 4.2498,
+      "pass": true
+    },
+    {
+      "label": "random_168",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "elapsed_ms": 0.536,
+      "pass": true
+    },
+    {
+      "label": "random_169",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.2092,
+      "pass": true
+    },
+    {
+      "label": "random_170",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "elapsed_ms": 0.5261,
+      "pass": true
+    },
+    {
+      "label": "random_171",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 3.5466,
+      "pass": true
+    },
+    {
+      "label": "random_172",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          2,
+          2
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "elapsed_ms": 0.2342,
+      "pass": true
+    },
+    {
+      "label": "random_173",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.6165,
+      "pass": true
+    },
+    {
+      "label": "random_174",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          2,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "elapsed_ms": 0.8064,
+      "pass": true
+    },
+    {
+      "label": "random_175",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.7665,
+      "pass": true
+    },
+    {
+      "label": "random_176",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "elapsed_ms": 0.5331,
+      "pass": true
+    },
+    {
+      "label": "random_177",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.3172,
+      "pass": true
+    },
+    {
+      "label": "random_178",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "elapsed_ms": 0.2652,
+      "pass": true
+    },
+    {
+      "label": "random_179",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.7088,
+      "pass": true
+    },
+    {
+      "label": "random_180",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "elapsed_ms": 0.2338,
+      "pass": true
+    },
+    {
+      "label": "random_181",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.4862,
+      "pass": true
+    },
+    {
+      "label": "random_182",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          2,
+          0
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "elapsed_ms": 0.4278,
+      "pass": true
+    },
+    {
+      "label": "random_183",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 1.2252,
+      "pass": true
+    },
+    {
+      "label": "random_184",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "elapsed_ms": 0.4002,
+      "pass": true
+    },
+    {
+      "label": "random_185",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.3082,
+      "pass": true
+    },
+    {
+      "label": "random_186",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "elapsed_ms": 0.5499,
+      "pass": true
+    },
+    {
+      "label": "random_187",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 3.7221,
+      "pass": true
+    },
+    {
+      "label": "random_188",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          2,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "elapsed_ms": 0.2951,
+      "pass": true
+    },
+    {
+      "label": "random_189",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.3009,
+      "pass": true
+    },
+    {
+      "label": "random_190",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "elapsed_ms": 0.5851,
+      "pass": true
+    },
+    {
+      "label": "random_191",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.3408,
+      "pass": true
+    },
+    {
+      "label": "random_192",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          2,
+          2
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "elapsed_ms": 0.1064,
+      "pass": true
+    },
+    {
+      "label": "random_193",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "elapsed_ms": 0.1179,
+      "pass": true
+    },
+    {
+      "label": "random_194",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          2,
+          1
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "elapsed_ms": 0.3324,
+      "pass": true
+    },
+    {
+      "label": "random_195",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 1.2401,
+      "pass": true
+    },
+    {
+      "label": "random_196",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "elapsed_ms": 0.2165,
+      "pass": true
+    },
+    {
+      "label": "random_197",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.2741,
+      "pass": true
+    },
+    {
+      "label": "random_198",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          4,
+          0
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "elapsed_ms": 0.3056,
+      "pass": true
+    },
+    {
+      "label": "random_199",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.7859,
+      "pass": true
+    },
+    {
+      "label": "random_200",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "elapsed_ms": 0.2757,
+      "pass": true
+    },
+    {
+      "label": "random_201",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.2984,
+      "pass": true
+    },
+    {
+      "label": "random_202",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          1
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "elapsed_ms": 0.4582,
+      "pass": true
+    },
+    {
+      "label": "random_203",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.5594,
+      "pass": true
+    },
+    {
+      "label": "random_204",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "elapsed_ms": 0.365,
+      "pass": true
+    },
+    {
+      "label": "random_205",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.2639,
+      "pass": true
+    },
+    {
+      "label": "random_206",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "elapsed_ms": 0.8071,
+      "pass": true
+    },
+    {
+      "label": "random_207",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.5458,
+      "pass": true
+    },
+    {
+      "label": "random_208",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "elapsed_ms": 0.217,
+      "pass": true
+    },
+    {
+      "label": "random_209",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.4197,
+      "pass": true
+    },
+    {
+      "label": "random_210",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          4,
+          1
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "elapsed_ms": 0.345,
+      "pass": true
+    },
+    {
+      "label": "random_211",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 1.1635,
+      "pass": true
+    },
+    {
+      "label": "random_212",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "elapsed_ms": 0.4999,
+      "pass": true
+    },
+    {
+      "label": "random_213",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.1922,
+      "pass": true
+    },
+    {
+      "label": "random_214",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "elapsed_ms": 0.3335,
+      "pass": true
+    },
+    {
+      "label": "random_215",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          3
+        ]
+      ],
+      "elapsed_ms": 0.7697,
+      "pass": true
+    },
+    {
+      "label": "random_216",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          2,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "elapsed_ms": 0.4173,
+      "pass": true
+    },
+    {
+      "label": "random_217",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.3086,
+      "pass": true
+    },
+    {
+      "label": "random_218",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "elapsed_ms": 0.8519,
+      "pass": true
+    },
+    {
+      "label": "random_219",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.5226,
+      "pass": true
+    },
+    {
+      "label": "random_220",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "elapsed_ms": 0.2506,
+      "pass": true
+    },
+    {
+      "label": "random_221",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.3069,
+      "pass": true
+    },
+    {
+      "label": "random_222",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          3,
+          3
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "elapsed_ms": 0.211,
+      "pass": true
+    },
+    {
+      "label": "random_223",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.4743,
+      "pass": true
+    },
+    {
+      "label": "random_224",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "elapsed_ms": 0.3425,
+      "pass": true
+    },
+    {
+      "label": "random_225",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.2592,
+      "pass": true
+    },
+    {
+      "label": "random_226",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "elapsed_ms": 0.6817,
+      "pass": true
+    },
+    {
+      "label": "random_227",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 1.0932,
+      "pass": true
+    },
+    {
+      "label": "random_228",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "elapsed_ms": 0.2833,
+      "pass": true
+    },
+    {
+      "label": "random_229",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.3049,
+      "pass": true
+    },
+    {
+      "label": "random_230",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          4,
+          4
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "elapsed_ms": 0.7887,
+      "pass": true
+    },
+    {
+      "label": "random_231",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.3695,
+      "pass": true
+    },
+    {
+      "label": "random_232",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "elapsed_ms": 0.5717,
+      "pass": true
+    },
+    {
+      "label": "random_233",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.2112,
+      "pass": true
+    },
+    {
+      "label": "random_234",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "elapsed_ms": 0.3399,
+      "pass": true
+    },
+    {
+      "label": "random_235",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.9108,
+      "pass": true
+    },
+    {
+      "label": "random_236",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "elapsed_ms": 0.2541,
+      "pass": true
+    },
+    {
+      "label": "random_237",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          1
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "elapsed_ms": 0.2138,
+      "pass": true
+    },
+    {
+      "label": "random_238",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "elapsed_ms": 0.7589,
+      "pass": true
+    },
+    {
+      "label": "random_239",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.4127,
+      "pass": true
+    },
+    {
+      "label": "random_240",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "elapsed_ms": 0.252,
+      "pass": true
+    },
+    {
+      "label": "random_241",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.2851,
+      "pass": true
+    },
+    {
+      "label": "random_242",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          2
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          0
+        ]
+      ],
+      "elapsed_ms": 0.6513,
+      "pass": true
+    },
+    {
+      "label": "random_243",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.5333,
+      "pass": true
+    },
+    {
+      "label": "random_244",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "elapsed_ms": 0.2403,
+      "pass": true
+    },
+    {
+      "label": "random_245",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.2143,
+      "pass": true
+    },
+    {
+      "label": "random_246",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          4,
+          0
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "elapsed_ms": 0.3466,
+      "pass": true
+    },
+    {
+      "label": "random_247",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.842,
+      "pass": true
+    },
+    {
+      "label": "random_248",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "elapsed_ms": 0.3143,
+      "pass": true
+    },
+    {
+      "label": "random_249",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.2816,
+      "pass": true
+    },
+    {
+      "label": "random_250",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          0
+        ]
+      ],
+      "elapsed_ms": 0.4805,
+      "pass": true
+    },
+    {
+      "label": "random_251",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.8171,
+      "pass": true
+    },
+    {
+      "label": "random_252",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "elapsed_ms": 0.297,
+      "pass": true
+    },
+    {
+      "label": "random_253",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.186,
+      "pass": true
+    },
+    {
+      "label": "random_254",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          4,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "elapsed_ms": 0.7617,
+      "pass": true
+    },
+    {
+      "label": "random_255",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.8104,
+      "pass": true
+    },
+    {
+      "label": "random_256",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "elapsed_ms": 0.2843,
+      "pass": true
+    },
+    {
+      "label": "random_257",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.1702,
+      "pass": true
+    },
+    {
+      "label": "random_258",
+      "category": "generated_isomorphic",
+      "oracle": true,
+      "observed_candidate_v101": true,
+      "witness": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "elapsed_ms": 0.968,
+      "pass": true
+    },
+    {
+      "label": "random_259",
+      "category": "randomized_nonmatch_or_match",
+      "oracle": false,
+      "observed_candidate_v101": false,
+      "witness": null,
+      "elapsed_ms": 0.5166,
+      "pass": true
+    }
+  ]
+}

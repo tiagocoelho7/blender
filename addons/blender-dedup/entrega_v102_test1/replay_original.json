@@ -1,0 +1,206 @@
+[
+  {
+    "name": "original_custody_A",
+    "returncode": 0,
+    "seconds": 0.072,
+    "command": [
+      "/workspace/blender-dedup-env/venv/bin/python",
+      "HARNESSES/verify_originals.py"
+    ],
+    "cwd": "/workspace/blender/addons/blender-dedup/work/replay/A",
+    "target_sha256": "1d4175b1190732ea6077232b32d4fd632021f99c9ccb80e5ba15dd5e4dcb9956"
+  },
+  {
+    "name": "original_custody_B",
+    "returncode": 0,
+    "seconds": 0.0739,
+    "command": [
+      "/workspace/blender-dedup-env/venv/bin/python",
+      "tests/verify_custody.py"
+    ],
+    "cwd": "/workspace/blender/addons/blender-dedup/work/replay/B",
+    "target_sha256": "1d4175b1190732ea6077232b32d4fd632021f99c9ccb80e5ba15dd5e4dcb9956"
+  },
+  {
+    "name": "original_qa57",
+    "returncode": 0,
+    "seconds": 0.5977,
+    "command": [
+      "/workspace/blender-dedup-env/venv/bin/python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "qa",
+      "-p",
+      "test_candidate_v101.py",
+      "-v"
+    ],
+    "cwd": "/workspace/blender/addons/blender-dedup/work/replay/A/CANDIDATA_EXTRAIDA",
+    "target_sha256": "1d4175b1190732ea6077232b32d4fd632021f99c9ccb80e5ba15dd5e4dcb9956"
+  },
+  {
+    "name": "original_oracle266",
+    "returncode": 0,
+    "seconds": 0.325,
+    "command": [
+      "/workspace/blender-dedup-env/venv/bin/python",
+      "/workspace/blender/addons/blender-dedup/tests_v102_test1/oracle266_adapter.py",
+      "/workspace/blender/addons/blender-dedup/work/replay/A/CANDIDATA_EXTRAIDA/qa/oracle_A_adapted_to_candidate.py",
+      "/workspace/blender/addons/blender-dedup/work/replay/A/CANDIDATA_EXTRAIDA/src/remover_duplicatas_blend_v1_0_1.py",
+      "/workspace/blender/addons/blender-dedup/entrega_v102_test1/logs/original_oracle266/results.json"
+    ],
+    "cwd": "/workspace/blender/addons/blender-dedup/work/replay/A/CANDIDATA_EXTRAIDA",
+    "target_sha256": "1d4175b1190732ea6077232b32d4fd632021f99c9ccb80e5ba15dd5e4dcb9956"
+  },
+  {
+    "name": "original_geometry2649",
+    "returncode": 0,
+    "seconds": 2.076,
+    "command": [
+      "/workspace/blender-dedup-env/venv/bin/python",
+      "qa/audit_A_geometry_adapted.py",
+      "src/remover_duplicatas_blend_v1_0_1.py"
+    ],
+    "cwd": "/workspace/blender/addons/blender-dedup/work/replay/A/CANDIDATA_EXTRAIDA",
+    "target_sha256": "1d4175b1190732ea6077232b32d4fd632021f99c9ccb80e5ba15dd5e4dcb9956"
+  },
+  {
+    "name": "original_graph32",
+    "returncode": 0,
+    "seconds": 0.3422,
+    "command": [
+      "/workspace/blender-dedup-env/venv/bin/python",
+      "qa/verify_B_graph32_on_candidate.py"
+    ],
+    "cwd": "/workspace/blender/addons/blender-dedup/work/replay/A/CANDIDATA_EXTRAIDA",
+    "target_sha256": "1d4175b1190732ea6077232b32d4fd632021f99c9ccb80e5ba15dd5e4dcb9956"
+  },
+  {
+    "name": "original_oracle400",
+    "returncode": 0,
+    "seconds": 0.81,
+    "command": [
+      "/workspace/blender-dedup-env/venv/bin/python",
+      "HARNESSES/independent_geometry_oracle.py"
+    ],
+    "cwd": "/workspace/blender/addons/blender-dedup/work/replay/A",
+    "target_sha256": "1d4175b1190732ea6077232b32d4fd632021f99c9ccb80e5ba15dd5e4dcb9956"
+  },
+  {
+    "name": "original_oracle160",
+    "returncode": 0,
+    "seconds": 0.3127,
+    "command": [
+      "/workspace/blender-dedup-env/venv/bin/python",
+      "tests/independent_B_geometry_oracle.py"
+    ],
+    "cwd": "/workspace/blender/addons/blender-dedup/work/replay/B",
+    "target_sha256": "1d4175b1190732ea6077232b32d4fd632021f99c9ccb80e5ba15dd5e4dcb9956"
+  },
+  {
+    "name": "original_benchmark1M",
+    "returncode": 0,
+    "seconds": 0.6078,
+    "command": [
+      "/workspace/blender-dedup-env/venv/bin/python",
+      "qa/benchmark_v101.py"
+    ],
+    "cwd": "/workspace/blender/addons/blender-dedup/work/replay/A/CANDIDATA_EXTRAIDA",
+    "target_sha256": "1d4175b1190732ea6077232b32d4fd632021f99c9ccb80e5ba15dd5e4dcb9956"
+  },
+  {
+    "name": "original_historical_A_refs",
+    "returncode": 0,
+    "seconds": 0.1831,
+    "command": [
+      "/workspace/blender-dedup-env/venv/bin/python",
+      "HARNESSES/adversarial_references.py"
+    ],
+    "cwd": "/workspace/blender/addons/blender-dedup/work/replay/A",
+    "target_sha256": "1d4175b1190732ea6077232b32d4fd632021f99c9ccb80e5ba15dd5e4dcb9956"
+  },
+  {
+    "name": "original_historical_B_adversarial",
+    "returncode": 0,
+    "seconds": 0.2376,
+    "command": [
+      "/workspace/blender-dedup-env/venv/bin/python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "independent_B_adversarial.py",
+      "-v"
+    ],
+    "cwd": "/workspace/blender/addons/blender-dedup/work/replay/B",
+    "target_sha256": "1d4175b1190732ea6077232b32d4fd632021f99c9ccb80e5ba15dd5e4dcb9956"
+  },
+  {
+    "name": "original_historical_B_crosscheck",
+    "returncode": 0,
+    "seconds": 0.201,
+    "command": [
+      "/workspace/blender-dedup-env/venv/bin/python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "independent_B_crosscheck.py",
+      "-v"
+    ],
+    "cwd": "/workspace/blender/addons/blender-dedup/work/replay/B",
+    "target_sha256": "1d4175b1190732ea6077232b32d4fd632021f99c9ccb80e5ba15dd5e4dcb9956"
+  },
+  {
+    "name": "original_historical_deadline",
+    "returncode": 0,
+    "seconds": 1.1118,
+    "command": [
+      "/workspace/blender-dedup-env/venv/bin/python",
+      "HARNESSES/adversarial_deadline.py"
+    ],
+    "cwd": "/workspace/blender/addons/blender-dedup/work/replay/A",
+    "target_sha256": "1d4175b1190732ea6077232b32d4fd632021f99c9ccb80e5ba15dd5e4dcb9956"
+  },
+  {
+    "name": "original_historical_memory100",
+    "returncode": 0,
+    "seconds": 0.4842,
+    "command": [
+      "/workspace/blender-dedup-env/venv/bin/python",
+      "HARNESSES/adversarial_memory.py",
+      "100"
+    ],
+    "cwd": "/workspace/blender/addons/blender-dedup/work/replay/A",
+    "target_sha256": "1d4175b1190732ea6077232b32d4fd632021f99c9ccb80e5ba15dd5e4dcb9956"
+  },
+  {
+    "name": "original_historical_memory200",
+    "returncode": 0,
+    "seconds": 1.4692,
+    "command": [
+      "/workspace/blender-dedup-env/venv/bin/python",
+      "HARNESSES/adversarial_memory.py",
+      "200"
+    ],
+    "cwd": "/workspace/blender/addons/blender-dedup/work/replay/A",
+    "target_sha256": "1d4175b1190732ea6077232b32d4fd632021f99c9ccb80e5ba15dd5e4dcb9956"
+  },
+  {
+    "name": "original_historical_memory240",
+    "returncode": 0,
+    "seconds": 2.014,
+    "command": [
+      "/workspace/blender-dedup-env/venv/bin/python",
+      "HARNESSES/adversarial_memory.py",
+      "240"
+    ],
+    "cwd": "/workspace/blender/addons/blender-dedup/work/replay/A",
+    "target_sha256": "1d4175b1190732ea6077232b32d4fd632021f99c9ccb80e5ba15dd5e4dcb9956"
+  }
+]

@@ -1,0 +1,5 @@
+TARGET_BINDING_ONLY 02618942350dacfbb7d1b2b079e802ed3336802ddb719e059a85bfd2582a1ca8
+PASS 266/266 - v1.0.1 candidate
+Categories: {'semantic': 2, 'hypergraph': 1, 'multiplicity': 1, 'long_cycle': 2, 'generated_isomorphic': 130, 'randomized_nonmatch_or_match': 130}
+Hypergraph: edge-only=[1, 1, 1, 1, 1, 1] vs edges+faces=[1, 5]
+No bpy real; candidate comparison only; no removals

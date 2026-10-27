@@ -1,0 +1,232 @@
+{
+  "scope": "v1.0.1 NEW candidate, synthetic fake bpy, B graph policy reference",
+  "cases": 32,
+  "passed": 32,
+  "failures": [],
+  "results": [
+    {
+      "case": "F01",
+      "expected": "AUTO_REMOVE",
+      "observed_candidate": "AUTO_REMOVE",
+      "remove_calls": 2,
+      "pass": true
+    },
+    {
+      "case": "F02",
+      "expected": "AUTO_REMOVE",
+      "observed_candidate": "AUTO_REMOVE",
+      "remove_calls": 2,
+      "pass": true
+    },
+    {
+      "case": "F03",
+      "expected": "AUTO_REMOVE",
+      "observed_candidate": "AUTO_REMOVE",
+      "remove_calls": 2,
+      "pass": true
+    },
+    {
+      "case": "F04",
+      "expected": "GLOBAL_ABORT",
+      "observed_candidate": "GLOBAL_ABORT",
+      "remove_calls": 0,
+      "pass": true
+    },
+    {
+      "case": "F05",
+      "expected": "GLOBAL_ABORT",
+      "observed_candidate": "GLOBAL_ABORT",
+      "remove_calls": 0,
+      "pass": true
+    },
+    {
+      "case": "F06",
+      "expected": "GLOBAL_ABORT",
+      "observed_candidate": "GLOBAL_ABORT",
+      "remove_calls": 0,
+      "pass": true
+    },
+    {
+      "case": "F07",
+      "expected": "GLOBAL_ABORT",
+      "observed_candidate": "GLOBAL_ABORT",
+      "remove_calls": 0,
+      "pass": true
+    },
+    {
+      "case": "F08",
+      "expected": "GLOBAL_ABORT",
+      "observed_candidate": "GLOBAL_ABORT",
+      "remove_calls": 0,
+      "pass": true
+    },
+    {
+      "case": "F09",
+      "expected": "GLOBAL_ABORT",
+      "observed_candidate": "GLOBAL_ABORT",
+      "remove_calls": 0,
+      "pass": true
+    },
+    {
+      "case": "F10",
+      "expected": "GLOBAL_ABORT",
+      "observed_candidate": "GLOBAL_ABORT",
+      "remove_calls": 0,
+      "pass": true
+    },
+    {
+      "case": "F11",
+      "expected": "GLOBAL_ABORT",
+      "observed_candidate": "GLOBAL_ABORT",
+      "remove_calls": 0,
+      "pass": true
+    },
+    {
+      "case": "F12",
+      "expected": "AUTO_REMOVE",
+      "observed_candidate": "AUTO_REMOVE",
+      "remove_calls": 2,
+      "pass": true
+    },
+    {
+      "case": "F13",
+      "expected": "GLOBAL_ABORT",
+      "observed_candidate": "GLOBAL_ABORT",
+      "remove_calls": 0,
+      "pass": true
+    },
+    {
+      "case": "F14",
+      "expected": "AUTO_REMOVE",
+      "observed_candidate": "AUTO_REMOVE",
+      "remove_calls": 2,
+      "pass": true
+    },
+    {
+      "case": "F15",
+      "expected": "GLOBAL_ABORT",
+      "observed_candidate": "GLOBAL_ABORT",
+      "remove_calls": 0,
+      "pass": true
+    },
+    {
+      "case": "F16",
+      "expected": "GLOBAL_ABORT",
+      "observed_candidate": "GLOBAL_ABORT",
+      "remove_calls": 0,
+      "pass": true
+    },
+    {
+      "case": "F17",
+      "expected": "GLOBAL_ABORT",
+      "observed_candidate": "GLOBAL_ABORT",
+      "remove_calls": 0,
+      "pass": true
+    },
+    {
+      "case": "F18",
+      "expected": "GLOBAL_ABORT",
+      "observed_candidate": "GLOBAL_ABORT",
+      "remove_calls": 0,
+      "pass": true
+    },
+    {
+      "case": "F19",
+      "expected": "GLOBAL_ABORT",
+      "observed_candidate": "GLOBAL_ABORT",
+      "remove_calls": 0,
+      "pass": true
+    },
+    {
+      "case": "F20",
+      "expected": "GLOBAL_ABORT",
+      "observed_candidate": "GLOBAL_ABORT",
+      "remove_calls": 0,
+      "pass": true
+    },
+    {
+      "case": "F21",
+      "expected": "GLOBAL_ABORT",
+      "observed_candidate": "GLOBAL_ABORT",
+      "remove_calls": 0,
+      "pass": true
+    },
+    {
+      "case": "F22",
+      "expected": "AUTO_REMOVE",
+      "observed_candidate": "AUTO_REMOVE",
+      "remove_calls": 2,
+      "pass": true
+    },
+    {
+      "case": "F23",
+      "expected": "AUTO_REMOVE",
+      "observed_candidate": "AUTO_REMOVE",
+      "remove_calls": 2,
+      "pass": true
+    },
+    {
+      "case": "F24",
+      "expected": "GLOBAL_ABORT",
+      "observed_candidate": "GLOBAL_ABORT",
+      "remove_calls": 0,
+      "pass": true
+    },
+    {
+      "case": "F25",
+      "expected": "GLOBAL_ABORT",
+      "observed_candidate": "GLOBAL_ABORT",
+      "remove_calls": 0,
+      "pass": true
+    },
+    {
+      "case": "F26",
+      "expected": "GLOBAL_ABORT",
+      "observed_candidate": "GLOBAL_ABORT",
+      "remove_calls": 0,
+      "pass": true
+    },
+    {
+      "case": "F27",
+      "expected": "AUTO_REMOVE",
+      "observed_candidate": "AUTO_REMOVE",
+      "remove_calls": 2,
+      "pass": true
+    },
+    {
+      "case": "F28",
+      "expected": "GLOBAL_ABORT",
+      "observed_candidate": "GLOBAL_ABORT",
+      "remove_calls": 0,
+      "pass": true
+    },
+    {
+      "case": "F29",
+      "expected": "GLOBAL_ABORT",
+      "observed_candidate": "GLOBAL_ABORT",
+      "remove_calls": 0,
+      "pass": true
+    },
+    {
+      "case": "F30",
+      "expected": "GLOBAL_ABORT",
+      "observed_candidate": "GLOBAL_ABORT",
+      "remove_calls": 0,
+      "pass": true
+    },
+    {
+      "case": "F31",
+      "expected": "AUTO_REMOVE",
+      "observed_candidate": "AUTO_REMOVE",
+      "remove_calls": 2,
+      "pass": true
+    },
+    {
+      "case": "F32",
+      "expected": "GLOBAL_ABORT",
+      "observed_candidate": "GLOBAL_ABORT",
+      "remove_calls": 0,
+      "pass": true
+    }
+  ]
+}

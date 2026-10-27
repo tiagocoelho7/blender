@@ -1,0 +1,2392 @@
+{
+  "scope": "SYNTHETIC ONLY, no Blender/bpy/.blend",
+  "examples": {
+    "safe": {
+      "status": "REMOVOES_CONFIRMADAS",
+      "calls": 2,
+      "plan": {
+        "version": "1.0.2-test1-candidate-offline",
+        "status": "PRE_DELETE_PLAN_UNCHANGED",
+        "total_meshes": 3,
+        "clusters": [
+          {
+            "keep": {
+              "name": "model.001",
+              "kind": "OBJECT",
+              "pointer": 140351709455104,
+              "session_uid": 1005
+            },
+            "keep_modifiers": 2,
+            "keep_shape_keys": 0,
+            "drops": [
+              {
+                "name": "model.002",
+                "kind": "OBJECT",
+                "pointer": 140351709456112,
+                "session_uid": 1007
+              },
+              {
+                "name": "model.000",
+                "kind": "OBJECT",
+                "pointer": 140351962366704,
+                "session_uid": 1003
+              }
+            ]
+          }
+        ],
+        "drops_count": 2,
+        "decisions": [
+          {
+            "drop_key": {
+              "name": "model.002",
+              "kind": "OBJECT",
+              "pointer": 140351709456112,
+              "session_uid": 1007
+            },
+            "keep_key": {
+              "name": "model.001",
+              "kind": "OBJECT",
+              "pointer": 140351709455104,
+              "session_uid": 1005
+            },
+            "owner_lifecycle": "DROP",
+            "scan_status": "INSPECTED",
+            "action": "REMOVE_ONLY_IF_REVALIDATED",
+            "reason": "Exact geometry witness and absolute R2 ranking; dependency inventory attached",
+            "evidence": {
+              "inventory_blockers": [],
+              "mesh_counts": [
+                3,
+                3,
+                1,
+                3
+              ]
+            }
+          },
+          {
+            "drop_key": {
+              "name": "model.000",
+              "kind": "OBJECT",
+              "pointer": 140351962366704,
+              "session_uid": 1003
+            },
+            "keep_key": {
+              "name": "model.001",
+              "kind": "OBJECT",
+              "pointer": 140351709455104,
+              "session_uid": 1005
+            },
+            "owner_lifecycle": "DROP",
+            "scan_status": "INSPECTED",
+            "action": "REMOVE_ONLY_IF_REVALIDATED",
+            "reason": "Exact geometry witness and absolute R2 ranking; dependency inventory attached",
+            "evidence": {
+              "inventory_blockers": [],
+              "mesh_counts": [
+                3,
+                3,
+                1,
+                3
+              ]
+            }
+          }
+        ],
+        "inventory": {
+          "coverage": {
+            "eligibility_checked": 2,
+            "ids_scanned": 8,
+            "rna_structs": 11,
+            "skipped_numeric_mesh_structures": 12,
+            "rna_pointer_ids": 10,
+            "candidate_collections": 2,
+            "user_map_checked": 2
+          },
+          "references": [
+            {
+              "owner": {
+                "name": "S",
+                "kind": "SCENE",
+                "pointer": 140351709457264,
+                "session_uid": 1009
+              },
+              "owner_key": {
+                "name": "S",
+                "kind": "SCENE",
+                "pointer": 140351709457264,
+                "session_uid": 1009
+              },
+              "target": {
+                "name": "model.000",
+                "kind": "OBJECT",
+                "pointer": 140351962366704,
+                "session_uid": 1003
+              },
+              "target_key": {
+                "name": "model.000",
+                "kind": "OBJECT",
+                "pointer": 140351962366704,
+                "session_uid": 1003
+              },
+              "drop_key": {
+                "name": "model.000",
+                "kind": "OBJECT",
+                "pointer": 140351962366704,
+                "session_uid": 1003
+              },
+              "owner_lifecycle": "SURVIVE",
+              "path": "Scene.objects[0]",
+              "rna_path": "Scene.objects[0]",
+              "surface": "Scene",
+              "source_surface": "Scene",
+              "relation_category": "PERTENCIMENTO_AUTORIZADO",
+              "scan_status": "INSPECTED",
+              "action": "ALLOW_UNLINK",
+              "evidence": {
+                "method": "RNA/IDProperty enumeration",
+                "path": "Scene.objects[0]"
+              },
+              "why": "Unlink de Scene/Collection inerente ao remove",
+              "reason": "Unlink de Scene/Collection inerente ao remove",
+              "drop_target": true
+            },
+            {
+              "owner": {
+                "name": "S",
+                "kind": "SCENE",
+                "pointer": 140351709457264,
+                "session_uid": 1009
+              },
+              "owner_key": {
+                "name": "S",
+                "kind": "SCENE",
+                "pointer": 140351709457264,
+                "session_uid": 1009
+              },
+              "target": {
+                "name": "model.002",
+                "kind": "OBJECT",
+                "pointer": 140351709456112,
+                "session_uid": 1007
+              },
+              "target_key": {
+                "name": "model.002",
+                "kind": "OBJECT",
+                "pointer": 140351709456112,
+                "session_uid": 1007
+              },
+              "drop_key": {
+                "name": "model.002",
+                "kind": "OBJECT",
+                "pointer": 140351709456112,
+                "session_uid": 1007
+              },
+              "owner_lifecycle": "SURVIVE",
+              "path": "Scene.objects[2]",
+              "rna_path": "Scene.objects[2]",
+              "surface": "Scene",
+              "source_surface": "Scene",
+              "relation_category": "PERTENCIMENTO_AUTORIZADO",
+              "scan_status": "INSPECTED",
+              "action": "ALLOW_UNLINK",
+              "evidence": {
+                "method": "RNA/IDProperty enumeration",
+                "path": "Scene.objects[2]"
+              },
+              "why": "Unlink de Scene/Collection inerente ao remove",
+              "reason": "Unlink de Scene/Collection inerente ao remove",
+              "drop_target": true
+            },
+            {
+              "owner": {
+                "name": "Main",
+                "kind": "COLLECTION",
+                "pointer": 140351962366560,
+                "session_uid": 1008
+              },
+              "owner_key": {
+                "name": "Main",
+                "kind": "COLLECTION",
+                "pointer": 140351962366560,
+                "session_uid": 1008
+              },
+              "target": {
+                "name": "model.000",
+                "kind": "OBJECT",
+                "pointer": 140351962366704,
+                "session_uid": 1003
+              },
+              "target_key": {
+                "name": "model.000",
+                "kind": "OBJECT",
+                "pointer": 140351962366704,
+                "session_uid": 1003
+              },
+              "drop_key": {
+                "name": "model.000",
+                "kind": "OBJECT",
+                "pointer": 140351962366704,
+                "session_uid": 1003
+              },
+              "owner_lifecycle": "SURVIVE",
+              "path": "Collection.objects[0]",
+              "rna_path": "Collection.objects[0]",
+              "surface": "Collection",
+              "source_surface": "Collection",
+              "relation_category": "PERTENCIMENTO_AUTORIZADO",
+              "scan_status": "INSPECTED",
+              "action": "ALLOW_UNLINK",
+              "evidence": {
+                "method": "RNA/IDProperty enumeration",
+                "path": "Collection.objects[0]"
+              },
+              "why": "Unlink de Scene/Collection inerente ao remove",
+              "reason": "Unlink de Scene/Collection inerente ao remove",
+              "drop_target": true
+            },
+            {
+              "owner": {
+                "name": "Main",
+                "kind": "COLLECTION",
+                "pointer": 140351962366560,
+                "session_uid": 1008
+              },
+              "owner_key": {
+                "name": "Main",
+                "kind": "COLLECTION",
+                "pointer": 140351962366560,
+                "session_uid": 1008
+              },
+              "target": {
+                "name": "model.002",
+                "kind": "OBJECT",
+                "pointer": 140351709456112,
+                "session_uid": 1007
+              },
+              "target_key": {
+                "name": "model.002",
+                "kind": "OBJECT",
+                "pointer": 140351709456112,
+                "session_uid": 1007
+              },
+              "drop_key": {
+                "name": "model.002",
+                "kind": "OBJECT",
+                "pointer": 140351709456112,
+                "session_uid": 1007
+              },
+              "owner_lifecycle": "SURVIVE",
+              "path": "Collection.objects[2]",
+              "rna_path": "Collection.objects[2]",
+              "surface": "Collection",
+              "source_surface": "Collection",
+              "relation_category": "PERTENCIMENTO_AUTORIZADO",
+              "scan_status": "INSPECTED",
+              "action": "ALLOW_UNLINK",
+              "evidence": {
+                "method": "RNA/IDProperty enumeration",
+                "path": "Collection.objects[2]"
+              },
+              "why": "Unlink de Scene/Collection inerente ao remove",
+              "reason": "Unlink de Scene/Collection inerente ao remove",
+              "drop_target": true
+            }
+          ],
+          "blockers": [],
+          "uninspected": [],
+          "excluded_by_assumption": [
+            {
+              "path": "Mesh.vertices",
+              "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+            },
+            {
+              "path": "Mesh.edges",
+              "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+            },
+            {
+              "path": "Mesh.polygons",
+              "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+            },
+            {
+              "path": "Mesh.loops",
+              "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+            },
+            {
+              "path": "Mesh.vertices",
+              "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+            },
+            {
+              "path": "Mesh.edges",
+              "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+            },
+            {
+              "path": "Mesh.polygons",
+              "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+            },
+            {
+              "path": "Mesh.loops",
+              "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+            },
+            {
+              "path": "Mesh.vertices",
+              "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+            },
+            {
+              "path": "Mesh.edges",
+              "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+            },
+            {
+              "path": "Mesh.polygons",
+              "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+            },
+            {
+              "path": "Mesh.loops",
+              "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+            }
+          ],
+          "external_sources": "NOT_OBSERVABLE: external Python/handlers require independent runtime gate"
+        },
+        "budget": {
+          "time_s": 0.01663,
+          "states": 0,
+          "comparisons": 2,
+          "rna_nodes": 26,
+          "rss_start": 29630464,
+          "rss_peak": 30363648,
+          "largest_estimated_allocation": 240
+        },
+        "no_autosave": true,
+        "runtime_blender_approved": false
+      },
+      "reconciliation": {
+        "items": [
+          {
+            "snapshot": {
+              "name": "model.002",
+              "kind": "OBJECT",
+              "pointer": 140351709456112,
+              "session_uid": 1007
+            },
+            "status": "CONFIRMADO_REMOVIDO",
+            "proof": "session_uid+enumeracao"
+          },
+          {
+            "snapshot": {
+              "name": "model.000",
+              "kind": "OBJECT",
+              "pointer": 140351962366704,
+              "session_uid": 1003
+            },
+            "status": "CONFIRMADO_REMOVIDO",
+            "proof": "session_uid+enumeracao"
+          }
+        ],
+        "removed_confirmed": 2,
+        "present_confirmed": 0,
+        "indeterminate": 0
+      },
+      "no_autosave": true
+    },
+    "blocked_zero_calls": {
+      "status": "INCONCLUSIVO_ZERO_REMOVOES",
+      "calls_attempted": 0,
+      "zero_removals": true,
+      "exception": "UnsafeReference",
+      "detail": "Inventario bloqueado: 3 diagnosticos",
+      "plan": {
+        "version": "1.0.2-test1-candidate-offline",
+        "status": "PRE_DELETE_PLAN_UNCHANGED",
+        "total_meshes": 3,
+        "clusters": [
+          {
+            "keep": {
+              "name": "model.001",
+              "kind": "OBJECT",
+              "pointer": 140351709791440,
+              "session_uid": 1014
+            },
+            "keep_modifiers": 2,
+            "keep_shape_keys": 0,
+            "drops": [
+              {
+                "name": "model.002",
+                "kind": "OBJECT",
+                "pointer": 140351709792832,
+                "session_uid": 1016
+              },
+              {
+                "name": "model.000",
+                "kind": "OBJECT",
+                "pointer": 140351961600160,
+                "session_uid": 1012
+              }
+            ]
+          }
+        ],
+        "drops_count": 2,
+        "decisions": [
+          {
+            "drop_key": {
+              "name": "model.002",
+              "kind": "OBJECT",
+              "pointer": 140351709792832,
+              "session_uid": 1016
+            },
+            "keep_key": {
+              "name": "model.001",
+              "kind": "OBJECT",
+              "pointer": 140351709791440,
+              "session_uid": 1014
+            },
+            "owner_lifecycle": "DROP",
+            "scan_status": "BLOCKED",
+            "action": "ABORT_GLOBAL",
+            "reason": "Exact geometry witness and absolute R2 ranking; dependency inventory attached",
+            "evidence": {
+              "inventory_blockers": [
+                {
+                  "owner": {
+                    "name": "dependency",
+                    "kind": "MATERIAL",
+                    "pointer": 140351710655264,
+                    "session_uid": 1020
+                  },
+                  "owner_key": {
+                    "name": "dependency",
+                    "kind": "MATERIAL",
+                    "pointer": 140351710655264,
+                    "session_uid": 1020
+                  },
+                  "target": {
+                    "name": "model.002",
+                    "kind": "OBJECT",
+                    "pointer": 140351709792832,
+                    "session_uid": 1016
+                  },
+                  "target_key": {
+                    "name": "model.002",
+                    "kind": "OBJECT",
+                    "pointer": 140351709792832,
+                    "session_uid": 1016
+                  },
+                  "drop_key": {
+                    "name": "model.002",
+                    "kind": "OBJECT",
+                    "pointer": 140351709792832,
+                    "session_uid": 1016
+                  },
+                  "owner_lifecycle": "SURVIVE",
+                  "path": "Material.IDProperty['nested']['target']",
+                  "rna_path": "Material.IDProperty['nested']['target']",
+                  "surface": "IDProperty",
+                  "source_surface": "IDProperty",
+                  "relation_category": "FUNCIONAL_DIRETA",
+                  "scan_status": "INSPECTED",
+                  "action": "ABORT_GLOBAL",
+                  "evidence": {
+                    "method": "RNA/IDProperty enumeration",
+                    "path": "Material.IDProperty['nested']['target']"
+                  },
+                  "why": "Owner sobrevivente referencia DROP",
+                  "reason": "Owner sobrevivente referencia DROP",
+                  "drop_target": true
+                },
+                {
+                  "owner": {
+                    "name": "survivor",
+                    "kind": "OBJECT",
+                    "pointer": 140351966101680,
+                    "session_uid": 1019
+                  },
+                  "owner_key": {
+                    "name": "survivor",
+                    "kind": "OBJECT",
+                    "pointer": 140351966101680,
+                    "session_uid": 1019
+                  },
+                  "target": {
+                    "name": "model.000",
+                    "kind": "OBJECT",
+                    "pointer": 140351961600160,
+                    "session_uid": 1012
+                  },
+                  "target_key": {
+                    "name": "model.000",
+                    "kind": "OBJECT",
+                    "pointer": 140351961600160,
+                    "session_uid": 1012
+                  },
+                  "drop_key": {
+                    "name": "model.000",
+                    "kind": "OBJECT",
+                    "pointer": 140351961600160,
+                    "session_uid": 1012
+                  },
+                  "owner_lifecycle": "SURVIVE",
+                  "path": "Object.parent",
+                  "rna_path": "Object.parent",
+                  "surface": "Object",
+                  "source_surface": "Object",
+                  "relation_category": "FUNCIONAL_DIRETA",
+                  "scan_status": "INSPECTED",
+                  "action": "ABORT_GLOBAL",
+                  "evidence": {
+                    "method": "RNA/IDProperty enumeration",
+                    "path": "Object.parent"
+                  },
+                  "why": "Owner sobrevivente referencia DROP",
+                  "reason": "Owner sobrevivente referencia DROP",
+                  "drop_target": true
+                },
+                {
+                  "drop_key": {
+                    "name": "model.002",
+                    "kind": "OBJECT",
+                    "pointer": 140351709792832,
+                    "session_uid": 1016
+                  },
+                  "surface": "user_map",
+                  "reason": "user_map divergente",
+                  "missing_users": [
+                    140351710655264
+                  ],
+                  "unknown_users": [],
+                  "action": "ABORT_GLOBAL"
+                }
+              ],
+              "mesh_counts": [
+                3,
+                3,
+                1,
+                3
+              ]
+            }
+          },
+          {
+            "drop_key": {
+              "name": "model.000",
+              "kind": "OBJECT",
+              "pointer": 140351961600160,
+              "session_uid": 1012
+            },
+            "keep_key": {
+              "name": "model.001",
+              "kind": "OBJECT",
+              "pointer": 140351709791440,
+              "session_uid": 1014
+            },
+            "owner_lifecycle": "DROP",
+            "scan_status": "BLOCKED",
+            "action": "ABORT_GLOBAL",
+            "reason": "Exact geometry witness and absolute R2 ranking; dependency inventory attached",
+            "evidence": {
+              "inventory_blockers": [
+                {
+                  "owner": {
+                    "name": "dependency",
+                    "kind": "MATERIAL",
+                    "pointer": 140351710655264,
+                    "session_uid": 1020
+                  },
+                  "owner_key": {
+                    "name": "dependency",
+                    "kind": "MATERIAL",
+                    "pointer": 140351710655264,
+                    "session_uid": 1020
+                  },
+                  "target": {
+                    "name": "model.002",
+                    "kind": "OBJECT",
+                    "pointer": 140351709792832,
+                    "session_uid": 1016
+                  },
+                  "target_key": {
+                    "name": "model.002",
+                    "kind": "OBJECT",
+                    "pointer": 140351709792832,
+                    "session_uid": 1016
+                  },
+                  "drop_key": {
+                    "name": "model.002",
+                    "kind": "OBJECT",
+                    "pointer": 140351709792832,
+                    "session_uid": 1016
+                  },
+                  "owner_lifecycle": "SURVIVE",
+                  "path": "Material.IDProperty['nested']['target']",
+                  "rna_path": "Material.IDProperty['nested']['target']",
+                  "surface": "IDProperty",
+                  "source_surface": "IDProperty",
+                  "relation_category": "FUNCIONAL_DIRETA",
+                  "scan_status": "INSPECTED",
+                  "action": "ABORT_GLOBAL",
+                  "evidence": {
+                    "method": "RNA/IDProperty enumeration",
+                    "path": "Material.IDProperty['nested']['target']"
+                  },
+                  "why": "Owner sobrevivente referencia DROP",
+                  "reason": "Owner sobrevivente referencia DROP",
+                  "drop_target": true
+                },
+                {
+                  "owner": {
+                    "name": "survivor",
+                    "kind": "OBJECT",
+                    "pointer": 140351966101680,
+                    "session_uid": 1019
+                  },
+                  "owner_key": {
+                    "name": "survivor",
+                    "kind": "OBJECT",
+                    "pointer": 140351966101680,
+                    "session_uid": 1019
+                  },
+                  "target": {
+                    "name": "model.000",
+                    "kind": "OBJECT",
+                    "pointer": 140351961600160,
+                    "session_uid": 1012
+                  },
+                  "target_key": {
+                    "name": "model.000",
+                    "kind": "OBJECT",
+                    "pointer": 140351961600160,
+                    "session_uid": 1012
+                  },
+                  "drop_key": {
+                    "name": "model.000",
+                    "kind": "OBJECT",
+                    "pointer": 140351961600160,
+                    "session_uid": 1012
+                  },
+                  "owner_lifecycle": "SURVIVE",
+                  "path": "Object.parent",
+                  "rna_path": "Object.parent",
+                  "surface": "Object",
+                  "source_surface": "Object",
+                  "relation_category": "FUNCIONAL_DIRETA",
+                  "scan_status": "INSPECTED",
+                  "action": "ABORT_GLOBAL",
+                  "evidence": {
+                    "method": "RNA/IDProperty enumeration",
+                    "path": "Object.parent"
+                  },
+                  "why": "Owner sobrevivente referencia DROP",
+                  "reason": "Owner sobrevivente referencia DROP",
+                  "drop_target": true
+                },
+                {
+                  "drop_key": {
+                    "name": "model.002",
+                    "kind": "OBJECT",
+                    "pointer": 140351709792832,
+                    "session_uid": 1016
+                  },
+                  "surface": "user_map",
+                  "reason": "user_map divergente",
+                  "missing_users": [
+                    140351710655264
+                  ],
+                  "unknown_users": [],
+                  "action": "ABORT_GLOBAL"
+                }
+              ],
+              "mesh_counts": [
+                3,
+                3,
+                1,
+                3
+              ]
+            }
+          }
+        ],
+        "inventory": {
+          "coverage": {
+            "eligibility_checked": 2,
+            "ids_scanned": 10,
+            "rna_structs": 13,
+            "skipped_numeric_mesh_structures": 12,
+            "rna_pointer_ids": 12,
+            "candidate_collections": 2,
+            "user_map_checked": 2
+          },
+          "references": [
+            {
+              "owner": {
+                "name": "dependency",
+                "kind": "MATERIAL",
+                "pointer": 140351710655264,
+                "session_uid": 1020
+              },
+              "owner_key": {
+                "name": "dependency",
+                "kind": "MATERIAL",
+                "pointer": 140351710655264,
+                "session_uid": 1020
+              },
+              "target": {
+                "name": "model.002",
+                "kind": "OBJECT",
+                "pointer": 140351709792832,
+                "session_uid": 1016
+              },
+              "target_key": {
+                "name": "model.002",
+                "kind": "OBJECT",
+                "pointer": 140351709792832,
+                "session_uid": 1016
+              },
+              "drop_key": {
+                "name": "model.002",
+                "kind": "OBJECT",
+                "pointer": 140351709792832,
+                "session_uid": 1016
+              },
+              "owner_lifecycle": "SURVIVE",
+              "path": "Material.IDProperty['nested']['target']",
+              "rna_path": "Material.IDProperty['nested']['target']",
+              "surface": "IDProperty",
+              "source_surface": "IDProperty",
+              "relation_category": "FUNCIONAL_DIRETA",
+              "scan_status": "INSPECTED",
+              "action": "ABORT_GLOBAL",
+              "evidence": {
+                "method": "RNA/IDProperty enumeration",
+                "path": "Material.IDProperty['nested']['target']"
+              },
+              "why": "Owner sobrevivente referencia DROP",
+              "reason": "Owner sobrevivente referencia DROP",
+              "drop_target": true
+            },
+            {
+              "owner": {
+                "name": "S",
+                "kind": "SCENE",
+                "pointer": 140351709149376,
+                "session_uid": 1018
+              },
+              "owner_key": {
+                "name": "S",
+                "kind": "SCENE",
+                "pointer": 140351709149376,
+                "session_uid": 1018
+              },
+              "target": {
+                "name": "model.000",
+                "kind": "OBJECT",
+                "pointer": 140351961600160,
+                "session_uid": 1012
+              },
+              "target_key": {
+                "name": "model.000",
+                "kind": "OBJECT",
+                "pointer": 140351961600160,
+                "session_uid": 1012
+              },
+              "drop_key": {
+                "name": "model.000",
+                "kind": "OBJECT",
+                "pointer": 140351961600160,
+                "session_uid": 1012
+              },
+              "owner_lifecycle": "SURVIVE",
+              "path": "Scene.objects[0]",
+              "rna_path": "Scene.objects[0]",
+              "surface": "Scene",
+              "source_surface": "Scene",
+              "relation_category": "PERTENCIMENTO_AUTORIZADO",
+              "scan_status": "INSPECTED",
+              "action": "ALLOW_UNLINK",
+              "evidence": {
+                "method": "RNA/IDProperty enumeration",
+                "path": "Scene.objects[0]"
+              },
+              "why": "Unlink de Scene/Collection inerente ao remove",
+              "reason": "Unlink de Scene/Collection inerente ao remove",
+              "drop_target": true
+            },
+            {
+              "owner": {
+                "name": "S",
+                "kind": "SCENE",
+                "pointer": 140351709149376,
+                "session_uid": 1018
+              },
+              "owner_key": {
+                "name": "S",
+                "kind": "SCENE",
+                "pointer": 140351709149376,
+                "session_uid": 1018
+              },
+              "target": {
+                "name": "model.002",
+                "kind": "OBJECT",
+                "pointer": 140351709792832,
+                "session_uid": 1016
+              },
+              "target_key": {
+                "name": "model.002",
+                "kind": "OBJECT",
+                "pointer": 140351709792832,
+                "session_uid": 1016
+              },
+              "drop_key": {
+                "name": "model.002",
+                "kind": "OBJECT",
+                "pointer": 140351709792832,
+                "session_uid": 1016
+              },
+              "owner_lifecycle": "SURVIVE",
+              "path": "Scene.objects[2]",
+              "rna_path": "Scene.objects[2]",
+              "surface": "Scene",
+              "source_surface": "Scene",
+              "relation_category": "PERTENCIMENTO_AUTORIZADO",
+              "scan_status": "INSPECTED",
+              "action": "ALLOW_UNLINK",
+              "evidence": {
+                "method": "RNA/IDProperty enumeration",
+                "path": "Scene.objects[2]"
+              },
+              "why": "Unlink de Scene/Collection inerente ao remove",
+              "reason": "Unlink de Scene/Collection inerente ao remove",
+              "drop_target": true
+            },
+            {
+              "owner": {
+                "name": "Main",
+                "kind": "COLLECTION",
+                "pointer": 140351962804736,
+                "session_uid": 1017
+              },
+              "owner_key": {
+                "name": "Main",
+                "kind": "COLLECTION",
+                "pointer": 140351962804736,
+                "session_uid": 1017
+              },
+              "target": {
+                "name": "model.000",
+                "kind": "OBJECT",
+                "pointer": 140351961600160,
+                "session_uid": 1012
+              },
+              "target_key": {
+                "name": "model.000",
+                "kind": "OBJECT",
+                "pointer": 140351961600160,
+                "session_uid": 1012
+              },
+              "drop_key": {
+                "name": "model.000",
+                "kind": "OBJECT",
+                "pointer": 140351961600160,
+                "session_uid": 1012
+              },
+              "owner_lifecycle": "SURVIVE",
+              "path": "Collection.objects[0]",
+              "rna_path": "Collection.objects[0]",
+              "surface": "Collection",
+              "source_surface": "Collection",
+              "relation_category": "PERTENCIMENTO_AUTORIZADO",
+              "scan_status": "INSPECTED",
+              "action": "ALLOW_UNLINK",
+              "evidence": {
+                "method": "RNA/IDProperty enumeration",
+                "path": "Collection.objects[0]"
+              },
+              "why": "Unlink de Scene/Collection inerente ao remove",
+              "reason": "Unlink de Scene/Collection inerente ao remove",
+              "drop_target": true
+            },
+            {
+              "owner": {
+                "name": "Main",
+                "kind": "COLLECTION",
+                "pointer": 140351962804736,
+                "session_uid": 1017
+              },
+              "owner_key": {
+                "name": "Main",
+                "kind": "COLLECTION",
+                "pointer": 140351962804736,
+                "session_uid": 1017
+              },
+              "target": {
+                "name": "model.002",
+                "kind": "OBJECT",
+                "pointer": 140351709792832,
+                "session_uid": 1016
+              },
+              "target_key": {
+                "name": "model.002",
+                "kind": "OBJECT",
+                "pointer": 140351709792832,
+                "session_uid": 1016
+              },
+              "drop_key": {
+                "name": "model.002",
+                "kind": "OBJECT",
+                "pointer": 140351709792832,
+                "session_uid": 1016
+              },
+              "owner_lifecycle": "SURVIVE",
+              "path": "Collection.objects[2]",
+              "rna_path": "Collection.objects[2]",
+              "surface": "Collection",
+              "source_surface": "Collection",
+              "relation_category": "PERTENCIMENTO_AUTORIZADO",
+              "scan_status": "INSPECTED",
+              "action": "ALLOW_UNLINK",
+              "evidence": {
+                "method": "RNA/IDProperty enumeration",
+                "path": "Collection.objects[2]"
+              },
+              "why": "Unlink de Scene/Collection inerente ao remove",
+              "reason": "Unlink de Scene/Collection inerente ao remove",
+              "drop_target": true
+            },
+            {
+              "owner": {
+                "name": "survivor",
+                "kind": "OBJECT",
+                "pointer": 140351966101680,
+                "session_uid": 1019
+              },
+              "owner_key": {
+                "name": "survivor",
+                "kind": "OBJECT",
+                "pointer": 140351966101680,
+                "session_uid": 1019
+              },
+              "target": {
+                "name": "model.000",
+                "kind": "OBJECT",
+                "pointer": 140351961600160,
+                "session_uid": 1012
+              },
+              "target_key": {
+                "name": "model.000",
+                "kind": "OBJECT",
+                "pointer": 140351961600160,
+                "session_uid": 1012
+              },
+              "drop_key": {
+                "name": "model.000",
+                "kind": "OBJECT",
+                "pointer": 140351961600160,
+                "session_uid": 1012
+              },
+              "owner_lifecycle": "SURVIVE",
+              "path": "Object.parent",
+              "rna_path": "Object.parent",
+              "surface": "Object",
+              "source_surface": "Object",
+              "relation_category": "FUNCIONAL_DIRETA",
+              "scan_status": "INSPECTED",
+              "action": "ABORT_GLOBAL",
+              "evidence": {
+                "method": "RNA/IDProperty enumeration",
+                "path": "Object.parent"
+              },
+              "why": "Owner sobrevivente referencia DROP",
+              "reason": "Owner sobrevivente referencia DROP",
+              "drop_target": true
+            }
+          ],
+          "blockers": [
+            {
+              "owner": {
+                "name": "dependency",
+                "kind": "MATERIAL",
+                "pointer": 140351710655264,
+                "session_uid": 1020
+              },
+              "owner_key": {
+                "name": "dependency",
+                "kind": "MATERIAL",
+                "pointer": 140351710655264,
+                "session_uid": 1020
+              },
+              "target": {
+                "name": "model.002",
+                "kind": "OBJECT",
+                "pointer": 140351709792832,
+                "session_uid": 1016
+              },
+              "target_key": {
+                "name": "model.002",
+                "kind": "OBJECT",
+                "pointer": 140351709792832,
+                "session_uid": 1016
+              },
+              "drop_key": {
+                "name": "model.002",
+                "kind": "OBJECT",
+                "pointer": 140351709792832,
+                "session_uid": 1016
+              },
+              "owner_lifecycle": "SURVIVE",
+              "path": "Material.IDProperty['nested']['target']",
+              "rna_path": "Material.IDProperty['nested']['target']",
+              "surface": "IDProperty",
+              "source_surface": "IDProperty",
+              "relation_category": "FUNCIONAL_DIRETA",
+              "scan_status": "INSPECTED",
+              "action": "ABORT_GLOBAL",
+              "evidence": {
+                "method": "RNA/IDProperty enumeration",
+                "path": "Material.IDProperty['nested']['target']"
+              },
+              "why": "Owner sobrevivente referencia DROP",
+              "reason": "Owner sobrevivente referencia DROP",
+              "drop_target": true
+            },
+            {
+              "owner": {
+                "name": "survivor",
+                "kind": "OBJECT",
+                "pointer": 140351966101680,
+                "session_uid": 1019
+              },
+              "owner_key": {
+                "name": "survivor",
+                "kind": "OBJECT",
+                "pointer": 140351966101680,
+                "session_uid": 1019
+              },
+              "target": {
+                "name": "model.000",
+                "kind": "OBJECT",
+                "pointer": 140351961600160,
+                "session_uid": 1012
+              },
+              "target_key": {
+                "name": "model.000",
+                "kind": "OBJECT",
+                "pointer": 140351961600160,
+                "session_uid": 1012
+              },
+              "drop_key": {
+                "name": "model.000",
+                "kind": "OBJECT",
+                "pointer": 140351961600160,
+                "session_uid": 1012
+              },
+              "owner_lifecycle": "SURVIVE",
+              "path": "Object.parent",
+              "rna_path": "Object.parent",
+              "surface": "Object",
+              "source_surface": "Object",
+              "relation_category": "FUNCIONAL_DIRETA",
+              "scan_status": "INSPECTED",
+              "action": "ABORT_GLOBAL",
+              "evidence": {
+                "method": "RNA/IDProperty enumeration",
+                "path": "Object.parent"
+              },
+              "why": "Owner sobrevivente referencia DROP",
+              "reason": "Owner sobrevivente referencia DROP",
+              "drop_target": true
+            },
+            {
+              "drop_key": {
+                "name": "model.002",
+                "kind": "OBJECT",
+                "pointer": 140351709792832,
+                "session_uid": 1016
+              },
+              "surface": "user_map",
+              "reason": "user_map divergente",
+              "missing_users": [
+                140351710655264
+              ],
+              "unknown_users": [],
+              "action": "ABORT_GLOBAL"
+            }
+          ],
+          "uninspected": [],
+          "excluded_by_assumption": [
+            {
+              "path": "Mesh.vertices",
+              "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+            },
+            {
+              "path": "Mesh.edges",
+              "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+            },
+            {
+              "path": "Mesh.polygons",
+              "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+            },
+            {
+              "path": "Mesh.loops",
+              "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+            },
+            {
+              "path": "Mesh.vertices",
+              "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+            },
+            {
+              "path": "Mesh.edges",
+              "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+            },
+            {
+              "path": "Mesh.polygons",
+              "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+            },
+            {
+              "path": "Mesh.loops",
+              "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+            },
+            {
+              "path": "Mesh.vertices",
+              "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+            },
+            {
+              "path": "Mesh.edges",
+              "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+            },
+            {
+              "path": "Mesh.polygons",
+              "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+            },
+            {
+              "path": "Mesh.loops",
+              "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+            }
+          ],
+          "external_sources": "NOT_OBSERVABLE: external Python/handlers require independent runtime gate"
+        },
+        "budget": {
+          "time_s": 0.00717,
+          "states": 0,
+          "comparisons": 2,
+          "rna_nodes": 29,
+          "rss_start": 30363648,
+          "rss_peak": 30367744,
+          "largest_estimated_allocation": 240
+        },
+        "no_autosave": true,
+        "runtime_blender_approved": false
+      },
+      "inventory": {
+        "coverage": {
+          "eligibility_checked": 2,
+          "ids_scanned": 10,
+          "rna_structs": 13,
+          "skipped_numeric_mesh_structures": 12,
+          "rna_pointer_ids": 12,
+          "candidate_collections": 2,
+          "user_map_checked": 2
+        },
+        "references": [
+          {
+            "owner": {
+              "name": "dependency",
+              "kind": "MATERIAL",
+              "pointer": 140351710655264,
+              "session_uid": 1020
+            },
+            "owner_key": {
+              "name": "dependency",
+              "kind": "MATERIAL",
+              "pointer": 140351710655264,
+              "session_uid": 1020
+            },
+            "target": {
+              "name": "model.002",
+              "kind": "OBJECT",
+              "pointer": 140351709792832,
+              "session_uid": 1016
+            },
+            "target_key": {
+              "name": "model.002",
+              "kind": "OBJECT",
+              "pointer": 140351709792832,
+              "session_uid": 1016
+            },
+            "drop_key": {
+              "name": "model.002",
+              "kind": "OBJECT",
+              "pointer": 140351709792832,
+              "session_uid": 1016
+            },
+            "owner_lifecycle": "SURVIVE",
+            "path": "Material.IDProperty['nested']['target']",
+            "rna_path": "Material.IDProperty['nested']['target']",
+            "surface": "IDProperty",
+            "source_surface": "IDProperty",
+            "relation_category": "FUNCIONAL_DIRETA",
+            "scan_status": "INSPECTED",
+            "action": "ABORT_GLOBAL",
+            "evidence": {
+              "method": "RNA/IDProperty enumeration",
+              "path": "Material.IDProperty['nested']['target']"
+            },
+            "why": "Owner sobrevivente referencia DROP",
+            "reason": "Owner sobrevivente referencia DROP",
+            "drop_target": true
+          },
+          {
+            "owner": {
+              "name": "S",
+              "kind": "SCENE",
+              "pointer": 140351709149376,
+              "session_uid": 1018
+            },
+            "owner_key": {
+              "name": "S",
+              "kind": "SCENE",
+              "pointer": 140351709149376,
+              "session_uid": 1018
+            },
+            "target": {
+              "name": "model.000",
+              "kind": "OBJECT",
+              "pointer": 140351961600160,
+              "session_uid": 1012
+            },
+            "target_key": {
+              "name": "model.000",
+              "kind": "OBJECT",
+              "pointer": 140351961600160,
+              "session_uid": 1012
+            },
+            "drop_key": {
+              "name": "model.000",
+              "kind": "OBJECT",
+              "pointer": 140351961600160,
+              "session_uid": 1012
+            },
+            "owner_lifecycle": "SURVIVE",
+            "path": "Scene.objects[0]",
+            "rna_path": "Scene.objects[0]",
+            "surface": "Scene",
+            "source_surface": "Scene",
+            "relation_category": "PERTENCIMENTO_AUTORIZADO",
+            "scan_status": "INSPECTED",
+            "action": "ALLOW_UNLINK",
+            "evidence": {
+              "method": "RNA/IDProperty enumeration",
+              "path": "Scene.objects[0]"
+            },
+            "why": "Unlink de Scene/Collection inerente ao remove",
+            "reason": "Unlink de Scene/Collection inerente ao remove",
+            "drop_target": true
+          },
+          {
+            "owner": {
+              "name": "S",
+              "kind": "SCENE",
+              "pointer": 140351709149376,
+              "session_uid": 1018
+            },
+            "owner_key": {
+              "name": "S",
+              "kind": "SCENE",
+              "pointer": 140351709149376,
+              "session_uid": 1018
+            },
+            "target": {
+              "name": "model.002",
+              "kind": "OBJECT",
+              "pointer": 140351709792832,
+              "session_uid": 1016
+            },
+            "target_key": {
+              "name": "model.002",
+              "kind": "OBJECT",
+              "pointer": 140351709792832,
+              "session_uid": 1016
+            },
+            "drop_key": {
+              "name": "model.002",
+              "kind": "OBJECT",
+              "pointer": 140351709792832,
+              "session_uid": 1016
+            },
+            "owner_lifecycle": "SURVIVE",
+            "path": "Scene.objects[2]",
+            "rna_path": "Scene.objects[2]",
+            "surface": "Scene",
+            "source_surface": "Scene",
+            "relation_category": "PERTENCIMENTO_AUTORIZADO",
+            "scan_status": "INSPECTED",
+            "action": "ALLOW_UNLINK",
+            "evidence": {
+              "method": "RNA/IDProperty enumeration",
+              "path": "Scene.objects[2]"
+            },
+            "why": "Unlink de Scene/Collection inerente ao remove",
+            "reason": "Unlink de Scene/Collection inerente ao remove",
+            "drop_target": true
+          },
+          {
+            "owner": {
+              "name": "Main",
+              "kind": "COLLECTION",
+              "pointer": 140351962804736,
+              "session_uid": 1017
+            },
+            "owner_key": {
+              "name": "Main",
+              "kind": "COLLECTION",
+              "pointer": 140351962804736,
+              "session_uid": 1017
+            },
+            "target": {
+              "name": "model.000",
+              "kind": "OBJECT",
+              "pointer": 140351961600160,
+              "session_uid": 1012
+            },
+            "target_key": {
+              "name": "model.000",
+              "kind": "OBJECT",
+              "pointer": 140351961600160,
+              "session_uid": 1012
+            },
+            "drop_key": {
+              "name": "model.000",
+              "kind": "OBJECT",
+              "pointer": 140351961600160,
+              "session_uid": 1012
+            },
+            "owner_lifecycle": "SURVIVE",
+            "path": "Collection.objects[0]",
+            "rna_path": "Collection.objects[0]",
+            "surface": "Collection",
+            "source_surface": "Collection",
+            "relation_category": "PERTENCIMENTO_AUTORIZADO",
+            "scan_status": "INSPECTED",
+            "action": "ALLOW_UNLINK",
+            "evidence": {
+              "method": "RNA/IDProperty enumeration",
+              "path": "Collection.objects[0]"
+            },
+            "why": "Unlink de Scene/Collection inerente ao remove",
+            "reason": "Unlink de Scene/Collection inerente ao remove",
+            "drop_target": true
+          },
+          {
+            "owner": {
+              "name": "Main",
+              "kind": "COLLECTION",
+              "pointer": 140351962804736,
+              "session_uid": 1017
+            },
+            "owner_key": {
+              "name": "Main",
+              "kind": "COLLECTION",
+              "pointer": 140351962804736,
+              "session_uid": 1017
+            },
+            "target": {
+              "name": "model.002",
+              "kind": "OBJECT",
+              "pointer": 140351709792832,
+              "session_uid": 1016
+            },
+            "target_key": {
+              "name": "model.002",
+              "kind": "OBJECT",
+              "pointer": 140351709792832,
+              "session_uid": 1016
+            },
+            "drop_key": {
+              "name": "model.002",
+              "kind": "OBJECT",
+              "pointer": 140351709792832,
+              "session_uid": 1016
+            },
+            "owner_lifecycle": "SURVIVE",
+            "path": "Collection.objects[2]",
+            "rna_path": "Collection.objects[2]",
+            "surface": "Collection",
+            "source_surface": "Collection",
+            "relation_category": "PERTENCIMENTO_AUTORIZADO",
+            "scan_status": "INSPECTED",
+            "action": "ALLOW_UNLINK",
+            "evidence": {
+              "method": "RNA/IDProperty enumeration",
+              "path": "Collection.objects[2]"
+            },
+            "why": "Unlink de Scene/Collection inerente ao remove",
+            "reason": "Unlink de Scene/Collection inerente ao remove",
+            "drop_target": true
+          },
+          {
+            "owner": {
+              "name": "survivor",
+              "kind": "OBJECT",
+              "pointer": 140351966101680,
+              "session_uid": 1019
+            },
+            "owner_key": {
+              "name": "survivor",
+              "kind": "OBJECT",
+              "pointer": 140351966101680,
+              "session_uid": 1019
+            },
+            "target": {
+              "name": "model.000",
+              "kind": "OBJECT",
+              "pointer": 140351961600160,
+              "session_uid": 1012
+            },
+            "target_key": {
+              "name": "model.000",
+              "kind": "OBJECT",
+              "pointer": 140351961600160,
+              "session_uid": 1012
+            },
+            "drop_key": {
+              "name": "model.000",
+              "kind": "OBJECT",
+              "pointer": 140351961600160,
+              "session_uid": 1012
+            },
+            "owner_lifecycle": "SURVIVE",
+            "path": "Object.parent",
+            "rna_path": "Object.parent",
+            "surface": "Object",
+            "source_surface": "Object",
+            "relation_category": "FUNCIONAL_DIRETA",
+            "scan_status": "INSPECTED",
+            "action": "ABORT_GLOBAL",
+            "evidence": {
+              "method": "RNA/IDProperty enumeration",
+              "path": "Object.parent"
+            },
+            "why": "Owner sobrevivente referencia DROP",
+            "reason": "Owner sobrevivente referencia DROP",
+            "drop_target": true
+          }
+        ],
+        "blockers": [
+          {
+            "owner": {
+              "name": "dependency",
+              "kind": "MATERIAL",
+              "pointer": 140351710655264,
+              "session_uid": 1020
+            },
+            "owner_key": {
+              "name": "dependency",
+              "kind": "MATERIAL",
+              "pointer": 140351710655264,
+              "session_uid": 1020
+            },
+            "target": {
+              "name": "model.002",
+              "kind": "OBJECT",
+              "pointer": 140351709792832,
+              "session_uid": 1016
+            },
+            "target_key": {
+              "name": "model.002",
+              "kind": "OBJECT",
+              "pointer": 140351709792832,
+              "session_uid": 1016
+            },
+            "drop_key": {
+              "name": "model.002",
+              "kind": "OBJECT",
+              "pointer": 140351709792832,
+              "session_uid": 1016
+            },
+            "owner_lifecycle": "SURVIVE",
+            "path": "Material.IDProperty['nested']['target']",
+            "rna_path": "Material.IDProperty['nested']['target']",
+            "surface": "IDProperty",
+            "source_surface": "IDProperty",
+            "relation_category": "FUNCIONAL_DIRETA",
+            "scan_status": "INSPECTED",
+            "action": "ABORT_GLOBAL",
+            "evidence": {
+              "method": "RNA/IDProperty enumeration",
+              "path": "Material.IDProperty['nested']['target']"
+            },
+            "why": "Owner sobrevivente referencia DROP",
+            "reason": "Owner sobrevivente referencia DROP",
+            "drop_target": true
+          },
+          {
+            "owner": {
+              "name": "survivor",
+              "kind": "OBJECT",
+              "pointer": 140351966101680,
+              "session_uid": 1019
+            },
+            "owner_key": {
+              "name": "survivor",
+              "kind": "OBJECT",
+              "pointer": 140351966101680,
+              "session_uid": 1019
+            },
+            "target": {
+              "name": "model.000",
+              "kind": "OBJECT",
+              "pointer": 140351961600160,
+              "session_uid": 1012
+            },
+            "target_key": {
+              "name": "model.000",
+              "kind": "OBJECT",
+              "pointer": 140351961600160,
+              "session_uid": 1012
+            },
+            "drop_key": {
+              "name": "model.000",
+              "kind": "OBJECT",
+              "pointer": 140351961600160,
+              "session_uid": 1012
+            },
+            "owner_lifecycle": "SURVIVE",
+            "path": "Object.parent",
+            "rna_path": "Object.parent",
+            "surface": "Object",
+            "source_surface": "Object",
+            "relation_category": "FUNCIONAL_DIRETA",
+            "scan_status": "INSPECTED",
+            "action": "ABORT_GLOBAL",
+            "evidence": {
+              "method": "RNA/IDProperty enumeration",
+              "path": "Object.parent"
+            },
+            "why": "Owner sobrevivente referencia DROP",
+            "reason": "Owner sobrevivente referencia DROP",
+            "drop_target": true
+          },
+          {
+            "drop_key": {
+              "name": "model.002",
+              "kind": "OBJECT",
+              "pointer": 140351709792832,
+              "session_uid": 1016
+            },
+            "surface": "user_map",
+            "reason": "user_map divergente",
+            "missing_users": [
+              140351710655264
+            ],
+            "unknown_users": [],
+            "action": "ABORT_GLOBAL"
+          }
+        ],
+        "uninspected": [],
+        "excluded_by_assumption": [
+          {
+            "path": "Mesh.vertices",
+            "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+          },
+          {
+            "path": "Mesh.edges",
+            "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+          },
+          {
+            "path": "Mesh.polygons",
+            "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+          },
+          {
+            "path": "Mesh.loops",
+            "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+          },
+          {
+            "path": "Mesh.vertices",
+            "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+          },
+          {
+            "path": "Mesh.edges",
+            "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+          },
+          {
+            "path": "Mesh.polygons",
+            "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+          },
+          {
+            "path": "Mesh.loops",
+            "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+          },
+          {
+            "path": "Mesh.vertices",
+            "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+          },
+          {
+            "path": "Mesh.edges",
+            "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+          },
+          {
+            "path": "Mesh.polygons",
+            "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+          },
+          {
+            "path": "Mesh.loops",
+            "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+          }
+        ],
+        "external_sources": "NOT_OBSERVABLE: external Python/handlers require independent runtime gate"
+      },
+      "no_rollback": true,
+      "no_autosave": true,
+      "reconciliation": {
+        "items": [
+          {
+            "snapshot": {
+              "name": "model.002",
+              "kind": "OBJECT",
+              "pointer": 140351709792832,
+              "session_uid": 1016
+            },
+            "status": "CONFIRMADO_PRESENTE",
+            "proof": "session_uid+enumeracao"
+          },
+          {
+            "snapshot": {
+              "name": "model.000",
+              "kind": "OBJECT",
+              "pointer": 140351961600160,
+              "session_uid": 1012
+            },
+            "status": "CONFIRMADO_PRESENTE",
+            "proof": "session_uid+enumeracao"
+          }
+        ],
+        "removed_confirmed": 0,
+        "present_confirmed": 2,
+        "indeterminate": 0
+      },
+      "decisions": [
+        {
+          "drop_key": {
+            "name": "model.002",
+            "kind": "OBJECT",
+            "pointer": 140351709792832,
+            "session_uid": 1016
+          },
+          "scan_status": "ABORTED",
+          "action": "STOP_NO_MORE_REMOVALS",
+          "reason": "Inventario bloqueado: 3 diagnosticos",
+          "evidence": {
+            "snapshot": {
+              "name": "model.002",
+              "kind": "OBJECT",
+              "pointer": 140351709792832,
+              "session_uid": 1016
+            },
+            "status": "CONFIRMADO_PRESENTE",
+            "proof": "session_uid+enumeracao"
+          }
+        },
+        {
+          "drop_key": {
+            "name": "model.000",
+            "kind": "OBJECT",
+            "pointer": 140351961600160,
+            "session_uid": 1012
+          },
+          "scan_status": "ABORTED",
+          "action": "STOP_NO_MORE_REMOVALS",
+          "reason": "Inventario bloqueado: 3 diagnosticos",
+          "evidence": {
+            "snapshot": {
+              "name": "model.000",
+              "kind": "OBJECT",
+              "pointer": 140351961600160,
+              "session_uid": 1012
+            },
+            "status": "CONFIRMADO_PRESENTE",
+            "proof": "session_uid+enumeracao"
+          }
+        }
+      ]
+    },
+    "partial_after_effect": {
+      "status": "FALHA_PARCIAL_POSSIVEL",
+      "calls_attempted": 1,
+      "zero_removals": false,
+      "exception": "RuntimeError",
+      "detail": "injected AFTER effect",
+      "plan": {
+        "version": "1.0.2-test1-candidate-offline",
+        "status": "PRE_DELETE_PLAN_UNCHANGED",
+        "total_meshes": 3,
+        "clusters": [
+          {
+            "keep": {
+              "name": "model.001",
+              "kind": "OBJECT",
+              "pointer": 140351962367568,
+              "session_uid": 1025
+            },
+            "keep_modifiers": 2,
+            "keep_shape_keys": 0,
+            "drops": [
+              {
+                "name": "model.002",
+                "kind": "OBJECT",
+                "pointer": 140351709794752,
+                "session_uid": 1027
+              },
+              {
+                "name": "model.000",
+                "kind": "OBJECT",
+                "pointer": 140351709458512,
+                "session_uid": 1023
+              }
+            ]
+          }
+        ],
+        "drops_count": 2,
+        "decisions": [
+          {
+            "drop_key": {
+              "name": "model.002",
+              "kind": "OBJECT",
+              "pointer": 140351709794752,
+              "session_uid": 1027
+            },
+            "keep_key": {
+              "name": "model.001",
+              "kind": "OBJECT",
+              "pointer": 140351962367568,
+              "session_uid": 1025
+            },
+            "owner_lifecycle": "DROP",
+            "scan_status": "INSPECTED",
+            "action": "REMOVE_ONLY_IF_REVALIDATED",
+            "reason": "Exact geometry witness and absolute R2 ranking; dependency inventory attached",
+            "evidence": {
+              "inventory_blockers": [],
+              "mesh_counts": [
+                3,
+                3,
+                1,
+                3
+              ]
+            }
+          },
+          {
+            "drop_key": {
+              "name": "model.000",
+              "kind": "OBJECT",
+              "pointer": 140351709458512,
+              "session_uid": 1023
+            },
+            "keep_key": {
+              "name": "model.001",
+              "kind": "OBJECT",
+              "pointer": 140351962367568,
+              "session_uid": 1025
+            },
+            "owner_lifecycle": "DROP",
+            "scan_status": "INSPECTED",
+            "action": "REMOVE_ONLY_IF_REVALIDATED",
+            "reason": "Exact geometry witness and absolute R2 ranking; dependency inventory attached",
+            "evidence": {
+              "inventory_blockers": [],
+              "mesh_counts": [
+                3,
+                3,
+                1,
+                3
+              ]
+            }
+          }
+        ],
+        "inventory": {
+          "coverage": {
+            "eligibility_checked": 2,
+            "ids_scanned": 8,
+            "rna_structs": 11,
+            "skipped_numeric_mesh_structures": 12,
+            "rna_pointer_ids": 10,
+            "candidate_collections": 2,
+            "user_map_checked": 2
+          },
+          "references": [
+            {
+              "owner": {
+                "name": "S",
+                "kind": "SCENE",
+                "pointer": 140351709795232,
+                "session_uid": 1029
+              },
+              "owner_key": {
+                "name": "S",
+                "kind": "SCENE",
+                "pointer": 140351709795232,
+                "session_uid": 1029
+              },
+              "target": {
+                "name": "model.000",
+                "kind": "OBJECT",
+                "pointer": 140351709458512,
+                "session_uid": 1023
+              },
+              "target_key": {
+                "name": "model.000",
+                "kind": "OBJECT",
+                "pointer": 140351709458512,
+                "session_uid": 1023
+              },
+              "drop_key": {
+                "name": "model.000",
+                "kind": "OBJECT",
+                "pointer": 140351709458512,
+                "session_uid": 1023
+              },
+              "owner_lifecycle": "SURVIVE",
+              "path": "Scene.objects[0]",
+              "rna_path": "Scene.objects[0]",
+              "surface": "Scene",
+              "source_surface": "Scene",
+              "relation_category": "PERTENCIMENTO_AUTORIZADO",
+              "scan_status": "INSPECTED",
+              "action": "ALLOW_UNLINK",
+              "evidence": {
+                "method": "RNA/IDProperty enumeration",
+                "path": "Scene.objects[0]"
+              },
+              "why": "Unlink de Scene/Collection inerente ao remove",
+              "reason": "Unlink de Scene/Collection inerente ao remove",
+              "drop_target": true
+            },
+            {
+              "owner": {
+                "name": "S",
+                "kind": "SCENE",
+                "pointer": 140351709795232,
+                "session_uid": 1029
+              },
+              "owner_key": {
+                "name": "S",
+                "kind": "SCENE",
+                "pointer": 140351709795232,
+                "session_uid": 1029
+              },
+              "target": {
+                "name": "model.002",
+                "kind": "OBJECT",
+                "pointer": 140351709794752,
+                "session_uid": 1027
+              },
+              "target_key": {
+                "name": "model.002",
+                "kind": "OBJECT",
+                "pointer": 140351709794752,
+                "session_uid": 1027
+              },
+              "drop_key": {
+                "name": "model.002",
+                "kind": "OBJECT",
+                "pointer": 140351709794752,
+                "session_uid": 1027
+              },
+              "owner_lifecycle": "SURVIVE",
+              "path": "Scene.objects[2]",
+              "rna_path": "Scene.objects[2]",
+              "surface": "Scene",
+              "source_surface": "Scene",
+              "relation_category": "PERTENCIMENTO_AUTORIZADO",
+              "scan_status": "INSPECTED",
+              "action": "ALLOW_UNLINK",
+              "evidence": {
+                "method": "RNA/IDProperty enumeration",
+                "path": "Scene.objects[2]"
+              },
+              "why": "Unlink de Scene/Collection inerente ao remove",
+              "reason": "Unlink de Scene/Collection inerente ao remove",
+              "drop_target": true
+            },
+            {
+              "owner": {
+                "name": "Main",
+                "kind": "COLLECTION",
+                "pointer": 140351709455728,
+                "session_uid": 1028
+              },
+              "owner_key": {
+                "name": "Main",
+                "kind": "COLLECTION",
+                "pointer": 140351709455728,
+                "session_uid": 1028
+              },
+              "target": {
+                "name": "model.000",
+                "kind": "OBJECT",
+                "pointer": 140351709458512,
+                "session_uid": 1023
+              },
+              "target_key": {
+                "name": "model.000",
+                "kind": "OBJECT",
+                "pointer": 140351709458512,
+                "session_uid": 1023
+              },
+              "drop_key": {
+                "name": "model.000",
+                "kind": "OBJECT",
+                "pointer": 140351709458512,
+                "session_uid": 1023
+              },
+              "owner_lifecycle": "SURVIVE",
+              "path": "Collection.objects[0]",
+              "rna_path": "Collection.objects[0]",
+              "surface": "Collection",
+              "source_surface": "Collection",
+              "relation_category": "PERTENCIMENTO_AUTORIZADO",
+              "scan_status": "INSPECTED",
+              "action": "ALLOW_UNLINK",
+              "evidence": {
+                "method": "RNA/IDProperty enumeration",
+                "path": "Collection.objects[0]"
+              },
+              "why": "Unlink de Scene/Collection inerente ao remove",
+              "reason": "Unlink de Scene/Collection inerente ao remove",
+              "drop_target": true
+            },
+            {
+              "owner": {
+                "name": "Main",
+                "kind": "COLLECTION",
+                "pointer": 140351709455728,
+                "session_uid": 1028
+              },
+              "owner_key": {
+                "name": "Main",
+                "kind": "COLLECTION",
+                "pointer": 140351709455728,
+                "session_uid": 1028
+              },
+              "target": {
+                "name": "model.002",
+                "kind": "OBJECT",
+                "pointer": 140351709794752,
+                "session_uid": 1027
+              },
+              "target_key": {
+                "name": "model.002",
+                "kind": "OBJECT",
+                "pointer": 140351709794752,
+                "session_uid": 1027
+              },
+              "drop_key": {
+                "name": "model.002",
+                "kind": "OBJECT",
+                "pointer": 140351709794752,
+                "session_uid": 1027
+              },
+              "owner_lifecycle": "SURVIVE",
+              "path": "Collection.objects[2]",
+              "rna_path": "Collection.objects[2]",
+              "surface": "Collection",
+              "source_surface": "Collection",
+              "relation_category": "PERTENCIMENTO_AUTORIZADO",
+              "scan_status": "INSPECTED",
+              "action": "ALLOW_UNLINK",
+              "evidence": {
+                "method": "RNA/IDProperty enumeration",
+                "path": "Collection.objects[2]"
+              },
+              "why": "Unlink de Scene/Collection inerente ao remove",
+              "reason": "Unlink de Scene/Collection inerente ao remove",
+              "drop_target": true
+            }
+          ],
+          "blockers": [],
+          "uninspected": [],
+          "excluded_by_assumption": [
+            {
+              "path": "Mesh.vertices",
+              "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+            },
+            {
+              "path": "Mesh.edges",
+              "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+            },
+            {
+              "path": "Mesh.polygons",
+              "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+            },
+            {
+              "path": "Mesh.loops",
+              "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+            },
+            {
+              "path": "Mesh.vertices",
+              "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+            },
+            {
+              "path": "Mesh.edges",
+              "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+            },
+            {
+              "path": "Mesh.polygons",
+              "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+            },
+            {
+              "path": "Mesh.loops",
+              "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+            },
+            {
+              "path": "Mesh.vertices",
+              "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+            },
+            {
+              "path": "Mesh.edges",
+              "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+            },
+            {
+              "path": "Mesh.polygons",
+              "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+            },
+            {
+              "path": "Mesh.loops",
+              "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+            }
+          ],
+          "external_sources": "NOT_OBSERVABLE: external Python/handlers require independent runtime gate"
+        },
+        "budget": {
+          "time_s": 0.00988,
+          "states": 0,
+          "comparisons": 2,
+          "rna_nodes": 26,
+          "rss_start": 30371840,
+          "rss_peak": 30375936,
+          "largest_estimated_allocation": 240
+        },
+        "no_autosave": true,
+        "runtime_blender_approved": false
+      },
+      "inventory": {
+        "coverage": {
+          "eligibility_checked": 2,
+          "ids_scanned": 8,
+          "rna_structs": 11,
+          "skipped_numeric_mesh_structures": 12,
+          "rna_pointer_ids": 10,
+          "candidate_collections": 2,
+          "user_map_checked": 2
+        },
+        "references": [
+          {
+            "owner": {
+              "name": "S",
+              "kind": "SCENE",
+              "pointer": 140351709795232,
+              "session_uid": 1029
+            },
+            "owner_key": {
+              "name": "S",
+              "kind": "SCENE",
+              "pointer": 140351709795232,
+              "session_uid": 1029
+            },
+            "target": {
+              "name": "model.000",
+              "kind": "OBJECT",
+              "pointer": 140351709458512,
+              "session_uid": 1023
+            },
+            "target_key": {
+              "name": "model.000",
+              "kind": "OBJECT",
+              "pointer": 140351709458512,
+              "session_uid": 1023
+            },
+            "drop_key": {
+              "name": "model.000",
+              "kind": "OBJECT",
+              "pointer": 140351709458512,
+              "session_uid": 1023
+            },
+            "owner_lifecycle": "SURVIVE",
+            "path": "Scene.objects[0]",
+            "rna_path": "Scene.objects[0]",
+            "surface": "Scene",
+            "source_surface": "Scene",
+            "relation_category": "PERTENCIMENTO_AUTORIZADO",
+            "scan_status": "INSPECTED",
+            "action": "ALLOW_UNLINK",
+            "evidence": {
+              "method": "RNA/IDProperty enumeration",
+              "path": "Scene.objects[0]"
+            },
+            "why": "Unlink de Scene/Collection inerente ao remove",
+            "reason": "Unlink de Scene/Collection inerente ao remove",
+            "drop_target": true
+          },
+          {
+            "owner": {
+              "name": "S",
+              "kind": "SCENE",
+              "pointer": 140351709795232,
+              "session_uid": 1029
+            },
+            "owner_key": {
+              "name": "S",
+              "kind": "SCENE",
+              "pointer": 140351709795232,
+              "session_uid": 1029
+            },
+            "target": {
+              "name": "model.002",
+              "kind": "OBJECT",
+              "pointer": 140351709794752,
+              "session_uid": 1027
+            },
+            "target_key": {
+              "name": "model.002",
+              "kind": "OBJECT",
+              "pointer": 140351709794752,
+              "session_uid": 1027
+            },
+            "drop_key": {
+              "name": "model.002",
+              "kind": "OBJECT",
+              "pointer": 140351709794752,
+              "session_uid": 1027
+            },
+            "owner_lifecycle": "SURVIVE",
+            "path": "Scene.objects[2]",
+            "rna_path": "Scene.objects[2]",
+            "surface": "Scene",
+            "source_surface": "Scene",
+            "relation_category": "PERTENCIMENTO_AUTORIZADO",
+            "scan_status": "INSPECTED",
+            "action": "ALLOW_UNLINK",
+            "evidence": {
+              "method": "RNA/IDProperty enumeration",
+              "path": "Scene.objects[2]"
+            },
+            "why": "Unlink de Scene/Collection inerente ao remove",
+            "reason": "Unlink de Scene/Collection inerente ao remove",
+            "drop_target": true
+          },
+          {
+            "owner": {
+              "name": "Main",
+              "kind": "COLLECTION",
+              "pointer": 140351709455728,
+              "session_uid": 1028
+            },
+            "owner_key": {
+              "name": "Main",
+              "kind": "COLLECTION",
+              "pointer": 140351709455728,
+              "session_uid": 1028
+            },
+            "target": {
+              "name": "model.000",
+              "kind": "OBJECT",
+              "pointer": 140351709458512,
+              "session_uid": 1023
+            },
+            "target_key": {
+              "name": "model.000",
+              "kind": "OBJECT",
+              "pointer": 140351709458512,
+              "session_uid": 1023
+            },
+            "drop_key": {
+              "name": "model.000",
+              "kind": "OBJECT",
+              "pointer": 140351709458512,
+              "session_uid": 1023
+            },
+            "owner_lifecycle": "SURVIVE",
+            "path": "Collection.objects[0]",
+            "rna_path": "Collection.objects[0]",
+            "surface": "Collection",
+            "source_surface": "Collection",
+            "relation_category": "PERTENCIMENTO_AUTORIZADO",
+            "scan_status": "INSPECTED",
+            "action": "ALLOW_UNLINK",
+            "evidence": {
+              "method": "RNA/IDProperty enumeration",
+              "path": "Collection.objects[0]"
+            },
+            "why": "Unlink de Scene/Collection inerente ao remove",
+            "reason": "Unlink de Scene/Collection inerente ao remove",
+            "drop_target": true
+          },
+          {
+            "owner": {
+              "name": "Main",
+              "kind": "COLLECTION",
+              "pointer": 140351709455728,
+              "session_uid": 1028
+            },
+            "owner_key": {
+              "name": "Main",
+              "kind": "COLLECTION",
+              "pointer": 140351709455728,
+              "session_uid": 1028
+            },
+            "target": {
+              "name": "model.002",
+              "kind": "OBJECT",
+              "pointer": 140351709794752,
+              "session_uid": 1027
+            },
+            "target_key": {
+              "name": "model.002",
+              "kind": "OBJECT",
+              "pointer": 140351709794752,
+              "session_uid": 1027
+            },
+            "drop_key": {
+              "name": "model.002",
+              "kind": "OBJECT",
+              "pointer": 140351709794752,
+              "session_uid": 1027
+            },
+            "owner_lifecycle": "SURVIVE",
+            "path": "Collection.objects[2]",
+            "rna_path": "Collection.objects[2]",
+            "surface": "Collection",
+            "source_surface": "Collection",
+            "relation_category": "PERTENCIMENTO_AUTORIZADO",
+            "scan_status": "INSPECTED",
+            "action": "ALLOW_UNLINK",
+            "evidence": {
+              "method": "RNA/IDProperty enumeration",
+              "path": "Collection.objects[2]"
+            },
+            "why": "Unlink de Scene/Collection inerente ao remove",
+            "reason": "Unlink de Scene/Collection inerente ao remove",
+            "drop_target": true
+          }
+        ],
+        "blockers": [],
+        "uninspected": [],
+        "excluded_by_assumption": [
+          {
+            "path": "Mesh.vertices",
+            "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+          },
+          {
+            "path": "Mesh.edges",
+            "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+          },
+          {
+            "path": "Mesh.polygons",
+            "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+          },
+          {
+            "path": "Mesh.loops",
+            "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+          },
+          {
+            "path": "Mesh.vertices",
+            "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+          },
+          {
+            "path": "Mesh.edges",
+            "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+          },
+          {
+            "path": "Mesh.polygons",
+            "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+          },
+          {
+            "path": "Mesh.loops",
+            "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+          },
+          {
+            "path": "Mesh.vertices",
+            "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+          },
+          {
+            "path": "Mesh.edges",
+            "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+          },
+          {
+            "path": "Mesh.polygons",
+            "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+          },
+          {
+            "path": "Mesh.loops",
+            "reason": "elementos primitivos de geometria presumidos sem ID pointers; confirmar Blender 5.0"
+          }
+        ],
+        "external_sources": "NOT_OBSERVABLE: external Python/handlers require independent runtime gate"
+      },
+      "no_rollback": true,
+      "no_autosave": true,
+      "reconciliation": {
+        "items": [
+          {
+            "snapshot": {
+              "name": "model.002",
+              "kind": "OBJECT",
+              "pointer": 140351709794752,
+              "session_uid": 1027
+            },
+            "status": "CONFIRMADO_REMOVIDO",
+            "proof": "session_uid+enumeracao"
+          },
+          {
+            "snapshot": {
+              "name": "model.000",
+              "kind": "OBJECT",
+              "pointer": 140351709458512,
+              "session_uid": 1023
+            },
+            "status": "CONFIRMADO_PRESENTE",
+            "proof": "session_uid+enumeracao"
+          }
+        ],
+        "removed_confirmed": 1,
+        "present_confirmed": 1,
+        "indeterminate": 0
+      },
+      "decisions": [
+        {
+          "drop_key": {
+            "name": "model.002",
+            "kind": "OBJECT",
+            "pointer": 140351709794752,
+            "session_uid": 1027
+          },
+          "scan_status": "ABORTED",
+          "action": "STOP_NO_MORE_REMOVALS",
+          "reason": "injected AFTER effect",
+          "evidence": {
+            "snapshot": {
+              "name": "model.002",
+              "kind": "OBJECT",
+              "pointer": 140351709794752,
+              "session_uid": 1027
+            },
+            "status": "CONFIRMADO_REMOVIDO",
+            "proof": "session_uid+enumeracao"
+          }
+        },
+        {
+          "drop_key": {
+            "name": "model.000",
+            "kind": "OBJECT",
+            "pointer": 140351709458512,
+            "session_uid": 1023
+          },
+          "scan_status": "ABORTED",
+          "action": "STOP_NO_MORE_REMOVALS",
+          "reason": "injected AFTER effect",
+          "evidence": {
+            "snapshot": {
+              "name": "model.000",
+              "kind": "OBJECT",
+              "pointer": 140351709458512,
+              "session_uid": 1023
+            },
+            "status": "CONFIRMADO_PRESENTE",
+            "proof": "session_uid+enumeracao"
+          }
+        }
+      ]
+    }
+  }
+}

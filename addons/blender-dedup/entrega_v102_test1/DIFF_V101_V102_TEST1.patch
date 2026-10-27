@@ -1,0 +1,960 @@
+--- a/remover_duplicatas_blend_v1_0_1.py
++++ b/remover_duplicatas_blend_v1_0_2_test1.py
+@@ -1,4 +1,4 @@
+-"""Blender Dedup v1.0.1 -- CANDIDATA OFFLINE; NAO HOMOLOGADA.
++"""Blender Dedup v1.0.2-test1 -- CANDIDATA OFFLINE; NAO HOMOLOGADA.
+ 
+ Detecta malhas-base MESH isomorfas apos quantizacao float32 (5 casas),
+ sem depender de indices, G/R/S, materiais, UV ou modifiers. Ranking:
+@@ -14,6 +14,7 @@
+ from collections import Counter, defaultdict
+ import ast
+ from contextlib import contextmanager
++from contextvars import ContextVar
+ from dataclasses import dataclass
+ import hashlib
+ import json
+@@ -21,23 +22,27 @@
+ import re
+ import sys
+ import time
++import copy
++import threading
+ 
+ try:
+     import numpy as np
+ except ImportError as exc:
+     raise RuntimeError("Blender Dedup requer NumPy.") from exc
+-try:
+-    import bpy
+-except ImportError:
+-    bpy = None  # Somente permite testes offline de geometria e mocks.
++# Offline import never loads Blender. A future authorized runtime must already
++# provide bpy; tests require bpy is None. No runtime validation is claimed.
++bpy = sys.modules.get("bpy")
+ 
+ PRECISION = 5
+ FACTOR = 10 ** PRECISION
+ INT64_LIMIT = 2**63 - 1
+-VERSION = "1.0.1-candidate-offline"
++VERSION = "1.0.2-test1-candidate-offline"
+ 
+ class PreflightAborted(RuntimeError):
+     """Nenhuma exclusao pode comecar apos esta falha de preflight."""
++
++class MutationDetected(PreflightAborted):
++    pass
+ 
+ class ComplexityBudgetExceeded(PreflightAborted):
+     pass
+@@ -112,6 +117,7 @@
+         self.comparisons = 0
+         self.rna_nodes = 0
+         self.pair_started = None
++        self.pair_initial_rss = None
+         self.pair_allocation_requests = 0
+         self.global_allocation_peak_request = 0
+ 
+@@ -124,6 +130,8 @@
+         rss = _rss_bytes()
+         if rss is not None:
+             self.rss_peak = max(self.rss_peak, rss)
++            if self.pair_started is not None and self.pair_initial_rss is not None and rss-self.pair_initial_rss > self.limits.mem_pair_bytes:
++                raise ComplexityBudgetExceeded("Crescimento de RSS do par excedido: " + label)
+             if self.initial_rss is not None and rss-self.initial_rss > self.limits.mem_global_bytes:
+                 raise ComplexityBudgetExceeded("Crescimento de RSS global excedido: " + label)
+         return now
+@@ -162,6 +170,8 @@
+         if self.comparisons > self.limits.comparisons:
+             raise ComplexityBudgetExceeded("Quantidade maxima de pares excedida")
+         old_start, old_states, old_alloc = self.pair_started, self.pair_states, self.pair_allocation_requests
++        old_rss = self.pair_initial_rss
++        self.pair_initial_rss = _rss_bytes()
+         self.pair_started, self.pair_states, self.pair_allocation_requests = time.perf_counter(), 0, 0
+         try:
+             self.checkpoint("inicio-par")
+@@ -169,8 +179,9 @@
+             self.checkpoint("fim-par")
+         finally:
+             self.pair_started, self.pair_states, self.pair_allocation_requests = old_start, old_states, old_alloc
+-
+-CURRENT_BUDGET = None
++            self.pair_initial_rss = old_rss
++
++CURRENT_BUDGET = ContextVar("dedup_budget", default=None)
+ class _NullBudget:
+     def checkpoint(self, *a, **k): return None
+     def allocation_bound(self, *a, **k): return None
+@@ -179,17 +190,23 @@
+ _NULL_BUDGET = _NullBudget()
+ 
+ def _budget():
+-    return CURRENT_BUDGET if CURRENT_BUDGET is not None else _NULL_BUDGET
++    return CURRENT_BUDGET.get() or _NULL_BUDGET
+ 
+ @contextmanager
+ def bound_budget(budget):
+-    global CURRENT_BUDGET
+-    previous = CURRENT_BUDGET
+-    CURRENT_BUDGET = budget
++    token = CURRENT_BUDGET.set(budget)
+     try:
+         yield
+     finally:
+-        CURRENT_BUDGET = previous
++        CURRENT_BUDGET.reset(token)
++
++def _checked(iterable, label):
++    """Check inside Python loops; native NumPy/sort calls remain cooperative."""
++    for index, value in enumerate(iterable):
++        if index % 128 == 0:
++            _budget().checkpoint(label)
++        yield value
++
+ 
+ def mesh_identity(mesh):
+     """Identificador estavel do datablock, independentemente do proxy bpy."""
+@@ -273,7 +290,10 @@
+         return seq
+     double = seq + seq
+     i, j, k = 0, 1, 0
++    steps = 0
+     while i < n and j < n and k < n:
++        steps += 1
++        if steps % 128 == 0: _budget().checkpoint("ciclo-orientado")
+         a, b = double[i + k], double[j + k]
+         if a == b:
+             k += 1
+@@ -380,14 +400,14 @@
+         if index % 2048 == 0: _budget().checkpoint("faces-locais")
+         start, size = int(start), int(size)
+         indices = loops[start:start+size]
+-        for j, raw in enumerate(indices):
++        for j, raw in _checked(enumerate(indices), "cantos-locais"):
+             v = int(raw)
+             if v in amb:
+                 prev = int(qclasses[int(indices[(j-1) % size])])
+                 nxt = int(qclasses[int(indices[(j+1) % size])])
+                 corners[v].append((size, prev, nxt))
+     return {v: (int(qclasses[v]), tuple(sorted(neigh[v])), tuple(sorted(corners[v])))
+-            for v in amb}
++            for v in _checked(amb, "assinaturas-vertices")}
+ 
+ 
+ def _ambiguous_isomorphism(mesh_a, mesh_b, q_a, q_b, order_a, order_b):
+@@ -398,7 +418,7 @@
+     malhas patologicamente simetricas; NUNCA aceita so por hash.
+     """
+     n = len(q_a)
+-    _budget().allocation_bound(n * 160 + len(mesh_a.loops)*64 + len(mesh_a.edges)*64, "grafo-ambiguo", stage="alloc")
++    _budget().allocation_bound(n * 2048 + n * n * 16 + (len(mesh_a.loops) + len(mesh_b.loops))*512 + (len(mesh_a.edges) + len(mesh_b.edges))*512, "grafo-ambiguo", stage="alloc")
+     same = np.all(q_a[order_a][1:] == q_a[order_a][:-1], axis=1)
+     # 'same' tem True nas fronteiras internas de grupos repetidos.
+     separators = np.flatnonzero(~same) + 1
+@@ -409,7 +429,7 @@
+     qclasses_a = np.empty(n, dtype=np.int64)
+     qclasses_b = np.empty(n, dtype=np.int64)
+     ambiguous_a, ambiguous_b = [], []
+-    for cls, (start, stop) in enumerate(zip(starts, stops)):
++    for cls, (start, stop) in _checked(enumerate(zip(starts, stops)), "classes-coordenadas"):
+         ia = order_a[start:stop]
+         ib = order_b[start:stop]
+         qclasses_a[ia] = cls
+@@ -428,15 +448,30 @@
+     sig_a = _localized_signatures(qclasses_a, edges_a, poly_a, ambiguous_a)
+     sig_b = _localized_signatures(qclasses_b, edges_b, poly_b, ambiguous_b)
+     groups_a, groups_b = defaultdict(list), defaultdict(list)
+-    for i, key in sig_a.items():
++    for i, key in _checked(sig_a.items(), "grupos-A"):
+         groups_a[key].append(i)
+-    for i, key in sig_b.items():
++    for i, key in _checked(sig_b.items(), "grupos-B"):
+         groups_b[key].append(i)
+     if {key: len(v) for key, v in groups_a.items()} != {key: len(v) for key, v in groups_b.items()}:
+         return False
++    # Refine coordinate/local partitions jointly, never use them as positive proof.
++    # Orientation and multiplicity remain checked by the final exact witness.
++    for refinement in range(4):
++        keys = sorted(set(sig_a.values()) | set(sig_b.values()))
++        colors = {key: index for index, key in enumerate(keys)}
++        ca, cb = qclasses_a.copy(), qclasses_b.copy()
++        for v in _checked(ambiguous_a, "refino-A"): ca[v] = len(starts) + colors[sig_a[v]]
++        for v in _checked(ambiguous_b, "refino-B"): cb[v] = len(starts) + colors[sig_b[v]]
++        na = _localized_signatures(ca, edges_a, poly_a, ambiguous_a)
++        nb = _localized_signatures(cb, edges_b, poly_b, ambiguous_b)
++        if Counter(na.values()) != Counter(nb.values()): return False
++        sig_a, sig_b = na, nb
++    groups_a, groups_b = defaultdict(list), defaultdict(list)
++    for i, key in _checked(sig_a.items(), "grupos-A"): groups_a[key].append(i)
++    for i, key in _checked(sig_b.items(), "grupos-B"): groups_b[key].append(i)
+     remaining = set()
+     candidates = {}
+-    for key, verts_a in groups_a.items():
++    for key, verts_a in _checked(groups_a.items(), "particoes"):
+         verts_b = groups_b[key]
+         if len(verts_a) == 1:
+             a, b = verts_a[0], verts_b[0]
+@@ -444,19 +479,20 @@
+             reverse[b] = a
+         else:
+             remaining.update(verts_a)
+-            for a in verts_a:
+-                candidates[a] = tuple(sorted(verts_b))
++            shared = tuple(sorted(verts_b))
++            for a in _checked(verts_a, "candidatos-compartilhados"):
++                candidates[a] = shared
+ 
+     # Preparar adjacencias somente dos vertices ambiguos (economiza memoria).
+     adj_a = {a: Counter() for a in ambiguous_a}
+     adj_b = {b: Counter() for b in ambiguous_b}
+-    for u, v in edges_a:
++    for u, v in _checked(edges_a, "adjacencias-A"):
+         u, v = int(u), int(v)
+         if u in adj_a:
+             adj_a[u][v] += 1
+         if v in adj_a:
+             adj_a[v][u] += 1
+-    for u, v in edges_b:
++    for u, v in _checked(edges_b, "adjacencias-B"):
+         u, v = int(u), int(v)
+         if u in adj_b:
+             adj_b[u][v] += 1
+@@ -470,8 +506,8 @@
+         amb_set = set(amb)
+         result = []
+         touching = defaultdict(list)
+-        for start, size in zip(starts_, totals_):
+-            raw = tuple(int(i) for i in loops_[int(start):int(start)+int(size)])
++        for start, size in _checked(zip(starts_, totals_), "indexacao-faces"):
++            raw = tuple(int(i) for i in _checked(loops_[int(start):int(start)+int(size)], "indices-face"))
+             touched = amb_set.intersection(raw)
+             if touched:
+                 idx = len(result)
+@@ -484,14 +520,14 @@
+     faces_b, _ = indexed_faces(poly_b, ambiguous_b)
+     if len(faces_a) != len(faces_b):
+         return False
+-    available_b = Counter(_canonical_cycle(f) for f in faces_b)
++    available_b = Counter(_canonical_cycle(f) for f in _checked(faces_b, "faces-disponiveis"))
+ 
+     def consume_complete_faces(affected_ids):
+         changed = []
+-        for face_id in affected_ids:
++        for face_id in _checked(affected_ids, "poda-faces"):
+             _budget().state("faces-consumidas")
+             face = faces_a[face_id]
+-            if any(mapping[v] < 0 for v in face):
++            if any(mapping[v] < 0 for v in _checked(face, "face-completa")):
+                 continue
+             key = _canonical_cycle(mapping[list(face)])
+             if available_b[key] <= 0:
+@@ -513,11 +549,11 @@
+     def compatible(a, b):
+         if reverse[b] >= 0:
+             return False
+-        for v, count in adj_a[a].items():
++        for v, count in _checked(adj_a[a].items(), "compatibilidade-A"):
+             mapped = int(mapping[v])
+             if mapped >= 0 and adj_b[b].get(mapped, 0) != count:
+                 return False
+-        for w, count in adj_b[b].items():
++        for w, count in _checked(adj_b[b].items(), "compatibilidade-B"):
+             inverse = int(reverse[w])
+             if inverse >= 0 and adj_a[a].get(inverse, 0) != count:
+                 return False
+@@ -526,13 +562,18 @@
+     def frame():
+         # Explora primeiro fronteiras conectadas aos vertices ja mapeados.
+         # Ordem de escolha nao influencia completude, so o desempenho.
++        free_by_class = {}
++        for a in _checked(remaining, "classes-livres"):
++            shared = candidates[a]
++            if id(shared) not in free_by_class:
++                free_by_class[id(shared)] = sum(int(reverse[b] < 0) for b in _checked(shared, "contagem-livres"))
+         def rank(a):
+-            mapped_neighbors = sum(int(mapping[v] >= 0) for v in adj_a[a])
+-            free = sum(int(reverse[b] < 0) for b in candidates[a])
++            mapped_neighbors = sum(int(mapping[v] >= 0) for v in _checked(adj_a[a], "ranking-adjacencias"))
++            free = free_by_class[id(candidates[a])]
+             return (0 if mapped_neighbors else 1, free, -mapped_neighbors, -len(adj_a[a]), a)
+         _budget().state("frame-backtracking")
+-        a = min(remaining, key=rank)
+-        bs = [b for b in candidates[a] if compatible(a, b)]
++        a = min(_checked(remaining, "ranking-vertices"), key=rank)
++        bs = [b for b in _checked(candidates[a], "ranking-candidatos") if compatible(a, b)]
+         return {'a': a, 'bs': bs, 'pos': 0, 'b': None, 'faces': None}
+ 
+     stack = [frame()]
+@@ -644,6 +685,11 @@
+         raise PreflightAborted("Malha tem faces com comprimentos/offsets invalidos")
+     if len(starts) and np.any(starts.astype(np.int64) + totals.astype(np.int64) > len(loops)):
+         raise PreflightAborted("Malha tem faces acessando loops inexistentes")
++    if len(starts):
++        order = np.argsort(starts)
++        ordered_starts, ordered_totals = starts[order], totals[order]
++        if ordered_starts[0] != 0 or np.any(ordered_starts[1:] != ordered_starts[:-1] + ordered_totals[:-1]):
++            raise PreflightAborted("Offsets de faces sobrepostos ou com lacunas")
+     if int(np.sum(totals, dtype=np.int64)) != len(loops):
+         raise PreflightAborted("Malha tem loops soltos/compartilhados inconsistentes")
+ 
+@@ -661,6 +707,10 @@
+         for i, obj in enumerate(meshes):
+             if i % 8 == 0:
+                 budget.checkpoint("validacao-global")
++            if getattr(obj, "mode", None) != "OBJECT" or getattr(obj, "is_evaluated", True):
++                raise UnsafeReference("MESH em modo/estado nao confiavel: " + obj.name)
++            if getattr(obj.data, "is_editmode", False):
++                raise UnsafeReference("Mesh em edicao: " + obj.name)
+             mesh = obj.data
+             ptr = mesh_identity(mesh)
+             if ptr not in signatures:
+@@ -718,11 +768,19 @@
+     category: str = "PENDENTE"
+     why: str = ""
+ 
+-    def record(self, drop_keys):
+-        return {"owner": snapshot(self.owner), "target": snapshot(self.target),
+-                "path": self.path, "surface": self.surface,
+-                "relation_category": self.category, "why": self.why,
+-                "drop_target": stable_id(self.target) in drop_keys}
++    def record(self, drop_keys, keep_keys=(), affected_drop=None):
++        owner, target = snapshot(self.owner), snapshot(self.target)
++        lifecycle = "DROP" if owner["pointer"] in drop_keys else ("KEEP" if owner["pointer"] in keep_keys else "SURVIVE")
++        blocked = self.category in ("FUNCIONAL_DIRETA", "FUNCIONAL_INDIRETA", "DESCONHECIDA", "PENDENTE")
++        return {"owner": owner, "owner_key": owner, "target": target, "target_key": target,
++                "drop_key": target if target["pointer"] in drop_keys else affected_drop,
++                "owner_lifecycle": lifecycle, "path": self.path, "rna_path": self.path,
++                "surface": self.surface, "source_surface": self.surface,
++                "relation_category": self.category, "scan_status": "INSPECTED",
++                "action": "ABORT_GLOBAL" if blocked else "ALLOW_UNLINK" if self.category == "PERTENCIMENTO_AUTORIZADO" else "NO_REMAP",
++                "evidence": {"method": "RNA/IDProperty enumeration", "path": self.path},
++                "why": self.why, "reason": self.why,
++                "drop_target": target["pointer"] in drop_keys}
+ 
+ 
+ _SKIP_INVERSE_PATHS = {
+@@ -782,40 +840,24 @@
+ 
+ 
+ def _text_lookup_risk(data, names):
+-    if not isinstance(data, str):
+-        return False
+-    # A specific target lookup OR an indeterminate computed ID lookup.
+-    if _DANGEROUS_NAME_LOOKUP.search(data):
++    """Conservative static veto, not an interpreter of arbitrary Python.
++
++    Any observable Blender namespace, import, reflection or dynamic code is
++    indeterminate, including aliases/getattr/computed names. Benign labels and
++    plain numeric IDProperties are allowed. External scripts remain unobservable.
++    """
++    if not isinstance(data, str) or not data.strip(): return False
++    _budget().allocation_bound(len(data.encode("utf-8"))*32, "AST-texto")
++    if re.search(r"\b(?:bpy|objects|collections|__import__|getattr|eval|exec|importlib|globals|locals)\b", data):
+         return True
+-    for name in names:
+-        if name and len(name) > 2 and re.search(r"\bobjects\b.{0,32}\[\s*[\"']" + re.escape(name) + r"[\"']", data):
++    try:
++        tree = ast.parse(data)
++    except (SyntaxError, ValueError):
++        # Unknown source-like strings cannot certify absence of a name lookup.
++        return any(token in data for token in ("[", ".get(", "(", "="))
++    for node in _checked(ast.walk(tree), "AST-texto"):
++        if isinstance(node, (ast.Import, ast.ImportFrom, ast.Call, ast.Subscript, ast.Attribute)):
+             return True
+-    # Common Python alias pattern: objs = bpy.data.objects; x = objs[key].
+-    # This is not a complete interpreter for arbitrary Python/driver scripts.
+-    if "bpy" in data and "objects" in data and ("[" in data or ".get(" in data):
+-        try:
+-            tree = ast.parse(data)
+-        except SyntaxError:
+-            # Could be a non-Python expression; the direct pattern above already
+-            # catches simple accesses. Unknown mixed-code script is unsafe.
+-            return bool(re.search(r"\bbpy\s*\.\s*data\s*\.\s*objects", data))
+-        aliases = set()
+-        for node in ast.walk(tree):
+-            if isinstance(node, (ast.Assign, ast.AnnAssign)):
+-                value = node.value
+-                if (isinstance(value, ast.Attribute) and value.attr == "objects" and
+-                    isinstance(value.value, ast.Attribute) and value.value.attr == "data" and
+-                    isinstance(value.value.value, ast.Name) and value.value.value.id == "bpy"):
+-                    targets = node.targets if isinstance(node, ast.Assign) else [node.target]
+-                    aliases.update(t.id for t in targets if isinstance(t, ast.Name))
+-        if aliases:
+-            for node in ast.walk(tree):
+-                if isinstance(node, ast.Subscript) and isinstance(node.value, ast.Name) and node.value.id in aliases:
+-                    return True
+-                if (isinstance(node, ast.Call) and isinstance(node.func, ast.Attribute) and
+-                    node.func.attr in ("get", "__getitem__") and isinstance(node.func.value, ast.Name)
+-                    and node.func.value.id in aliases):
+-                    return True
+     return False
+ 
+ 
+@@ -826,8 +868,11 @@
+     discovered through nested RNA, and IDProperties. `user_map` is corroboration
+     only. No geometric remapping of references is ever performed.
+     """
+-    def __init__(self, blend_data, clusters, budget):
++    def __init__(self, blend_data, clusters, budget, removed=()):
+         self.data = blend_data
++        self.removed = set(removed)
++        self.blockers = []
++        self.strings = []
+         self.clusters = clusters
+         self.budget = budget
+         self.drops = {stable_id(obj): obj for _, rem in clusters for obj in rem}
+@@ -839,6 +884,7 @@
+         self.pending_ids = []
+         self.uninspected = []
+         self.excluded_surfaces = []
++        self.affected_by_collection = defaultdict(set)
+         self.belonging = defaultdict(set)
+         self.parents_by_collection = defaultdict(set)
+         self.coverage = Counter()
+@@ -846,6 +892,7 @@
+ 
+     def _add_id(self, value):
+         ptr = stable_id(value)
++        if ptr in self.removed: return
+         if ptr not in self.owners:
+             self.owners[ptr] = value
+             self.pending_ids.append(value)
+@@ -877,6 +924,7 @@
+ 
+     def _record_ref(self, owner, target, path, surface):
+         rec = Reference(owner, target, path, surface)
++        if stable_id(target) in self.removed and self._is_membership(rec): return rec
+         self.refs.append(rec)
+         self.coverage["rna_pointer_ids"] += 1
+         return rec
+@@ -891,8 +939,10 @@
+             self._record_ref(owner, value, path, "IDProperty")
+             return
+         if isinstance(value, str):
++            self.strings.append((stable_id(owner), path, value))
+             if _text_lookup_risk(value, self.names):
+-                raise UnsafeReference("Lookup dinamico por nome em IDProperties: " + path)
++                self.blockers.append({"surface": "IDProperty", "path": path, "owner": snapshot(owner),
++                    "reason": "Lookup dinamico/indeterminado em IDProperties", "action": "ABORT_GLOBAL"})
+             return
+         if isinstance(value, (int, float, bool, bytes, type(None))):
+             return
+@@ -953,10 +1003,11 @@
+             child_path = path + "." + field_name
+             result = _read_safe(value, prop)
+             if ptype == "STRING":
++                self.strings.append((stable_id(owner), child_path, str(result)))
+                 # Detect source strings/driver expressions without treating labels
+                 # or ordinary object names as dynamic Python lookups.
+                 if field_name in ("expression", "script", "text") and _text_lookup_risk(result, self.names):
+-                    raise UnsafeReference("Codigo/expressao dinamica detectada: " + child_path)
++                    self.blockers.append({"surface": struct_type, "path": child_path, "reason": "Codigo/expressao indeterminada", "action": "ABORT_GLOBAL"})
+                 continue
+             if ptype == "POINTER":
+                 if result is None:
+@@ -1000,9 +1051,10 @@
+             raise IncompleteDiscovery("Impossivel ler Text datablock") from exc
+         if len(content.encode("utf-8")) > self.budget.limits.text_bytes:
+             raise ComplexityBudgetExceeded("Text muito grande para varredura")
++        self.strings.append((stable_id(owner), "Text.as_string", content))
+         self.coverage["texts_scanned"] += 1
+         if _text_lookup_risk(content, self.names):
+-            raise UnsafeReference("Text com acesso dinamico a bpy.data.objects/collections: " + owner.name)
++            self.blockers.append({"surface": "Text", "path": owner.name, "reason": "Text com acesso dinamico/indeterminado", "action": "ABORT_GLOBAL"})
+ 
+     def _scan_all(self):
+         self._roots()
+@@ -1014,8 +1066,15 @@
+                 continue
+             self.visited_owners.add(oid)
+             self.coverage["ids_scanned"] += 1
+-            self._scan_struct(owner, owner, _bl_type(owner), set())
+-            self._scan_text(owner)
++            try:
++                self._scan_struct(owner, owner, _bl_type(owner), set())
++                self._scan_text(owner)
++            except ComplexityBudgetExceeded:
++                self.uninspected.append({"owner": snapshot(owner), "reason": "budget", "scan_status": "INCOMPLETE"})
++                raise
++            except (PreflightAborted, ValueError, TypeError) as exc:
++                self.uninspected.append({"owner": snapshot(owner), "reason": str(exc), "scan_status": "INCOMPLETE"})
++                self.blockers.append({"owner": snapshot(owner), "reason": str(exc), "action": "ABORT_GLOBAL"})
+ 
+     @staticmethod
+     def _kind(value):
+@@ -1041,6 +1100,11 @@
+         return False
+ 
+     def _check_object_flags(self):
++        for keep, _ in self.clusters:
++            if getattr(keep, "mode", None) != "OBJECT" or getattr(keep, "is_evaluated", True):
++                self.blockers.append({"owner": snapshot(keep), "reason": "KEEP em modo/estado nao confiavel", "action": "ABORT_GLOBAL"})
++            if getattr(keep.data, "is_evaluated", False) or getattr(keep.data, "is_library_indirect", False):
++                self.blockers.append({"owner": snapshot(keep), "reason": "Mesh KEEP nao confiavel", "action": "ABORT_GLOBAL"})
+         for obj in self.drops.values():
+             # KEEP may be linked/readonly: it is not mutated.
+             try:
+@@ -1053,13 +1117,12 @@
+             except Exception as exc:
+                 raise IncompleteDiscovery("Flags de elegibilidade inacessiveis") from exc
+             if linked or indirect or override or not editable or evaluated or mode != "OBJECT":
+-                raise UnsafeReference("DROP nao elegivel: %s linked=%s indirect=%s override=%s editable=%s evaluated=%s mode=%s" %
+-                                      (obj.name, linked, indirect, override, editable, evaluated, mode))
++                self.blockers.append({"owner": snapshot(obj), "reason": "DROP nao elegivel linked=%s indirect=%s override=%s editable=%s evaluated=%s mode=%s" % (linked, indirect, override, editable, evaluated, mode), "action": "ABORT_GLOBAL"})
+             mesh = obj.data
+             # Data Mesh is never removed directly. Linked Mesh may stay linked,
+             # but evaluated/indirect Mesh state is not trusted for safe planning.
+             if getattr(mesh, "is_evaluated", False) or getattr(mesh, "is_library_indirect", False):
+-                raise UnsafeReference("Mesh de DROP nao esta em estado permitido: " + obj.name)
++                self.blockers.append({"owner": snapshot(obj), "reason": "Mesh DROP nao confiavel", "action": "ABORT_GLOBAL"})
+         self.coverage["eligibility_checked"] = len(self.drops)
+ 
+     def _classify(self):
+@@ -1079,6 +1142,15 @@
+                 if parent not in affected:
+                     affected.add(parent)
+                     queue.append(parent)
++        for drop, memberships in self.belonging.items():
++            seen = set(memberships)
++            todo = list(seen)
++            while todo:
++                self.budget.node()
++                child = todo.pop()
++                self.affected_by_collection[child].add(drop)
++                for parent in self.parents_by_collection.get(child, ()):
++                    if parent not in seen: seen.add(parent); todo.append(parent)
+         for ref in self.refs:
+             target_id = stable_id(ref.target)
+             owner_id = stable_id(ref.owner)
+@@ -1089,7 +1161,7 @@
+                     if (getattr(ref.owner, "library", None) is not None or
+                         not bool(getattr(ref.owner, "is_editable", False)) or
+                         getattr(ref.owner, "override_library", None) is not None):
+-                        raise UnsafeReference("Membership esta em owner nao editavel: " + ref.path)
++                        self.blockers.append({"path": ref.path, "reason": "Membership em owner nao editavel", "action": "ABORT_GLOBAL"})
+                     ref.category = "PERTENCIMENTO_AUTORIZADO"
+                     ref.why = "Unlink de Scene/Collection inerente ao remove"
+                 elif owner_id in drop_keys:
+@@ -1098,8 +1170,7 @@
+                 else:
+                     ref.category = "FUNCIONAL_DIRETA"
+                     ref.why = "Owner sobrevivente referencia DROP"
+-                    raise UnsafeReference("Referencia funcional para DROP: %s -> %s (%s)" %
+-                                          (ref.owner.name, ref.target.name, ref.path))
++                    self.blockers.append(ref.record(self.drop_keys, self.keepers))
+             elif target_id in affected and self._kind(ref.target) == "Collection":
+                 if self._is_hierarchy(ref):
+                     ref.category = "PERTENCIMENTO_AUTORIZADO"
+@@ -1110,43 +1181,70 @@
+                 else:
+                     ref.category = "FUNCIONAL_INDIRETA"
+                     ref.why = "Collection contendo DROP consumida por owner sobrevivente"
+-                    raise UnsafeReference("Collection contendo DROP referenciada por sobrevivente: " + ref.path)
++                    self.blockers.extend(ref.record(self.drop_keys, self.keepers, snapshot(self.drops[key]))
++                        for key in sorted(self.affected_by_collection[target_id]))
+             else:
+                 ref.category = "FORA_DOS_ALVOS"
+         self.coverage["candidate_collections"] = len(affected)
+ 
+     def _user_map_corroborate(self):
++        """Normalize forward users, excluding computed Scene.objects backlinks.
++
++        Collection.objects is an actual comparable membership; Scene.objects and
++        view-layer projections need not be ID users. Actual users must still have
++        a discovered path. Missing keys are accepted only with no expected users.
++        This policy requires future Blender API verification.
++        """
++        actual = self.data.user_map(subset=list(self.drops.values()))
++        if not isinstance(actual, dict): raise IncompleteDiscovery("user_map tipo inesperado")
++        discovered, comparable = defaultdict(set), defaultdict(set)
++        for ref in self.refs:
++            key = stable_id(ref.target)
++            if key not in self.drop_keys: continue
++            owner = stable_id(ref.owner)
++            discovered[key].add(owner)
++            if not (self._kind(ref.owner) == "Scene" and self._is_membership(ref)):
++                comparable[key].add(owner)
++        normalized = {}
++        for target, owners in actual.items():
++            key = stable_id(target)
++            if key not in self.drop_keys or key in normalized:
++                raise IncompleteDiscovery("user_map alvo inesperado/duplicado")
++            normalized[key] = {stable_id(owner) for owner in owners}
++        for key in self.drop_keys:
++            got = normalized.get(key, set())
++            missing, unknown = comparable[key] - got, got - discovered[key]
++            if missing or unknown:
++                self.blockers.append({"drop_key": snapshot(self.drops[key]), "surface": "user_map",
++                    "reason": "user_map divergente", "missing_users": sorted(missing),
++                    "unknown_users": sorted(unknown), "action": "ABORT_GLOBAL"})
++        self.coverage["user_map_checked"] = len(self.drop_keys)
++
++    def report(self):
++        uninspected = list(self.uninspected)
++        uninspected.extend({"owner": snapshot(o), "scan_status": "NOT_INSPECTED", "reason": "inventario interrompido"}
++                           for key, o in self.owners.items() if key not in self.visited_owners)
++        return {"coverage": dict(self.coverage),
++                "references": [r.record(self.drop_keys, self.keepers, snapshot(self.drops[key]) if key is not None else None)
++                    for r in self.refs if stable_id(r.target) in self.drop_keys or r.category == "FUNCIONAL_INDIRETA"
++                    for key in (sorted(self.affected_by_collection[stable_id(r.target)]) if r.category == "FUNCIONAL_INDIRETA" else [None])],
++                "blockers": list(self.blockers), "uninspected": uninspected,
++                "excluded_by_assumption": list(self.excluded_surfaces),
++                "external_sources": "NOT_OBSERVABLE: external Python/handlers require independent runtime gate"}
++
++    def inspect(self):
+         try:
+-            actual = self.data.user_map(subset=list(self.drops.values()))
+-        except Exception as exc:
+-            raise IncompleteDiscovery("user_map falhou, impossivel cruzar referencias") from exc
+-        if not isinstance(actual, dict):
+-            raise IncompleteDiscovery("user_map retornou tipo inesperado")
+-        discovered = defaultdict(set)
+-        for ref in self.refs:
+-            if stable_id(ref.target) in self.drop_keys:
+-                discovered[stable_id(ref.target)].add(stable_id(ref.owner))
+-        for target, owners in actual.items():
+-            tkey = stable_id(target)
+-            if tkey not in self.drop_keys:
+-                raise IncompleteDiscovery("user_map trouxe alvo fora do subset")
+-            for owner in owners:
+-                if stable_id(owner) not in discovered[tkey]:
+-                    raise IncompleteDiscovery("user_map detectou owner nao visto em RNA: " + str(getattr(owner,"name","?")))
+-        self.coverage["user_map_checked"] = len(self.drop_keys)
+-
+-    def inspect(self):
+-        self._check_object_flags()
+-        self._scan_all()
+-        self._classify()
+-        self._user_map_corroborate()
+-        self.budget.checkpoint("fim-dependencias")
+-        return {"coverage": dict(self.coverage),
+-                "references": [r.record(self.drop_keys) for r in self.refs if
+-                               stable_id(r.target) in self.drop_keys or
+-                               r.category == "FUNCIONAL_INDIRETA"],
+-                "uninspected": list(self.uninspected),
+-                "excluded_by_assumption": list(self.excluded_surfaces)}
++            self._check_object_flags()
++            self._scan_all()
++            self._classify()
++            self._user_map_corroborate()
++            self.budget.checkpoint("fim-dependencias")
++            if self.blockers or self.uninspected:
++                raise UnsafeReference("Inventario bloqueado: %d diagnosticos" % len(self.blockers))
++        except BaseException as exc:
++            exc.inventory = self.report()
++            raise
++        return self.report()
+ 
+ # --- Preflight, auto-delete, and nontransactional ledger ---
+ 
+@@ -1161,6 +1259,12 @@
+                       "drops": [snapshot(obj) for obj in drops]}
+                      for keep, drops in clusters],
+         "drops_count": sum(len(drops) for _, drops in clusters),
++        "decisions": [{"drop_key": snapshot(obj), "keep_key": snapshot(keep),
++            "owner_lifecycle": "DROP", "scan_status": "INSPECTED" if not inventory.get("blockers") else "BLOCKED",
++            "action": "REMOVE_ONLY_IF_REVALIDATED" if not inventory.get("blockers") else "ABORT_GLOBAL",
++            "reason": "Exact geometry witness and absolute R2 ranking; dependency inventory attached",
++            "evidence": {"inventory_blockers": inventory.get("blockers", []), "mesh_counts": mesh_counts(obj.data)}}
++            for keep, drops in clusters for obj in drops],
+         "inventory": inventory,
+         "budget": {"time_s": round(time.perf_counter() - budget.started, 5),
+                    "states": budget.total_states,
+@@ -1173,29 +1277,102 @@
+     }
+ 
+ 
+-def preflight(blend_data, limits=None, *, context_mode="OBJECT"):
+-    """PURE preflight: guarantees zero objects.remove calls on failure.
+-
+-    On any incomplete RNA inventory, unknown owner, budget timeout, mutation
+-    before deletion, numerical error or ineligible DROP, raises, no deletions.
++def _object_state(blend_data, budget):
++    """Raw base buffers, ranking and eligibility; no removed proxies retained."""
++    rows = []
++    cache = {}
++    for obj in _checked(list(blend_data.objects), "snapshot-objects"):
++        row = {"key": snapshot(obj), "type": str(obj.type),
++               "mode": str(getattr(obj, "mode", None)),
++               "flags": _flags(obj)}
++        if obj.type == "MESH":
++            mesh = obj.data
++            if mesh is None: raise PreflightAborted("MESH sem dados")
++            ptr = mesh_identity(mesh)
++            if ptr not in cache:
++                _check_structural_indices(mesh)
++                quantized_vertices(mesh)  # validates NaN, Inf and overflow
++                budget.allocation_bound(len(mesh.vertices)*16, "snapshot-coordenadas")
++                raw = np.empty(len(mesh.vertices)*3, dtype=np.float32)
++                if len(raw): mesh.vertices.foreach_get('co', raw)
++                h = hashlib.sha256(raw.tobytes())
++                del raw
++                for array in (get_edges(mesh), *get_polygons(mesh)):
++                    budget.checkpoint("snapshot-buffer")
++                    h.update(array.tobytes())
++                cache[ptr] = {"pointer": ptr, "counts": mesh_counts(mesh), "raw_sha256": h.hexdigest(),
++                              "flags": _flags(mesh), "is_editmode": bool(getattr(mesh, "is_editmode", False))}
++            row["mesh"] = cache[ptr]
++            row["rank"] = preference(obj)
++        rows.append(row)
++    return sorted(rows, key=lambda row: row["key"]["pointer"])
++
++
++def _flags(item):
++    def token(value):
++        if value is None or isinstance(value, (str, int, bool)): return value
++        return stable_id(value)
++    return {name: token(getattr(item, name, None)) for name in
++            ("library", "is_library_indirect", "override_library", "is_editable", "is_evaluated")}
++
++
++def _observed_state(blend_data, clusters, budget, removed=()):
++    # Caller supplies live clusters: never inspect already removed object proxies.
++    scanner = ReferenceScanner(blend_data, clusters, budget, removed)
++    inventory = scanner.inspect()
++    refs = []
++    for ref in scanner.refs:
++        if stable_id(ref.owner) in removed: continue
++        if stable_id(ref.target) in removed and scanner._is_membership(ref): continue
++        if stable_id(ref.target) in removed:
++            raise UnsafeReference("Referencia funcional a objeto ja removido")
++        path = ref.path
++        if scanner._is_membership(ref): path = re.sub(r"\[\d+\]", "[*]", path)
++        refs.append((stable_id(ref.owner), stable_id(ref.target), path, ref.surface))
++    state = {"objects": _object_state(blend_data, budget),
++             "owners": sorted((key, snapshot(owner), _flags(owner)) for key, owner in scanner.owners.items() if key not in removed),
++             "refs": sorted(refs), "strings": sorted(scanner.strings)}
++    return state, inventory
++
++
++def _project_state(state, removed):
++    """Only expected changes: absent DROP, outgoing edges and unlink membership.
++
++    Real remove updates collections/scenes; fixtures may retain stale membership.
++    Numeric membership indexes are normalized. All other changes abort.
+     """
+-    if context_mode != "OBJECT":
+-        raise PreflightAborted("Blender precisa estar em Object Mode")
+-    if not hasattr(blend_data, "objects"):
+-        raise IncompleteDiscovery("bpy.data.objects indisponivel")
+-    budget = BudgetContext(limits)
++    return {"objects": [row for row in state["objects"] if row["key"]["pointer"] not in removed],
++            "owners": [row for row in state["owners"] if row[0] not in removed],
++            "strings": [row for row in state["strings"] if row[0] not in removed],
++            "refs": [row for row in state["refs"] if row[0] not in removed and not
++                     (row[1] in removed and (row[2].startswith("Collection.objects[") or
++                      row[2].startswith("Scene.objects[") or "view_layers" in row[2] and ".objects[" in row[2]))]}
++
++
++def preflight(blend_data, limits=None, *, context_mode="OBJECT", _budget_context=None):
++    """Read-only global plan. Failure carries diagnostics; never calls remove."""
++    if context_mode != "OBJECT": raise PreflightAborted("Blender precisa estar em Object Mode")
++    if not hasattr(blend_data, "objects"): raise IncompleteDiscovery("bpy.data.objects indisponivel")
++    budget = _budget_context or BudgetContext(limits)
+     with bound_budget(budget):
++        before = _object_state(blend_data, budget)
+         objects = list(blend_data.objects)
+         ids = [stable_id(obj) for obj in objects]
+-        if len(set(ids)) != len(ids):
+-            raise IncompleteDiscovery("Identidade ambigua em bpy.data.objects")
++        if len(set(ids)) != len(ids): raise IncompleteDiscovery("Identidade ambigua em bpy.data.objects")
+         clusters, total_meshes = plan_removals(objects, budget)
+-        if not clusters:
+-            inventory = {"coverage": {}, "references": [], "uninspected": [], "excluded_by_assumption": []}
++        if clusters:
++            try:
++                state, inventory = _observed_state(blend_data, clusters, budget)
++            except BaseException as exc:
++                exc.plan = _ledger(clusters, total_meshes, getattr(exc, "inventory", {}), budget)
++                raise
++            if state["objects"] != before: raise MutationDetected("Objects mudaram durante planejamento")
+         else:
+-            inventory = ReferenceScanner(blend_data, clusters, budget).inspect()
++            state = None
++            inventory = {"coverage": {}, "references": [], "blockers": [], "uninspected": [], "excluded_by_assumption": []}
+         budget.checkpoint("fim-preflight")
+         result = _ledger(clusters, total_meshes, inventory, budget)
++        result["_stability"] = state
+         return clusters, objects, result
+ 
+ 
+@@ -1241,79 +1418,116 @@
+     print(prefix + " " + json.dumps(data, ensure_ascii=False, sort_keys=True, default=str), flush=True)
+ 
+ 
++_EXECUTE_LOCK = threading.Lock()
++_REENTRY_EPOCH = 0
++
++
++class ExecutionFailure(RuntimeError):
++    """Nontransactional failure; ledger remains available if stdout is broken."""
++    def __init__(self, ledger):
++        self.ledger = ledger
++        super().__init__("FALHA_PARCIAL_POSSIVEL: %d chamada(s); %s" %
++                         (ledger["calls_attempted"], ledger["detail"]))
++
++
+ def execute(blend_data, *, context_mode="OBJECT", limits=None, emit=_log_json):
+-    """Execute automatically only AFTER total preflight; never save .blend.
+-
+-    emit callback is injected in QA to simulate logger failure. Internal
+-    exception during phase 3 is never mislabeled atomic/rolled back.
++    """Exclusive, revalidated execution with detached logger payloads.
++
++    Each callback and each remove is an untrusted boundary. Revalidation detects
++    observable persistent changes; arbitrary concurrent writes/getter side effects
++    inside a check/remove cannot be made atomic by this Python API. Runtime HOLD.
+     """
+-    # Phase 1 and 2 are entirely read-only.
++    global _REENTRY_EPOCH
++    if not _EXECUTE_LOCK.acquire(blocking=False):
++        _REENTRY_EPOCH += 1
++        exc = PreflightAborted("Reentrancia/concorrencia recusada (ZERO REMOCOES nesta chamada)")
++        exc.ledger = {"status": "ABORT_POR_MUTACAO_ZERO_REMOVOES", "calls_attempted": 0}
++        raise exc
++    epoch = _REENTRY_EPOCH
++    calls = 0
++    plan = None
++    removed = set()
++    current_clusters = []
+     try:
+-        clusters, original_objects, plan = preflight(
+-            blend_data, limits, context_mode=context_mode)
+-        # Persist ledger to stdout before the first mutation. Never autosave.
+-        emit("[T7-DEDUP-LEDGER-PRE]", plan)
+-        before = [snapshot(obj) for obj in original_objects]
+-        now = _enumerate_current_snapshots(blend_data)
+-        if len(before) != len(now) or sorted(x["pointer"] for x in before) != sorted(x["pointer"] for x in now):
+-            raise PreflightAborted("Conjunto de Objects mudou entre preflight e fase 3")
+-        del original_objects
++        budget = BudgetContext(limits)
++        with bound_budget(budget):
++            clusters, original_objects, plan = preflight(blend_data, limits, context_mode=context_mode, _budget_context=budget)
++            baseline = plan.pop("_stability")
++            # Capture every DROP identity before deletion; no post-remove reads.
++            current_clusters = [(keep, [(obj, stable_id(obj), snapshot(obj)) for obj in drops]) for keep, drops in clusters]
++            del original_objects
++
++            def validate():
++                if epoch != _REENTRY_EPOCH: raise MutationDetected("Tentativa de reentrancia observada")
++                _enumerate_current_snapshots(blend_data)  # independent enumeration can fail closed
++                if baseline is None:
++                    return
++                live = [(keep, tuple(obj for obj, key, snap in drops if key not in removed))
++                        for keep, drops in current_clusters]
++                try:
++                    state, inventory = _observed_state(blend_data, live, budget, removed)
++                except (UnsafeReference, IncompleteDiscovery) as exc:
++                    changed = MutationDetected("Inventario deixou de ser seguro: " + str(exc))
++                    changed.inventory = getattr(exc, "inventory", {})
++                    raise changed from exc
++                if _project_state(baseline, removed) != _project_state(state, removed):
++                    raise MutationDetected("Geometria/flags/ranking/referencias/textos mudaram")
++                budget.checkpoint("revalidacao-finalizada")
++
++            def log_boundary(label, payload):
++                # The callback can neither corrupt the internal ledger nor its status.
++                emit(label, copy.deepcopy(payload))
++                validate()
++
++            log_boundary("[T7-DEDUP-LEDGER-PRE]", plan)
++            if plan["drops_count"] == 0:
++                log_boundary("[T7-DEDUP-RESULT]", {"status": "SEM_DUPLICATAS", "removed": 0})
++                return {"plan": plan, "status": "SEM_DUPLICATAS", "reconciliation": {"items": []}}
++            for keep, drops in current_clusters:
++                for obj, key, obj_snapshot in drops:
++                    log_boundary("[T7-DEDUP-BEFORE-REMOVE]", {"call": calls+1, "drop": obj_snapshot})
++                    calls += 1
++                    blend_data.objects.remove(obj, do_unlink=True)
++                    removed.add(key)
++                    validate()  # catches mutation even on the last removal
++                    log_boundary("[T7-DEDUP-AFTER-REMOVE]", {"call": calls, "drop_snapshot": obj_snapshot})
++            resolution = reconcile(plan, blend_data)
++            if resolution.get("indeterminate", 1) or resolution.get("present_confirmed", 1):
++                raise RuntimeError("Nao e possivel confirmar todas as remocoes")
++            # No success is reported to an arbitrary callback before validating its effects.
++            log_boundary("[T7-DEDUP-RESULT]", {"status": "PENDING_FINAL_VALIDATION", "calls": calls,
++                                             "reconciliation": resolution})
++            return {"status": "REMOVOES_CONFIRMADAS", "calls": calls, "plan": plan,
++                    "reconciliation": resolution, "no_autosave": True}
+     except BaseException as exc:
+-        # Nothing in this function calls remove() before here.
+-        try:
+-            emit("[T7-DEDUP-PREFLIGHT-ABORT]", {"zero_removals": True,
+-                  "exception": type(exc).__name__, "detail": str(exc)})
+-        except BaseException:
+-            pass
+-        raise PreflightAborted("Preflight abortado (ZERO REMOCOES): " + str(exc)) from exc
+-
+-    if plan["drops_count"] == 0:
+-        emit("[T7-DEDUP-RESULT]", {"status": "SEM_DUPLICATAS", "removed": 0})
+-        return {"plan": plan, "status": "SEM_DUPLICATAS", "reconciliation": {"items": []}}
+-
+-    calls = 0
+-    try:
+-        for _, drops in clusters:
+-            for obj in drops:
+-                # Snapshot BEFORE delete; never read obj AFTER .remove().
+-                obj_snapshot = snapshot(obj)
+-                emit("[T7-DEDUP-BEFORE-REMOVE]", {"call": calls+1, "drop": obj_snapshot})
+-                calls += 1
+-                blend_data.objects.remove(obj, do_unlink=True)
+-                emit("[T7-DEDUP-AFTER-REMOVE]", {"call": calls, "drop_snapshot": obj_snapshot})
+-        resolution = reconcile(plan, blend_data)
+-        if resolution["indeterminate"] or resolution["present_confirmed"]:
+-            # No further removals; do not claim success if unable to verify.
+-            status = "FALHA_PARCIAL_POSSIVEL"
+-        else:
+-            status = "REMOVOES_CONFIRMADAS"
+-        result = {"status": status, "calls": calls, "plan": plan, "reconciliation": resolution,
+-                  "no_autosave": True}
+-        emit("[T7-DEDUP-RESULT]", {"status": status, "calls": calls,
+-                                  "reconciliation": resolution})
+-        if status != "REMOVOES_CONFIRMADAS":
+-            raise RuntimeError("Nao e possivel confirmar todas as remocoes")
+-        return result
+-    except BaseException as exc:
+-        # Includes logger errors, snapshot errors and KeyboardInterrupt.
+-        resolution = reconcile(plan, blend_data)
+-        try:
+-            emit("[T7-DEDUP-FALHA-PARCIAL]", {"status": "FALHA_PARCIAL_POSSIVEL",
+-                 "calls_attempted": calls, "exception": type(exc).__name__,
+-                 "detail": str(exc), "reconciliation": resolution,
+-                 "no_rollback": True, "no_autosave": True})
+-        except BaseException:
+-            # Even a broken logger cannot cause extra removals or fake rollback.
+-            pass
+-        raise RuntimeError("FALHA_PARCIAL_POSSIVEL: %d chamada(s); consultar ledger. %s" %
+-                           (calls, str(exc))) from exc
++        if plan is None: plan = getattr(exc, "plan", None)
++        status = ("ABORT_POR_MUTACAO_ZERO_REMOVOES" if isinstance(exc, MutationDetected)
++                  else "INCONCLUSIVO_ZERO_REMOVOES") if calls == 0 else "FALHA_PARCIAL_POSSIVEL"
++        ledger = {"status": status, "calls_attempted": calls, "zero_removals": calls == 0,
++                  "exception": type(exc).__name__, "detail": str(exc), "plan": plan,
++                  "inventory": getattr(exc, "inventory", plan.get("inventory") if plan else None),
++                  "no_rollback": True, "no_autosave": True}
++        if plan is not None:
++            ledger["reconciliation"] = reconcile(plan, blend_data)
++            ledger["decisions"] = [{"drop_key": row["snapshot"], "scan_status": "ABORTED",
++                "action": "STOP_NO_MORE_REMOVALS", "reason": str(exc), "evidence": row}
++                for row in ledger["reconciliation"]["items"]]
++        try: emit("[T7-DEDUP-PREFLIGHT-ABORT]" if calls == 0 else "[T7-DEDUP-FALHA-PARCIAL]", copy.deepcopy(ledger))
++        except BaseException: pass
++        if calls == 0:
++            failure = PreflightAborted("Preflight abortado (ZERO REMOCOES): " + str(exc))
++            failure.ledger = ledger
++            raise failure from exc
++        raise ExecutionFailure(ledger) from exc
++    finally:
++        _EXECUTE_LOCK.release()
+ 
+ 
+ def run_blender():
+     if bpy is None:
+         raise RuntimeError("Execute somente em Blender real apos autorizacao/homologacao futura.")
+     mode = getattr(getattr(bpy, "context", None), "mode", None)
+-    print("[T7-Dedup v1.0.1 CANDIDATA] Inicio, sem autosave; analise global e remocao automatica segura.", flush=True)
++    print("[T7-Dedup v1.0.2-test1 CANDIDATA] Inicio, sem autosave; analise global e remocao automatica segura.", flush=True)
+     return execute(bpy.data, context_mode=mode)
+ 
+ 
